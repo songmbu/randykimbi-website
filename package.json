@@ -1,0 +1,12 @@
+{
+  "name": "randykimbi-website",
+  "version": "1.0.0",
+  "description": "Randy Kimbi - Enterprise AI Strategy Consultant",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -o",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["AI", "strategy", "consulting", "enterprise"],
+  "author": "Randy Kimbi",
+  "license": "MIT"
+}

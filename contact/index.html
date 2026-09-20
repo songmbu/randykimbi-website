@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Randy Kimbi</title>
+  <title>Contact — Randy Kimbi</title>
+  <meta name="description" content="Contact Randy Kimbi for enterprise AI strategy, executive training or an AI readiness assessment.">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <div class="header-content">
       <div class="logo">Randy Kimbi</div>
@@ -24,102 +24,110 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
+  <section class="hero text-center">
     <div class="container">
-      <h1>Let's Talk</h1>
-      <p>Schedule a consultation or get in touch.</p>
+      <div class="hero-grid centered">
+        <div>
+          <span class="eyebrow center">Contact</span>
+          <h1>Let's talk <em>strategy.</em></h1>
+          <p>For enterprise AI strategy, executive training, or an assessment of where your organisation stands. I reply within 24 hours.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section>
-    <div class="container-narrow">
-      <div class="two-column">
+    <div class="container">
+      <div class="contact-grid">
         <div>
-          <h2>Contact Methods</h2>
-          
-          <div class="card">
-            <h3>Email</h3>
-            <p><a href="mailto:contact@randykimbi.com">contact@randykimbi.com</a></p>
+          <div class="sec-head" style="margin-bottom:clamp(24px,4vh,36px)">
+            <span class="eyebrow">Direct</span>
+            <h2>Reach me.</h2>
+          </div>
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="k">Email</div>
+              <div class="v"><a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a></div>
+            </div>
+            <div class="contact-method">
+              <div class="k">WhatsApp</div>
+              <div class="v"><a href="https://wa.me/237671283217" target="_blank" rel="noopener">Message on WhatsApp</a></div>
+              <small>Fastest route for scheduling and quick questions.</small>
+            </div>
+            <div class="contact-method">
+              <div class="k">Phone</div>
+              <div class="v"><a href="tel:+237671283217">+237 671 283 217</a></div>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>WhatsApp</h3>
-            <p><a href="https://wa.me/237xxxxxxxxx">Message on WhatsApp</a></p>
-            <p style="font-size: 0.9rem; color: var(--charcoal);">Primary contact method. Best for quick questions and scheduling.</p>
-          </div>
-
-          <div class="card">
-            <h3>Phone</h3>
-            <p><a href="tel:+237xxxxxxxxx">+237 XXXXXXXXX</a></p>
-          </div>
+          <figure class="media-figure" style="margin-top:clamp(26px,4vh,42px)">
+            <!-- Replace .asset with: <img src="/images/randy-contact.jpg" alt="Randy Kimbi"> -->
+            <div class="asset portrait">
+              <div class="asset-icon"><svg viewBox="0 0 24 24"><path d="M4 20V9a2 2 0 0 1 2-2h1.5L9 5h6l1.5 2H18a2 2 0 0 1 2 2v11z"/><circle cx="12" cy="13" r="3.4"/></svg></div>
+              <div class="asset-kind">Photograph</div>
+              <div class="asset-desc">A relaxed, approachable portrait of Randy</div>
+              <div class="asset-spec">Portrait 4:5 &middot; min 900&times;1125px &middot; neutral background</div>
+            </div>
+          </figure>
         </div>
 
-        <div>
-          <h2>Schedule a Call</h2>
-          <p>Use the form below to request a consultation. I'll get back to you within 24 hours with available times.</p>
-
-          <form id="contact-form" onsubmit="handleContactForm(event)">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="company">Company / Organisation</label>
-            <input type="text" id="company" name="company" required>
-
-            <label for="title">Job Title</label>
-            <input type="text" id="title" name="title" required>
-
-            <label for="enquiry">What are you interested in?</label>
-            <select id="enquiry" name="enquiry" required>
-              <option value="">Select...</option>
-              <option value="ai-strategy">AI Strategy Consulting</option>
-              <option value="training">Corporate Training</option>
-              <option value="other">Other</option>
-            </select>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5"></textarea>
-
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-
-          <div id="form-status" style="display: none; margin-top: var(--spacing-lg); padding: var(--spacing-md); background-color: var(--light-grey); border-left: 4px solid var(--gold);">
-            <p id="status-message"></p>
+        <div class="form-wrap">
+          <div class="sec-head" style="margin-bottom:clamp(24px,4vh,36px)">
+            <span class="eyebrow">Enquiry</span>
+            <h2>Request a call.</h2>
           </div>
+          <form onsubmit="handleContactForm(event)">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required>
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" required>
+            <label for="company">Organisation</label>
+            <input id="company" name="company" type="text">
+            <label for="title">Role</label>
+            <input id="title" name="title" type="text">
+            <label for="enquiry">Interested in</label>
+            <select id="enquiry" name="enquiry">
+              <option>AI Strategy Consulting</option>
+              <option>Executive Training</option>
+              <option>AI Readiness Assessment</option>
+              <option>Something else</option>
+            </select>
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit" class="btn btn-primary">Send enquiry</button>
+            <div id="form-status" style="display:none;margin-top:18px;padding:16px 18px;border:1px solid var(--gold);font-size:15px">
+              <span id="status-message"></span>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Randy Kimbi</h3>
-          <p style="color: var(--white); margin-bottom: 0;">Enterprise AI Strategy Consultant</p>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Services</h3>
-          <a href="/services/strategy/">AI Strategy Consulting</a>
-          <a href="/services/training/">Corporate Training</a>
-        </div>
-        
-        <div class="footer-section">
-          <h3>Contact</h3>
-          <a href="mailto:contact@randykimbi.com">Email</a>
-          <a href="https://wa.me/237xxxxxxxxx">WhatsApp</a>
-        </div>
+    <div class="footer-content">
+      <div class="footer-section footer-brand">
+        <span class="monogram">RK</span>
+        <span class="brand-name">Randy Kimbi</span>
+        <p>Enterprise AI strategy and executive capability for institutions that cannot afford to guess.</p>
       </div>
-      
-      <div class="footer-copyright">
-        <p>&copy; 2026 Randy Kimbi. All rights reserved.</p>
+      <div class="footer-section">
+        <h4>Engagements</h4>
+        <a href="/services/strategy/">AI Strategy Consulting</a>
+        <a href="/services/training/">Executive Training</a>
+        <a href="/assessment/">AI Readiness Assessment</a>
+        <a href="/case-studies/">Case Studies</a>
       </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a>
+        <a href="https://wa.me/237671283217" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="tel:+237671283217">+237 671 283 217</a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <span>&copy; 2026 Randy Kimbi. All rights reserved.</span>
+      <span>Enterprise AI Strategist &middot; Central Africa</span>
     </div>
   </footer>
 

@@ -49,7 +49,7 @@ function buildHeader() {
     }).join('') + '</nav>' +
     '<div class="overlay-foot">' +
       '<span>Enterprise AI Strategist</span>' +
-      '<a href="mailto:contact@randykimbi.com">contact@randykimbi.com</a>' +
+      '<a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a>' +
     '</div>';
   document.body.appendChild(overlay);
 

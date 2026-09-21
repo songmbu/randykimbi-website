@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Readiness Assessment — Randy Kimbi</title>
-  <meta name="description" content="Ten questions, a maturity score out of 100, and a personalised roadmap for your organisation's AI readiness.">
+  <title>Free AI Strategy Assessment — Randy Kimbi</title>
+  <meta name="description" content="A free AI readiness assessment. Ten questions, a maturity score out of 100, and a personalised roadmap for your organisation.">
   <link rel="stylesheet" href="/css/main.css">
   <style>
     :root{--spacing-xxl:clamp(40px,6vh,64px)}
@@ -20,7 +20,8 @@
     .assess-body .float-dot{opacity:.28}
 
     .quiz-welcome{text-align:center;animation:fadeUp .6s ease}
-    .quiz-welcome h2{margin:26px 0 16px}
+    .free-badge{display:inline-block;background:var(--gold);color:var(--ink-deep);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;border-radius:100px}
+    .quiz-welcome h2{margin:20px 0 16px}
     .quiz-welcome h2 em{color:var(--gold)}
     .quiz-welcome p{color:var(--charcoal-dim);max-width:34em;margin:0 auto clamp(28px,4vh,40px)}
     .assess-meta{margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal-dim)}
@@ -101,7 +102,7 @@
       <div class="hero-grid centered">
         <div>
           <span class="eyebrow center">AI Readiness Assessment</span>
-          <h1>Where does your organisation <em>stand?</em></h1>
+          <h1>Free AI Strategy <em>Assessment</em></h1>
         </div>
       </div>
     </div>
@@ -123,10 +124,11 @@
               <div class="asset-spec">Landscape, transparent PNG or SVG</div>
             </div>
           </figure>
-          <h2>Ten questions. <em>One clear picture.</em></h2>
-          <p>Answer honestly. In about five minutes you will have a maturity score out of 100 and a personalised view of your next move.</p>
-          <button class="btn btn-primary" onclick="startQuiz()">Begin the assessment</button>
-          <div class="assess-meta">10 questions &middot; about 5 minutes &middot; see your score instantly</div>
+          <span class="free-badge">100% Free &middot; No email required</span>
+          <h2>Get your AI Readiness Score &mdash; <em>and know exactly what to fix.</em></h2>
+          <p>Ten questions. In five minutes you will see your maturity score out of 100 and the three moves that will grow your organisation the fastest.</p>
+          <button class="btn btn-primary" onclick="startQuiz()">Get my free score</button>
+          <div class="assess-meta">10 questions &middot; about 5 minutes &middot; instant result</div>
         </div>
 
         <div id="quiz-questions" style="display:none">

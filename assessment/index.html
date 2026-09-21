@@ -203,6 +203,7 @@
         var val = parseInt(target.textContent, 10);
         if(isNaN(val) || target.dataset.animated === '1' || val === 0) return;
         target.dataset.animated = '1';
+        var nav = document.getElementById('nav-buttons'); if(nav){ nav.style.display = 'none'; }
         var dur = 1200, t0 = null;
         function step(ts){
           if(!t0) t0 = ts;

@@ -25,7 +25,9 @@
     .quiz-welcome h2 em{color:var(--gold)}
     .quiz-welcome p{color:var(--charcoal-dim);max-width:34em;margin:0 auto clamp(28px,4vh,40px)}
     .assess-meta{margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal-dim)}
-    .assess-graphic{max-width:520px;margin:0 auto clamp(28px,4vh,44px)}
+    .assess-graphic{max-width:210px;margin:0 auto clamp(18px,3vh,30px)}
+    .assess-graphic img{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 30px rgba(11,27,48,.18));animation:botFloat 4s ease-in-out infinite}
+    @keyframes botFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
     .quiz-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
     .q-counter{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
@@ -55,7 +57,7 @@
     .results-cta-band .btn-group{justify-content:center;margin:0}
 
     @media(prefers-reduced-motion:reduce){
-      .assess-net circle,.float-dot,.quiz-progress-bar::after,.quiz-section,.quiz-welcome,.quiz-results{animation:none!important}
+      .assess-net circle,.float-dot,.quiz-progress-bar::after,.quiz-section,.quiz-welcome,.quiz-results,.assess-graphic img{animation:none!important}
     }
   </style>
 </head>
@@ -116,13 +118,7 @@
 
         <div id="quiz-welcome" class="quiz-welcome">
           <figure class="assess-graphic">
-            <!-- Optional: replace .asset with an illustration: <img src="/images/assessment-graphic.png" alt=""> -->
-            <div class="asset short">
-              <div class="asset-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 12l5-5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
-              <div class="asset-kind">Graphic</div>
-              <div class="asset-desc">Optional illustration or diagram for the intro</div>
-              <div class="asset-spec">Landscape, transparent PNG or SVG</div>
-            </div>
+            <img src="/images/ai-avatar.png" alt="AI assistant" width="210" height="185">
           </figure>
           <span class="free-badge">100% Free &middot; No email required</span>
           <h2>Get your AI Readiness Score &mdash; <em>and know exactly what to fix.</em></h2>

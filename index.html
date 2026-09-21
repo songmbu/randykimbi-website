@@ -15,11 +15,14 @@
     .hero h1{line-height:1.4}
     .hero h1 .hl{display:inline-block;background:var(--gold);color:var(--ink-deep);line-height:1.05;padding:.06em .26em;border-radius:6px}
 
-    /* pointing robot beside hero CTA */
-    .hero-cta{align-items:center}
-    .cta-bot{flex:0 0 auto;width:64px;color:#ffffff;animation:botBob 3s ease-in-out infinite;filter:drop-shadow(0 3px 8px rgba(0,0,0,.4))}
-    .cta-bot svg{width:100%;height:auto;display:block}
-    @keyframes botBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    /* secondary link must be visible on the dark hero */
+    .hero .textlink{color:var(--bone)}
+    .hero .textlink:hover{color:var(--gold)}
+
+    /* AI avatar beside hero CTA */
+    .hero-cta{align-items:center;flex-wrap:wrap}
+    .cta-bot{flex:0 0 auto;width:80px;height:auto;animation:botBob 3.4s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(0,0,0,.4))}
+    @keyframes botBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 
     /* button polish */
     .btn-primary{transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
@@ -31,14 +34,14 @@
     .btn-cta-anim::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:ctaShine 3.6s ease-in-out infinite}
     @keyframes ctaShine{0%{left:-70%}55%,100%{left:150%}}
 
-    /* engagements robot illustration */
-    .engage-figure{max-width:440px;margin:0 auto clamp(34px,5vh,54px);border:1px solid var(--line-on-paper);padding:clamp(24px,3.4vw,40px);color:var(--gold);background:var(--paper)}
-    .engage-figure svg{width:100%;height:auto;display:block}
-    .engage-cap{text-align:center;margin-top:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal-dim)}
+    /* engagements AI avatar */
+    .engage-figure{max-width:260px;margin:0 auto clamp(30px,5vh,52px);text-align:center}
+    .engage-figure img{width:100%;height:auto;display:block;animation:botBob 4s ease-in-out infinite;filter:drop-shadow(0 16px 34px rgba(11,27,48,.20))}
+    .engage-cap{text-align:center;margin-top:16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal-dim)}
 
     @media(max-width:900px){.hero-ai{opacity:.10;width:78%;right:auto;left:50%;transform:translate(-50%,-50%)}}
-    @media(max-width:560px){.cta-bot{width:54px}}
-    @media(prefers-reduced-motion:reduce){.cta-bot,.btn-cta-anim,.btn-cta-anim::after{animation:none}}
+    @media(max-width:560px){.cta-bot{width:62px}.engage-figure{max-width:210px}}
+    @media(prefers-reduced-motion:reduce){.cta-bot,.engage-figure img,.btn-cta-anim,.btn-cta-anim::after{animation:none}}
   </style>
 </head>
 <body>
@@ -87,22 +90,7 @@
           <h1>You have heard of AI. Is it working <em>for you, or your</em> <span class="hl">competitors</span><em>?</em></h1>
           <div class="hero-cta">
             <a href="/assessment/" class="btn btn-primary">Assess your AI readiness</a>
-            <span class="cta-bot" aria-hidden="true">
-              <svg viewBox="0 0 96 92" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="56" y1="9" x2="56" y2="19"/>
-                <circle cx="56" cy="6" r="3.4" fill="#ffffff" stroke="none"/>
-                <rect x="36" y="19" width="40" height="30" rx="9"/>
-                <circle cx="48" cy="34" r="3.4" fill="#ffffff" stroke="none"/>
-                <circle cx="64" cy="34" r="3.4" fill="#ffffff" stroke="none"/>
-                <line x1="49" y1="42" x2="63" y2="42"/>
-                <line x1="36" y1="31" x2="30" y2="31"/>
-                <line x1="76" y1="31" x2="82" y2="31"/>
-                <rect x="42" y="51" width="28" height="24" rx="7"/>
-                <path d="M70 57 q11 3 12 16"/>
-                <path d="M42 57 q-20 3 -30 -2"/>
-                <path d="M12 55 l-6 0 M9 51 l-4 4 l4 4"/>
-              </svg>
-            </span>
+            <img class="cta-bot" src="/images/ai-avatar.png" alt="AI assistant" width="80" height="70">
             <a href="/contact/" class="textlink">Schedule a strategy call <span class="ar">&rarr;</span></a>
           </div>
         </div>
@@ -164,24 +152,8 @@
         <span class="eyebrow">Engagements</span>
         <h2>Two ways to work <em>together.</em></h2>
       </div>
-      <figure class="engage-figure" aria-hidden="true">
-        <svg viewBox="0 0 280 168" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="26" y1="146" x2="254" y2="146"/>
-          <path d="M104 138 h72 l10 8 h-92 z"/>
-          <rect x="112" y="96" width="56" height="40" rx="2.5"/>
-          <polyline points="120,124 132,114 142,120 152,106 160,112"/>
-          <line x1="140" y1="48" x2="140" y2="56"/>
-          <circle cx="140" cy="46" r="2.4" fill="currentColor" stroke="none"/>
-          <rect x="122" y="56" width="36" height="26" rx="7"/>
-          <circle cx="132" cy="68" r="2.6" fill="currentColor" stroke="none"/>
-          <circle cx="148" cy="68" r="2.6" fill="currentColor" stroke="none"/>
-          <line x1="133" y1="75" x2="147" y2="75"/>
-          <line x1="122" y1="66" x2="117" y2="66"/>
-          <line x1="158" y1="66" x2="163" y2="66"/>
-          <path d="M116 96 q-6 -12 12 -16 h24 q18 4 12 16"/>
-          <path d="M118 92 q-11 15 -6 46"/>
-          <path d="M162 92 q11 15 6 46"/>
-        </svg>
+      <figure class="engage-figure">
+        <img src="/images/ai-avatar.png" alt="AI assistant" width="260" height="229">
         <figcaption class="engage-cap">AI, put to work</figcaption>
       </figure>
       <div class="services">
@@ -224,10 +196,6 @@
     </div>
   </section>
 
-  <!-- CLIENT VIDEO TESTIMONIALS -->
-  <!-- To add a real video: inside each .video-embed, replace the .video-ph block with:
-       <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Client testimonial" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       Also update the .v-industry / .v-detail caption to the real client and sector. -->
   <section class="testimonials">
     <div class="container">
       <div class="sec-head center">

@@ -14,31 +14,20 @@
     .svc-ico svg{width:100%;height:100%;display:block}
     .hero h1{line-height:1.4}
     .hero h1 .hl{display:inline-block;background:var(--gold);color:var(--ink-deep);line-height:1.05;padding:.06em .26em;border-radius:6px}
-
-    /* secondary link must be visible on the dark hero */
     .hero .textlink{color:var(--bone)}
     .hero .textlink:hover{color:var(--gold)}
-
-    /* AI avatar beside hero CTA */
     .hero-cta{align-items:center;flex-wrap:wrap}
     .cta-bot{flex:0 0 auto;width:80px;height:auto;animation:botBob 3.4s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(0,0,0,.4))}
     @keyframes botBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-
-    /* button polish */
     .btn-primary{transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(176,141,79,.28)}
-
-    /* animated final CTA */
     .btn-cta-anim{position:relative;overflow:hidden;letter-spacing:.08em;animation:ctaGlow 2.8s ease-in-out infinite}
     @keyframes ctaGlow{0%,100%{box-shadow:0 0 0 0 rgba(176,141,79,0)}50%{box-shadow:0 0 26px 3px rgba(176,141,79,.5)}}
     .btn-cta-anim::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:ctaShine 3.6s ease-in-out infinite}
     @keyframes ctaShine{0%{left:-70%}55%,100%{left:150%}}
-
-    /* engagements AI avatar */
     .engage-figure{max-width:260px;margin:0 auto clamp(30px,5vh,52px);text-align:center}
     .engage-figure img{width:100%;height:auto;display:block;animation:botBob 4s ease-in-out infinite;filter:drop-shadow(0 16px 34px rgba(11,27,48,.20))}
     .engage-cap{text-align:center;margin-top:16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal-dim)}
-
     @media(max-width:900px){.hero-ai{opacity:.10;width:78%;right:auto;left:50%;transform:translate(-50%,-50%)}}
     @media(max-width:560px){.cta-bot{width:62px}.engage-figure{max-width:210px}}
     @media(prefers-reduced-motion:reduce){.cta-bot,.engage-figure img,.btn-cta-anim,.btn-cta-anim::after{animation:none}}
@@ -195,6 +184,20 @@
     </div>
   </section>
 
+  <section class="sec-ink">
+    <div class="container">
+      <div class="sec-head center">
+        <span class="eyebrow center">Track record</span>
+        <h2>Grounded in real <em>work.</em></h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n rk-count" data-to="6" data-suffix="+">0</div><div class="l">Years building software, now with AI at the core</div></div>
+        <div class="stat"><div class="n rk-count" data-to="4" data-suffix="">0</div><div class="l">Enterprise sectors served</div></div>
+        <div class="stat"><div class="n rk-count" data-to="5" data-suffix="+">0</div><div class="l">AI certifications held</div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="testimonials">
     <div class="container">
       <div class="sec-head center">
@@ -274,5 +277,22 @@
   </footer>
 
   <script src="/js/app.js"></script>
+  <script>
+    (function(){
+      var els = document.querySelectorAll('.rk-count');
+      if(!els.length) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce){ els.forEach(function(el){ el.textContent = el.getAttribute('data-to') + (el.getAttribute('data-suffix')||''); }); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(!e.isIntersecting) return; var el=e.target; io.unobserve(el);
+          var to=parseInt(el.getAttribute('data-to'),10), suf=el.getAttribute('data-suffix')||'', dur=1100, t0=null;
+          function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var eased=1-Math.pow(1-p,3); el.textContent=Math.round(eased*to)+suf; if(p<1)requestAnimationFrame(step); }
+          requestAnimationFrame(step);
+        });
+      }, {threshold:0.4});
+      els.forEach(function(el){ io.observe(el); });
+    })();
+  </script>
 </body>
 </html>

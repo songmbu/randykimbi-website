@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free AI Risk &amp; Readiness Assessment — Randy Kimbi</title>
-  <meta name="description" content="A free AI risk assessment. Eleven questions revealing where your organisation is exposed — and the dangers of operating without an AI strategy.">
+  <title>Free AI Exposure Audit — Randy Kimbi</title>
+  <meta name="description" content="A free 15-question AI exposure audit for enterprise. See where AI risk hides in your organisation — shadow AI, governance, strategy and incident readiness. Instant score, no email.">
   <link rel="stylesheet" href="/css/main.css">
   <style>
-    .aq{--red:#FF4D4D;--amber:#FF8A1E;--gold:#D9A441;--gold-soft:#E7C070;--green:#31C971;--ink:#0A1526;--panel:#12233F;--panel-2:#16294a;--line:rgba(255,255,255,.12);--dim:#9AA7BC;--bone:#E8E3D6;--sig:var(--amber);
-      background:#0A1526;color:#F6F3EC;position:relative;overflow:hidden;
-      background-image:radial-gradient(60vw 40vw at 12% -5%,rgba(255,138,30,.16),transparent 60%),radial-gradient(55vw 45vw at 100% 0%,rgba(217,164,65,.12),transparent 60%),radial-gradient(70vw 55vw at 50% 120%,rgba(255,77,77,.12),transparent 60%);}
-    .aq .wrap{max-width:960px;margin:0 auto;padding:clamp(48px,8vh,110px) clamp(20px,4vw,48px)}
+    .aq{--red:#FF4D4D;--amber:#FF8A1E;--gold:#D9A441;--gold-soft:#E7C070;--green:#31C971;--panel:#12233F;--panel-2:#16294a;--line:rgba(255,255,255,.12);--dim:#9AA7BC;--bone:#E8E3D6;--sig:var(--amber);background:#0A1526;color:#F6F3EC;position:relative;overflow:hidden;background-image:radial-gradient(60vw 40vw at 12% -5%,rgba(255,138,30,.16),transparent 60%),radial-gradient(55vw 45vw at 100% 0%,rgba(217,164,65,.12),transparent 60%),radial-gradient(70vw 55vw at 50% 120%,rgba(255,77,77,.12),transparent 60%);}
+    .aq .wrap{max-width:960px;margin:0 auto;padding:clamp(46px,8vh,104px) clamp(20px,4vw,48px)}
     .aq .screen{display:none;animation:aqfade .5s ease}
     .aq .screen.on{display:block}
     @keyframes aqfade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -25,9 +23,9 @@
     .aq .ghero{width:clamp(140px,30vw,200px);height:clamp(140px,30vw,200px);margin:0 auto clamp(24px,4vh,36px);position:relative}
     .aq .ghero svg{width:100%;height:100%;transform:rotate(-90deg)}
     .aq .ghero .mid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-    .aq h1.aqh{color:#F6F3EC;font-family:var(--display);font-weight:600;font-size:clamp(27px,4.6vw,50px);line-height:1.02;letter-spacing:-.01em;margin:22px 0 20px}
+    .aq h1.aqh{color:#F6F3EC;font-family:var(--display);font-weight:600;font-size:clamp(28px,4.8vw,52px);line-height:1.08;letter-spacing:-.01em;margin:22px 0 20px}
     .aq h1.aqh .hot{color:var(--amber)}
-    .aq .lede{font-size:clamp(17px,2.1vw,22px);line-height:1.6;color:var(--bone);max-width:32ch;margin:0 auto clamp(26px,4vh,38px)}
+    .aq .lede{font-size:clamp(16px,1.9vw,20px);line-height:1.6;color:var(--bone);max-width:44ch;margin:0 auto clamp(26px,4vh,38px)}
     .aq .actions{display:flex;flex-direction:column;align-items:center;gap:18px}
     .aq .meta{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:26px;color:var(--dim);font-size:14px;font-weight:600}
     .aq .meta span{display:inline-flex;align-items:center;gap:8px}
@@ -35,17 +33,17 @@
     .aq .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
     .aq .qnum{font-family:var(--display);font-weight:500;font-size:clamp(20px,2.4vw,26px);color:var(--gold)}
     .aq .qnum b{color:#F6F3EC}
-    .aq .qtag{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+    .aq .qtag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sig);text-align:right}
     .aq .track{height:10px;border-radius:100px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:clamp(28px,5vh,46px)}
-    .aq .fill{height:100%;width:9%;border-radius:100px;background:linear-gradient(90deg,var(--amber),var(--gold));transition:width .5s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 18px rgba(255,138,30,.6)}
-    .aq .question{font-family:var(--display);font-weight:500;font-size:clamp(28px,4.8vw,52px);line-height:1.14;letter-spacing:-.01em;margin-bottom:clamp(26px,4vh,40px)}
+    .aq .fill{height:100%;width:6%;border-radius:100px;background:linear-gradient(90deg,var(--amber),var(--gold));transition:width .5s cubic-bezier(.2,.7,.2,1);box-shadow:0 0 18px rgba(255,138,30,.6)}
+    .aq .question{font-family:var(--display);font-weight:500;font-size:clamp(26px,4.2vw,46px);line-height:1.16;letter-spacing:-.01em;margin-bottom:clamp(24px,4vh,38px)}
     .aq .options{display:flex;flex-direction:column;gap:14px}
-    .aq .opt{display:flex;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,24px) clamp(18px,2.4vw,26px);color:#F6F3EC;font-family:var(--sans);font-size:clamp(17px,2vw,21px);font-weight:600;line-height:1.35;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
-    .aq .opt .key{flex:0 0 auto;width:clamp(38px,5vw,46px);height:clamp(38px,5vw,46px);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,20px);background:rgba(255,255,255,.07);color:var(--gold-soft);border:1px solid var(--line);transition:all .18s}
+    .aq .opt{display:flex;align-items:center;gap:18px;width:100%;text-align:left;cursor:pointer;background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:clamp(17px,2.3vw,23px) clamp(18px,2.4vw,26px);color:#F6F3EC;font-family:var(--sans);font-size:clamp(16px,1.9vw,20px);font-weight:600;line-height:1.35;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
+    .aq .opt .key{flex:0 0 auto;width:clamp(36px,5vw,44px);height:clamp(36px,5vw,44px);border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:clamp(16px,2vw,20px);background:rgba(255,255,255,.07);color:var(--gold-soft);border:1px solid var(--line);transition:all .18s}
     .aq .opt:hover{transform:translateX(6px);border-color:var(--gold);background:var(--panel-2)}
     .aq .opt.sel{border-color:var(--amber);background:linear-gradient(120deg,rgba(255,138,30,.18),rgba(217,164,65,.10));box-shadow:0 12px 34px rgba(255,138,30,.22)}
     .aq .opt.sel .key{background:linear-gradient(135deg,var(--amber),var(--gold));color:#231200;border-color:transparent}
-    .aq .nav2{display:flex;justify-content:space-between;align-items:center;margin-top:clamp(28px,5vh,42px)}
+    .aq .nav2{display:flex;justify-content:space-between;align-items:center;margin-top:clamp(26px,5vh,40px)}
     .aq .back{background:none;border:none;color:var(--dim);font-family:var(--sans);font-weight:700;font-size:16px;cursor:pointer;padding:12px 4px}
     .aq .back:hover{color:#F6F3EC}
     .aq .results{text-align:center}
@@ -55,11 +53,19 @@
     .aq .rgauge .score{color:#F6F3EC;font-family:var(--display);font-weight:600;font-size:clamp(64px,13vw,104px);line-height:1}
     .aq .rgauge .of{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-top:4px}
     .aq .tier{color:#F6F3EC;font-family:var(--display);font-weight:600;font-size:clamp(30px,6vw,52px);line-height:1.05;margin-top:6px}
-    .aq .tier-sub{font-size:clamp(16px,1.9vw,20px);color:var(--dim);font-weight:600;margin-top:6px}
-    .aq .rbody{max-width:660px;margin:clamp(34px,6vh,52px) auto 0;text-align:left}
-    .aq .rcard{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--sig);border-radius:14px;padding:clamp(22px,3vw,32px);margin-bottom:16px}
+    .aq .tier-sub{font-size:clamp(17px,2vw,22px);color:var(--bone);font-weight:600;margin:10px auto 0;max-width:34ch}
+    .aq .rbody{max-width:660px;margin:clamp(30px,5vh,46px) auto 0;text-align:left}
+    .aq .rcard{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--sig);border-radius:14px;padding:clamp(22px,3vw,32px)}
     .aq .rcard h3{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--sig);margin-bottom:12px}
     .aq .rcard p{font-size:clamp(17px,1.9vw,20px);line-height:1.7;color:var(--bone)}
+    .aq .dims{max-width:660px;margin:clamp(28px,4vh,40px) auto 0;text-align:left}
+    .aq .dims h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+    .aq .dim{margin-bottom:20px}
+    .aq .dim .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+    .aq .dim .name{font-family:var(--display);font-weight:500;font-size:clamp(18px,2.1vw,22px);color:#F6F3EC}
+    .aq .dim .pct{font-family:var(--display);font-weight:600;font-size:clamp(18px,2.1vw,22px)}
+    .aq .dim .bar{height:12px;border-radius:100px;background:rgba(255,255,255,.08);overflow:hidden}
+    .aq .dim .barf{height:100%;width:0;border-radius:100px;transition:width 1s cubic-bezier(.2,.7,.2,1)}
     .aq .rcta{margin-top:clamp(32px,6vh,48px);padding-top:clamp(28px,4vh,40px);border-top:1px solid var(--line)}
     .aq .rcta .big{color:#F6F3EC;font-family:var(--display);font-weight:500;font-size:clamp(24px,3.4vw,38px);line-height:1.2;margin-bottom:24px}
     .aq .rcta .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
@@ -90,18 +96,18 @@
           <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="9"/><circle cx="50" cy="50" r="44" fill="none" stroke="url(#gg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="180 276"/><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4D4D"/><stop offset=".5" stop-color="#FF8A1E"/><stop offset="1" stop-color="#D9A441"/></linearGradient></defs></svg>
           <div class="mid"><svg style="width:clamp(38px,8vw,56px);height:auto" viewBox="0 0 24 24" fill="none" stroke="#FF8A1E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="M12 8v4"/><circle cx="12" cy="15.5" r=".7" fill="#FF8A1E" stroke="none"/></svg></div>
         </div>
-        <span class="eyebrow">AI Risk &amp; Readiness Assessment</span>
-        <h1 class="aqh">Your staff are already using AI to do their work — <span class="hot">but how safe is that use?</span></h1>
-        <p class="lede">Eleven questions. In five minutes, see your exposure score and the risks costing you the most — free, no email required.</p>
+        <span class="eyebrow">AI Exposure Audit</span>
+        <h1 class="aqh">Your staff are already using AI to do their work. <span class="hot">How exposed does that leave you?</span></h1>
+        <p class="lede">Fifteen questions across the four places enterprise AI risk actually hides: unauthorised tool use, governance, strategic blindness and incident readiness. Five minutes. See your score instantly, no email required.</p>
         <div class="actions">
           <div class="badge"><svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="#231200" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100% Free &middot; No email required</div>
           <button class="btn2" onclick="aqStart()">Reveal my exposure &rarr;</button>
         </div>
-        <div class="meta"><span><span class="cdot"></span>11 questions</span><span><span class="cdot"></span>about 5 minutes</span><span><span class="cdot"></span>instant result</span></div>
+        <div class="meta"><span><span class="cdot"></span>15 questions</span><span><span class="cdot"></span>about 5 minutes</span><span><span class="cdot"></span>instant score</span></div>
       </section>
 
       <section id="aq-quiz" class="screen">
-        <div class="topbar"><div class="qnum"><b id="aq-qn">01</b> / <span id="aq-qtot">11</span></div><div class="qtag">AI Exposure Audit</div></div>
+        <div class="topbar"><div class="qnum"><b id="aq-qn">01</b> / <span id="aq-qtot">15</span></div><div class="qtag" id="aq-tag">Shadow AI Exposure</div></div>
         <div class="track"><div class="fill" id="aq-fill"></div></div>
         <div class="question" id="aq-question">Question</div>
         <div class="options" id="aq-options"></div>
@@ -113,9 +119,10 @@
         <div class="tier" id="aq-tier">&mdash;</div>
         <div class="tier-sub" id="aq-tiersub"></div>
         <div class="rbody" id="aq-rbody"></div>
+        <div class="dims" id="aq-dims"></div>
         <div class="rcta">
           <div class="big" id="aq-ctabig">Ready to close the gap?</div>
-          <div class="row"><a class="btn2" href="/contact/">Schedule a strategy call</a><button class="btn2 ghost" onclick="aqRestart()">Retake the assessment</button></div>
+          <div class="row"><a class="btn2" href="/contact/">Book a strategy call</a><button class="btn2 ghost" onclick="aqRestart()">Retake the audit</button></div>
         </div>
       </section>
 
@@ -151,34 +158,60 @@
   <script src="/js/app.js"></script>
   <script>
   var aqData=[
-   {q:"How well do you control the way your staff use AI day to day?",o:[["Tightly governed by clear policy",25],["Some guidance, loosely followed",15],["Largely unmanaged",5],["We honestly do not know",0]]},
-   {q:"Could sensitive data — customer records, finances, internal documents — leak through the AI tools your people use?",o:[["No, controls prevent it",25],["Unlikely, but not certain",15],["Quite possibly",5],["We have no way to tell",0]]},
-   {q:"AI has made attacks faster and more convincing — deepfakes, voice clones, automated phishing. How protected are you?",o:[["Defences updated for AI-era threats",25],["Standard security only",15],["Aware, nothing in place yet",5],["Not on our radar",0]]},
-   {q:"If someone used an AI deepfake of an executive to authorise a payment or request, would your people catch it?",o:[["Yes, verification steps would stop it",25],["Probably, but not guaranteed",12],["Likely not",3],["We have never considered it",0]]},
-   {q:"Do you know every AI tool and service currently touching your organisation’s data?",o:[["Yes, a maintained inventory",25],["Roughly",12],["Not really",5],["No idea",0]]},
-   {q:"If an AI system made a harmful or non-compliant decision, is it clear who is accountable?",o:[["Yes, a named owner and clear policy",25],["Shared responsibility",15],["Unclear",5],["No one owns it",0]]},
-   {q:"Have your people been trained to use AI safely and to spot AI-driven scams?",o:[["Yes, regular role-specific training",25],["One-off awareness",15],["Minimal",5],["None",0]]},
-   {q:"If an AI-related breach or misuse happened tomorrow, do you have a plan to contain it?",o:[["Yes, a tested response plan",25],["A basic plan",15],["We would improvise",5],["No plan",0]]},
-   {q:"If a regulator or your board asked how AI is used across your organisation, could you answer confidently?",o:[["Yes, documented and governed",25],["Mostly",15],["Only partially",5],["No",0]]},
-   {q:"Is AI use across your organisation guided by a clear strategy, or spreading on its own?",o:[["Guided by a documented strategy",25],["Some direction",15],["Spreading team by team",5],["No strategy at all",0]]},
-   {q:"Compared with peers in your sector, where does your AI security and readiness stand?",o:[["Ahead of our peers",25],["About the same",15],["Behind",5],["We do not know",0]]}
+   {d:"Shadow AI Exposure",q:"Do you know, with certainty, which AI tools your employees are currently using to handle company or client data?",o:[["Yes, full visibility and an approved tool list",5],["A rough idea, nothing confirmed",2],["No idea at all",0]]},
+   {d:"Shadow AI Exposure",q:"Has anyone in your organisation ever pasted client information, financial data, or internal documents into a public AI tool like ChatGPT?",o:[["No, and we would know if they had",5],["Possibly, we have no way of checking",1],["Yes, this has definitely happened",0]]},
+   {d:"Shadow AI Exposure",q:"If an employee started using an unapproved AI tool tomorrow, how long would it take your organisation to notice?",o:[["Immediately, we monitor this",5],["Eventually, if it caused a visible problem",2],["We would likely never know",0]]},
+   {d:"Shadow AI Exposure",q:"Do you have a written policy telling employees which AI tools are approved and which data they can and cannot enter into them?",o:[["Yes, documented and communicated",5],["An informal understanding, nothing written",2],["No policy exists",0]]},
+   {d:"Governance Gap",q:"Is there one named person accountable for AI decisions in your organisation, or does responsibility sit nowhere in particular?",o:[["Yes, one named owner",5],["Shared informally across a few people",2],["No one owns it",0]]},
+   {d:"Governance Gap",q:"Could you produce a list of every AI tool in use across your organisation if a regulator or board member asked for it today?",o:[["Yes, within the hour",5],["It would take days of asking around",2],["No, this list does not exist",0]]},
+   {d:"Governance Gap",q:"If an AI system made a wrong decision that affected a client or a regulatory filing, could you trace exactly how that decision was reached?",o:[["Yes, fully traceable",5],["Partially, with effort",2],["No, we could not reconstruct it",0]]},
+   {d:"Governance Gap",q:"Does your organisation have any process for reviewing or approving a new AI tool before staff start using it?",o:[["Yes, a formal review process",5],["Someone usually asks IT first",2],["No process at all",0]]},
+   {d:"Strategic Blindness",q:"Has your organisation calculated actual return on what it has already spent on AI, in real numbers?",o:[["Yes, we track this precisely",5],["A rough sense, not a real number",2],["No, we have never measured it",0]]},
+   {d:"Strategic Blindness",q:"Do you know whether your closest competitors have already deployed AI in ways that affect your market position?",o:[["Yes, we track this actively",5],["We hear things occasionally",2],["We have no visibility into this",0]]},
+   {d:"Strategic Blindness",q:"If your board asked for the business case behind your current AI spend, could you produce one this week?",o:[["Yes, it already exists",5],["We would need to build one from scratch",2],["No credible case could be made",0]]},
+   {d:"Strategic Blindness",q:"Is your current AI usage tied to specific, named business outcomes, or scattered across individual staff experimenting on their own?",o:[["Tied to specific outcomes we track",5],["A mix of both",2],["Entirely scattered, individual experimentation",0]]},
+   {d:"Incident Readiness",q:"If an AI tool used by your team leaked sensitive data tomorrow, do you have a response plan already written down?",o:[["Yes, a documented plan exists",5],["We would improvise something",1],["No plan exists",0]]},
+   {d:"Incident Readiness",q:"Could your organisation immediately disable or pull the plug on a rogue AI system or agent if it started behaving unexpectedly?",o:[["Yes, immediately",5],["Eventually, with some delay",2],["No, we could not do this quickly",0]]},
+   {d:"Incident Readiness",q:"Has anyone in your leadership team been trained specifically on AI-related risk, separate from general IT security training?",o:[["Yes, dedicated training has been done",5],["It has come up in general briefings",2],["No dedicated training at all",0]]}
   ];
   var aqTiers={
-   critical:{label:"Critical Exposure",sub:"Score 0–30 · highest risk",color:"#FF4D4D",where:"Your organisation is operating without an AI strategy while the technology reshapes your sector. This is the most dangerous position to be in: decisions are ad hoc, staff may already be feeding sensitive data into public tools, and competitors are quietly building advantages you cannot yet see. The choice is being made for you, by default, every day you wait.",risk:"Establish who owns AI, what is permitted, and where the real risks sit — before an incident, a regulator, or a competitor forces the conversation.",ex:"A Cameroon bank had no strategy and no policy. Staff were pasting client data into free AI tools, and $400,000 had gone to software nobody governed. They were one leak away from a regulatory and reputational crisis. We built the strategy and guardrails first — the exposure closed, and the tools they'd already paid for finally had direction.",close:"Closing critical exposure starts with discovery: two weeks to map where you're vulnerable, one month to design the strategy and governance, one month to prove it on a first workflow. By week twelve your team operates with control instead of luck."},
-   high:{label:"High Exposure",sub:"Score 31–60 · significant risk",color:"#FF8A1E",where:"You've started moving, and that creates a different danger: uncoordinated activity. Pilots run without a shared strategy, budgets are committed without clear accountability, and each team is exposed on its own. Disconnected AI is often riskier than no AI — it spreads data, decisions and unmanaged tools across the organisation with no one holding the whole picture.",risk:"Connect and govern what's already in motion before it hardens into liabilities. One strategy, one owner, one clear view of the risks.",ex:"A financial institution had three AI projects in three departments. No one could say whether any were compliant, secure, or even working. We brought the executives together, mapped the risk in each, and connected them under one governed strategy — from scattered and vulnerable to coordinated and accountable.",close:"A scoping engagement identifies where you're exposed and what's genuinely working. We validate your pilots, close the governance gaps, and connect everything to one strategy your leadership can stand behind."},
-   managed:{label:"Managed Exposure",sub:"Score 61–80 · controlled, watch scaling",color:"#D9A441",where:"You've closed the obvious risks — strategy, ownership and results are in place. The danger now is subtler: scaling faster than your governance can hold. As AI expands to more teams, undocumented process, quality drift and uneven controls become the new exposure. What protected you at small scale can quietly break at large scale.",risk:"Codify what works and scale deliberately, so growth doesn't reintroduce the risks you've already closed.",ex:"A government agency had one solid AI implementation and wanted five more — but nothing was documented and there was no training framework. Expanding would have multiplied their risk. We codified the operating model and built guardrails first, then scaled deliberately. Three new workflows went live without compromising control.",close:"A scaling engagement focuses on capability and control: your next two to three workflows, teams trained to own them, and governance that holds quality steady as you grow."},
-   resilient:{label:"Resilient",sub:"Score 81–100 · low exposure",color:"#31C971",where:"You've built real resilience: strategy, governance, internal capability and results. Most organisations in your sector are twelve to twenty-four months behind. The risk here isn't exposure — it's complacency. Advantage erodes, and the threat is a competitor, or a shift in the technology, that resets the board while you're standing still.",risk:"Turn resilience into a durable moat. Stay ahead of the shifts that will catch slower organisations off guard.",ex:"A multinational had built sophisticated, well-governed AI across three markets. Their question wasn't 'are we safe' — it was 'how do we stay ahead.' We identified the workflows that would give them an eighteen-to-twenty-four-month lead competitors couldn't easily copy.",close:"At this stage the work is about competitive moat: identifying your next frontier and positioning you to move while others catch up. This is ongoing, custom consulting."}
+   exposed:{label:"Exposed",color:"#FF4D4D",line:"Your organisation is operating with active, unmanaged AI risk right now.",sum:"This is not a future problem. Based on your answers, there is a strong likelihood that sensitive data has already passed through an unapproved AI tool, with no one accountable and no way to trace it if something goes wrong."},
+   reactive:{label:"Reactive",color:"#FF8A1E",line:"You are managing AI after the fact, not before it.",sum:"Some basics exist, but your organisation would find out about a problem after it happened, not before. That gap is where the cost lives — in cleanup rather than prevention."},
+   structured:{label:"Structured",color:"#D9A441",line:"The basics are in place. The gap is in what is not yet visible to you.",sum:"You are ahead of most organisations at your stage. The risk now is what your current visibility does not show you — the tools, the decisions and the spend still happening outside your view."},
+   governed:{label:"Governed",color:"#31C971",line:"You are ahead of most of the market. The risk now is complacency.",sum:"This is a genuinely strong position; most organisations are nowhere close. The next risk is assuming this is finished. AI governance is not a one-time project, and the organisations that fall behind from here are the ones that stopped checking."}
   };
   var aqCur=0, aqAns=[], AQC=276.46;
   function aqEl(id){return document.getElementById(id);}
   function aqShow(id){['aq-intro','aq-quiz','aq-results'].forEach(function(s){aqEl(s).classList.toggle('on',s===id);});window.scrollTo(0,0);}
   function aqStart(){aqCur=0;aqRender();aqShow('aq-quiz');}
-  function aqRender(){var d=aqData[aqCur];aqEl('aq-qn').textContent=String(aqCur+1).padStart(2,'0');aqEl('aq-qtot').textContent=aqData.length;aqEl('aq-fill').style.width=((aqCur+1)/aqData.length*100)+'%';aqEl('aq-question').textContent=d.q;var k=['A','B','C','D'];aqEl('aq-options').innerHTML=d.o.map(function(o,i){return '<button class="opt'+(aqAns[aqCur]===i?' sel':'')+'" onclick="aqPick('+i+')"><span class="key">'+k[i]+'</span><span>'+o[0]+'</span></button>';}).join('');aqEl('aq-back').style.visibility=aqCur>0?'visible':'hidden';aqEl('aq-next').textContent=aqCur===aqData.length-1?'See my exposure →':'Next →';}
+  function aqRender(){var d=aqData[aqCur];aqEl('aq-qn').textContent=String(aqCur+1).padStart(2,'0');aqEl('aq-qtot').textContent=aqData.length;aqEl('aq-tag').textContent=d.d;aqEl('aq-fill').style.width=((aqCur+1)/aqData.length*100)+'%';aqEl('aq-question').textContent=d.q;var k=['A','B','C','D'];aqEl('aq-options').innerHTML=d.o.map(function(o,i){return '<button class="opt'+(aqAns[aqCur]===i?' sel':'')+'" onclick="aqPick('+i+')"><span class="key">'+k[i]+'</span><span>'+o[0]+'</span></button>';}).join('');aqEl('aq-back').style.visibility=aqCur>0?'visible':'hidden';aqEl('aq-next').textContent=aqCur===aqData.length-1?'See my score →':'Next →';}
   function aqPick(i){aqAns[aqCur]=i;aqRender();}
   function aqNext(){if(aqAns[aqCur]===undefined){aqEl('aq-question').animate([{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],{duration:220});return;}if(aqCur<aqData.length-1){aqCur++;aqRender();}else{aqFinish();}}
   function aqPrev(){if(aqCur>0){aqCur--;aqRender();}}
   function aqCard(h,b){return '<div class="rcard"><h3>'+h+'</h3><p>'+b+'</p></div>';}
-  function aqFinish(){var total=aqAns.reduce(function(s,i,idx){return s+aqData[idx].o[i][1];},0);var max=aqData.reduce(function(s,q){return s+Math.max.apply(null,q.o.map(function(o){return o[1];}));},0);var score=Math.round(total/max*100);var key=score<=30?'critical':score<=60?'high':score<=80?'managed':'resilient';var t=aqTiers[key];document.querySelector('.aq').style.setProperty('--sig',t.color);aqEl('aq-tier').textContent=t.label;aqEl('aq-tier').style.color=t.color;aqEl('aq-tiersub').textContent=t.sub;aqEl('aq-rbody').innerHTML=aqCard('Where you stand',t.where)+aqCard('Your most urgent risk',t.risk)+aqCard('Real example',t.ex)+aqCard('How to close it',t.close);aqEl('aq-ctabig').textContent=key==='resilient'?"Let's talk about staying ahead.":"Ready to close the gap?";aqShow('aq-results');var ring=aqEl('aq-ring');ring.setAttribute('stroke',t.color);requestAnimationFrame(function(){setTimeout(function(){ring.setAttribute('stroke-dasharray',(AQC*score/100)+' '+AQC);},80);});var sc=aqEl('aq-score'),t0=null,dur=1200;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);sc.textContent=Math.round((1-Math.pow(1-p,3))*score);if(p<1)requestAnimationFrame(step);else sc.textContent=score;}requestAnimationFrame(step);setTimeout(function(){sc.textContent=score;},dur+300);}
+  function aqFinish(){
+    var total=0, dims={}, order=[];
+    aqData.forEach(function(item,idx){var pts=item.o[aqAns[idx]][1];total+=pts;if(!dims[item.d]){dims[item.d]={p:0,m:0};order.push(item.d);}dims[item.d].p+=pts;dims[item.d].m+=Math.max.apply(null,item.o.map(function(o){return o[1];}));});
+    var score=Math.round(total/75*100);
+    var key=score<=25?'exposed':score<=50?'reactive':score<=75?'structured':'governed';
+    var t=aqTiers[key];
+    document.querySelector('.aq').style.setProperty('--sig',t.color);
+    aqEl('aq-tier').textContent=t.label;aqEl('aq-tier').style.color=t.color;
+    aqEl('aq-tiersub').textContent=t.line;
+    aqEl('aq-rbody').innerHTML=aqCard('Where you stand',t.sum);
+    var arr=order.map(function(n){return {name:n,pct:Math.round(dims[n].p/dims[n].m*100)};});
+    arr.sort(function(a,b){return a.pct-b.pct;});
+    function bc(p){return p<34?'#FF4D4D':p<67?'#FF8A1E':'#31C971';}
+    var html='<h3>Your risk by dimension — weakest first</h3>'+arr.map(function(d){var col=bc(d.pct);return '<div class="dim"><div class="top"><span class="name">'+d.name+'</span><span class="pct" style="color:'+col+'">'+d.pct+'%</span></div><div class="bar"><div class="barf" data-w="'+d.pct+'" style="background:'+col+'"></div></div></div>';}).join('');
+    aqEl('aq-dims').innerHTML=html;
+    aqEl('aq-ctabig').textContent=key==='governed'?"Stay ahead of the market.":"Close the gap before it costs you.";
+    aqShow('aq-results');
+    var ring=aqEl('aq-ring');ring.setAttribute('stroke',t.color);
+    requestAnimationFrame(function(){setTimeout(function(){ring.setAttribute('stroke-dasharray',(AQC*score/100)+' '+AQC);document.querySelectorAll('.aq .barf').forEach(function(b){b.style.width=b.getAttribute('data-w')+'%';});},80);});
+    var sc=aqEl('aq-score'),t0=null,dur=1200;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);sc.textContent=Math.round((1-Math.pow(1-p,3))*score);if(p<1)requestAnimationFrame(step);else sc.textContent=score;}
+    requestAnimationFrame(step);setTimeout(function(){sc.textContent=score;},dur+300);
+  }
   function aqRestart(){aqCur=0;aqAns=[];document.querySelector('.aq').style.setProperty('--sig','#FF8A1E');aqShow('aq-intro');}
   </script>
 </body>

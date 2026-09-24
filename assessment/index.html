@@ -158,21 +158,21 @@
   <script src="/js/app.js"></script>
   <script>
   var aqData=[
-   {d:"Shadow AI Exposure",q:"Do you know, with certainty, which AI tools your employees are currently using to handle company or client data?",o:[["Yes, full visibility and an approved tool list",5],["A rough idea, nothing confirmed",2],["No idea at all",0]]},
-   {d:"Shadow AI Exposure",q:"Has anyone in your organisation ever pasted client information, financial data, or internal documents into a public AI tool like ChatGPT?",o:[["No, and we would know if they had",5],["Possibly, we have no way of checking",1],["Yes, this has definitely happened",0]]},
-   {d:"Shadow AI Exposure",q:"If an employee started using an unapproved AI tool tomorrow, how long would it take your organisation to notice?",o:[["Immediately, we monitor this",5],["Eventually, if it caused a visible problem",2],["We would likely never know",0]]},
-   {d:"Shadow AI Exposure",q:"Do you have a written policy telling employees which AI tools are approved and which data they can and cannot enter into them?",o:[["Yes, documented and communicated",5],["An informal understanding, nothing written",2],["No policy exists",0]]},
-   {d:"Governance Gap",q:"Is there one named person accountable for AI decisions in your organisation, or does responsibility sit nowhere in particular?",o:[["Yes, one named owner",5],["Shared informally across a few people",2],["No one owns it",0]]},
-   {d:"Governance Gap",q:"Could you produce a list of every AI tool in use across your organisation if a regulator or board member asked for it today?",o:[["Yes, within the hour",5],["It would take days of asking around",2],["No, this list does not exist",0]]},
-   {d:"Governance Gap",q:"If an AI system made a wrong decision that affected a client or a regulatory filing, could you trace exactly how that decision was reached?",o:[["Yes, fully traceable",5],["Partially, with effort",2],["No, we could not reconstruct it",0]]},
-   {d:"Governance Gap",q:"Does your organisation have any process for reviewing or approving a new AI tool before staff start using it?",o:[["Yes, a formal review process",5],["Someone usually asks IT first",2],["No process at all",0]]},
-   {d:"Strategic Blindness",q:"Has your organisation calculated actual return on what it has already spent on AI, in real numbers?",o:[["Yes, we track this precisely",5],["A rough sense, not a real number",2],["No, we have never measured it",0]]},
-   {d:"Strategic Blindness",q:"Do you know whether your closest competitors have already deployed AI in ways that affect your market position?",o:[["Yes, we track this actively",5],["We hear things occasionally",2],["We have no visibility into this",0]]},
-   {d:"Strategic Blindness",q:"If your board asked for the business case behind your current AI spend, could you produce one this week?",o:[["Yes, it already exists",5],["We would need to build one from scratch",2],["No credible case could be made",0]]},
-   {d:"Strategic Blindness",q:"Is your current AI usage tied to specific, named business outcomes, or scattered across individual staff experimenting on their own?",o:[["Tied to specific outcomes we track",5],["A mix of both",2],["Entirely scattered, individual experimentation",0]]},
-   {d:"Incident Readiness",q:"If an AI tool used by your team leaked sensitive data tomorrow, do you have a response plan already written down?",o:[["Yes, a documented plan exists",5],["We would improvise something",1],["No plan exists",0]]},
-   {d:"Incident Readiness",q:"Could your organisation immediately disable or pull the plug on a rogue AI system or agent if it started behaving unexpectedly?",o:[["Yes, immediately",5],["Eventually, with some delay",2],["No, we could not do this quickly",0]]},
-   {d:"Incident Readiness",q:"Has anyone in your leadership team been trained specifically on AI-related risk, separate from general IT security training?",o:[["Yes, dedicated training has been done",5],["It has come up in general briefings",2],["No dedicated training at all",0]]}
+   {d:"Shadow AI Exposure",q:"Do you know exactly which AI tools your staff use with company or client data?",o:[["Yes, full visibility and an approved list",5],["A rough idea, nothing confirmed",2],["No idea at all",0]]},
+   {d:"Shadow AI Exposure",q:"Has anyone pasted client, financial or internal data into a public AI tool like ChatGPT?",o:[["No, and we would know if they had",5],["Possibly, we cannot check",1],["Yes, it has happened",0]]},
+   {d:"Shadow AI Exposure",q:"If a staff member started using an unapproved AI tool tomorrow, would you notice?",o:[["Yes, immediately",5],["Only if it caused a visible problem",2],["We would likely never know",0]]},
+   {d:"Shadow AI Exposure",q:"Do you have a written policy on which AI tools staff may use, and with what data?",o:[["Yes, documented and communicated",5],["Informal understanding, nothing written",2],["No policy exists",0]]},
+   {d:"Governance Gap",q:"Is one named person accountable for AI decisions?",o:[["Yes, one named owner",5],["Shared informally",2],["No one owns it",0]]},
+   {d:"Governance Gap",q:"Could you list every AI tool in use if a regulator or board asked today?",o:[["Yes, within the hour",5],["It would take days",2],["No, the list does not exist",0]]},
+   {d:"Governance Gap",q:"If an AI made a wrong decision, could you trace how it happened?",o:[["Yes, fully traceable",5],["Partially, with effort",2],["No",0]]},
+   {d:"Governance Gap",q:"Do you review and approve new AI tools before staff start using them?",o:[["Yes, a formal process",5],["Someone usually asks IT",2],["No process at all",0]]},
+   {d:"Strategic Blindness",q:"Have you measured the actual return on your AI spend, in real numbers?",o:[["Yes, we track it precisely",5],["A rough sense only",2],["Never measured it",0]]},
+   {d:"Strategic Blindness",q:"Do you know how competitors are using AI against your market position?",o:[["Yes, we track it actively",5],["We hear things occasionally",2],["No visibility",0]]},
+   {d:"Strategic Blindness",q:"Could you show your board the business case for your AI spend this week?",o:[["Yes, it already exists",5],["We would build one from scratch",2],["No credible case exists",0]]},
+   {d:"Strategic Blindness",q:"Is your AI use tied to specific goals, or just staff experimenting?",o:[["Tied to outcomes we track",5],["A mix of both",2],["Scattered experimentation",0]]},
+   {d:"Incident Readiness",q:"If an AI tool leaked sensitive data tomorrow, do you have a written response plan?",o:[["Yes, a documented plan",5],["We would improvise",1],["No plan",0]]},
+   {d:"Incident Readiness",q:"Could you shut down a rogue AI system or agent immediately?",o:[["Yes, immediately",5],["Eventually, with delay",2],["No",0]]},
+   {d:"Incident Readiness",q:"Has your leadership had training on AI risk specifically, beyond general IT security?",o:[["Yes, dedicated training",5],["Only in general briefings",2],["None",0]]}
   ];
   var aqTiers={
    exposed:{label:"Exposed",color:"#FF4D4D",line:"Your organisation is operating with active, unmanaged AI risk right now.",sum:"This is not a future problem. Based on your answers, there is a strong likelihood that sensitive data has already passed through an unapproved AI tool, with no one accountable and no way to trace it if something goes wrong."},

@@ -1,113 +1,12 @@
-/* ============================================================
-   RANDY KIMBI — site behaviour
-   Builds the premium responsive header + full-screen mobile menu
-   on every page from the existing <header> markup. Also keeps the
-   contact form handler, smooth scrolling and helpers.
-   ============================================================ */
-
-// ---- PREMIUM HEADER + MOBILE MENU (runs on every page) ----
-function buildHeader() {
-  var header = document.querySelector('header');
-  if (!header) return;
-
-  var links = Array.prototype.map.call(header.querySelectorAll('nav a'), function (a) {
-    return { text: a.textContent.trim(), href: a.getAttribute('href') || '#' };
-  });
-  if (!links.length) return;
-
-  var path = window.location.pathname.replace(/\/index\.html$/, '/');
-  var isCurrent = function (href) {
-    var h = href.replace(/\/index\.html$/, '/');
-    if (h === '/') return path === '/';
-    return path === h || path === h.replace(/\/$/, '');
-  };
-
-  var navDesk = links.map(function (l) {
-    return '<a href="' + l.href + '"' + (isCurrent(l.href) ? ' aria-current="page"' : '') + '>' + l.text + '</a>';
-  }).join('');
-
-  header.className = 'site-head';
-  header.innerHTML =
-    '<div class="head-inner">' +
-      '<a class="brand" href="/"><span class="monogram">RK</span><span class="brand-name">Randy Kimbi</span></a>' +
-      '<nav class="nav-desk">' + navDesk + '</nav>' +
-      '<button class="burger" id="rk-burger" aria-label="Open menu" aria-expanded="false">' +
-        '<span></span><span></span><span></span>' +
-      '</button>' +
-    '</div>';
-
-  var overlay = document.createElement('div');
-  overlay.className = 'overlay';
-  overlay.id = 'rk-overlay';
-  overlay.innerHTML =
-    '<div class="overlay-top">' +
-      '<a class="brand" href="/"><span class="monogram">RK</span></a>' +
-      '<button class="overlay-close" id="rk-close" aria-label="Close menu"></button>' +
-    '</div>' +
-    '<nav>' + links.map(function (l) {
-      return '<a href="' + l.href + '"' + (isCurrent(l.href) ? ' aria-current="page"' : '') + '>' + l.text + '</a>';
-    }).join('') + '</nav>' +
-    '<div class="overlay-foot">' +
-      '<span>Enterprise AI Strategist</span>' +
-      '<a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a>' +
-    '</div>';
-  document.body.appendChild(overlay);
-
-  var burger = document.getElementById('rk-burger');
-  var openMenu = function () { overlay.classList.add('open'); burger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
-  var closeMenu = function () { overlay.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
-
-  burger.addEventListener('click', openMenu);
-  document.getElementById('rk-close').addEventListener('click', closeMenu);
-  overlay.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', closeMenu); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-}
-
-document.addEventListener('DOMContentLoaded', buildHeader);
-
-// ---- CONTACT FORM HANDLER ----
-async function handleContactForm(event) {
-  event.preventDefault();
-  var form = event.target;
-  var formData = new FormData(form);
-  var data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    company: formData.get('company'),
-    title: formData.get('title'),
-    enquiry: formData.get('enquiry'),
-    message: formData.get('message'),
-    timestamp: new Date().toISOString()
-  };
-  try {
-    console.log('Form submitted:', data);
-    var statusDiv = document.getElementById('form-status');
-    var statusMessage = document.getElementById('status-message');
-    if (statusMessage) statusMessage.textContent = 'Thank you. Your message has been received. I will get back to you within 24 hours.';
-    if (statusDiv) { statusDiv.style.display = 'block'; statusDiv.style.borderColor = '#B08D4F'; }
-    form.reset();
-    setTimeout(function () { if (statusDiv) statusDiv.style.display = 'none'; }, 5000);
-  } catch (error) {
-    console.error('Form submission error:', error);
-    var d = document.getElementById('form-status');
-    var m = document.getElementById('status-message');
-    if (m) m.textContent = 'There was an error submitting your message. Please try again or reach me on WhatsApp.';
-    if (d) { d.style.display = 'block'; d.style.borderColor = '#C0392B'; }
-  }
-}
-
-// ---- SMOOTH SCROLLING for same-page anchors ----
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var id = this.getAttribute('href');
-      if (id.length < 2) return;
-      var target = document.querySelector(id);
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-  });
-});
-
-// ---- HELPERS ----
-function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
-function trackEvent(eventName, eventData) { if (window.gtag) { gtag('event', eventName, eventData); } console.log('Event tracked:', eventName, eventData); }
+/* Randy Kimbi — header, footer, behaviour (rebuilt on every page) */
+var RK_NAV=[{t:'Home',h:'/'},{t:'About',h:'/about/'},{t:'Services',sub:[['AI Consultancy','/services/consultancy/'],['Corporate AI Training','/services/training/'],['AI Agents & Automation','/services/ai-agents-automation/']]},{t:'Free AI Assessment',h:'/assessment/',cta:true},{t:'Contact',h:'/contact/'}];
+function rkPath(){return location.pathname.replace(/\/index\.html$/,'/');}
+function rkCur(h){var p=rkPath();if(h==='/')return p==='/';return p===h||p===h.replace(/\/$/,'');}
+function rkNavStyle(){if(document.getElementById('rk-navstyle'))return;var s=document.createElement('style');s.id='rk-navstyle';s.textContent='.nav-desk .has-sub{position:relative}.nav-desk .has-sub>a{cursor:pointer}.nav-desk .sub{position:absolute;top:100%;left:-14px;background:rgba(7,19,34,.98);border:1px solid var(--line-on-ink);min-width:236px;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s,transform .25s,visibility .25s;z-index:70}.nav-desk .has-sub:hover>.sub,.nav-desk .has-sub:focus-within>.sub{opacity:1;visibility:visible;transform:translateY(0)}.nav-desk .sub a{display:block;padding:11px 20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim);white-space:nowrap}.nav-desk .sub a:hover{color:var(--bone);background:rgba(212,175,55,.10)}.nav-desk .sub a::after{display:none}.nav-cta{background:var(--gold);color:var(--ink-deep)!important;padding:10px 18px!important;border-radius:3px}.nav-cta::after{display:none!important}.nav-cta:hover{background:var(--gold-soft)}';document.head.appendChild(s);}
+function buildHeader(){var header=document.querySelector('header');if(!header)return;rkNavStyle();header.className='site-head';var desk=RK_NAV.map(function(n){if(n.sub){return '<div class="has-sub"><a href="'+n.sub[0][1]+'">'+n.t+' ▾</a><div class="sub">'+n.sub.map(function(s){return '<a href="'+s[1]+'">'+s[0]+'</a>';}).join('')+'</div></div>';}return '<a class="'+(n.cta?'nav-cta':'')+'" href="'+n.h+'"'+(rkCur(n.h)?' aria-current="page"':'')+'>'+n.t+'</a>';}).join('');header.innerHTML='<div class="head-inner"><a class="brand" href="/"><span class="monogram">RK</span><span class="brand-name">Randy Kimbi</span></a><nav class="nav-desk">'+desk+'</nav><button class="burger" id="rk-burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>';var ov=document.getElementById('rk-overlay');if(ov)ov.remove();ov=document.createElement('div');ov.className='overlay';ov.id='rk-overlay';var ol=[['Home','/'],['About','/about/'],['AI Consultancy','/services/consultancy/'],['Corporate AI Training','/services/training/'],['AI Agents & Automation','/services/ai-agents-automation/'],['Free AI Assessment','/assessment/'],['Contact','/contact/']];ov.innerHTML='<div class="overlay-top"><a class="brand" href="/"><span class="monogram">RK</span></a><button class="overlay-close" id="rk-close" aria-label="Close menu"></button></div><nav>'+ol.map(function(l){return '<a href="'+l[1]+'"'+(rkCur(l[1])?' aria-current="page"':'')+'>'+l[0]+'</a>';}).join('')+'</nav><div class="overlay-foot"><span>AI Consultant · Corporate AI Trainer · Software Engineer</span><a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a></div>';document.body.appendChild(ov);var burger=document.getElementById('rk-burger');var open=function(){ov.classList.add('open');burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';};var close=function(){ov.classList.remove('open');burger.setAttribute('aria-expanded','false');document.body.style.overflow='';};burger.addEventListener('click',open);document.getElementById('rk-close').addEventListener('click',close);ov.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',close);});document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});}
+function buildFooter(){var f=document.querySelector('footer');if(!f)return;f.innerHTML='<div class="footer-content"><div class="footer-section footer-brand"><span class="monogram">RK</span><span class="brand-name">Randy Kimbi</span><p style="color:var(--gold-soft);font-size:13px;letter-spacing:.03em;margin:6px 0 12px">AI Consultant &nbsp;|&nbsp; Corporate AI Trainer &nbsp;|&nbsp; Software Engineer</p><p>AI consultancy, corporate training and practical AI systems for organisations that want to use AI safely and effectively.</p></div><div class="footer-section"><h4>Explore</h4><a href="/about/">About</a><a href="/services/consultancy/">AI Consultancy</a><a href="/services/training/">Corporate AI Training</a><a href="/services/ai-agents-automation/">AI Agents &amp; Automation</a><a href="/assessment/">Free AI Assessment</a><a href="/contact/">Contact</a></div><div class="footer-section"><h4>Contact</h4><a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a><a href="https://wa.me/237671283217" target="_blank" rel="noopener">WhatsApp</a><a href="tel:+237671283217">+237 671 283 217</a></div></div><div class="footer-copyright"><span>&copy; 2026 Randy Kimbi. All rights reserved.</span><span>AI Consultant · Corporate AI Trainer · Software Engineer</span></div>';}
+document.addEventListener('DOMContentLoaded',function(){buildHeader();buildFooter();});
+async function handleContactForm(event){event.preventDefault();var form=event.target;var fd=new FormData(form);var status=document.getElementById('form-status');var msg=document.getElementById('status-message');if(msg)msg.textContent='Thank you. Your message has been received.';if(status){status.style.display='block';status.style.borderColor='var(--gold)';}form.reset();setTimeout(function(){if(status)status.style.display='none';},5000);}
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=this.getAttribute('href');if(id.length<2)return;var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});});
+function validateEmail(x){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x);}
+function trackEvent(n,d){if(window.gtag){gtag('event',n,d);}}

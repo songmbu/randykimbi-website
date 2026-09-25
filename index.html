@@ -3,100 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Randy Kimbi — Enterprise AI Strategist</title>
-  <meta name="description" content="Enterprise AI strategy, engineering and executive capability for banks, government, universities and multinational enterprise across Central Africa.">
+  <title>Randy Kimbi | AI Consultant, Corporate AI Trainer & Software Engineer</title>
+  <meta name="description" content="Randy Kimbi helps business leaders understand AI, control its risks and put it to work through consultancy, corporate training, AI agents and automation.">
   <link rel="stylesheet" href="/css/main.css">
   <style>
-    .hero .container{position:relative;z-index:2}
-    .hero-ai{position:absolute;top:50%;right:1%;transform:translateY(-50%);width:min(46%,540px);opacity:.16;pointer-events:none;z-index:1;color:var(--gold)}
-    .hero-ai svg{width:100%;height:auto;display:block}
-    .svc-ico{width:44px;height:44px;color:var(--gold);margin-bottom:16px}
-    .svc-ico svg{width:100%;height:100%;display:block}
-    .hero h1{line-height:1.4}
-    .hero h1 .hl{display:inline-block;background:var(--gold);color:var(--ink-deep);line-height:1.05;padding:.06em .26em;border-radius:6px}
-    .hero .textlink{color:var(--bone)}
-    .hero .textlink:hover{color:var(--gold)}
-    .hero-cta{align-items:center;flex-wrap:wrap}
-    .cta-bot{flex:0 0 auto;width:80px;height:auto;animation:botBob 3.4s ease-in-out infinite;filter:drop-shadow(0 8px 16px rgba(0,0,0,.4))}
-    @keyframes botBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-    .btn-primary{transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(176,141,79,.28)}
-    .btn-cta-anim{position:relative;overflow:hidden;letter-spacing:.08em;animation:ctaGlow 2.8s ease-in-out infinite}
-    @keyframes ctaGlow{0%,100%{box-shadow:0 0 0 0 rgba(176,141,79,0)}50%{box-shadow:0 0 26px 3px rgba(176,141,79,.5)}}
-    .btn-cta-anim::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:ctaShine 3.6s ease-in-out infinite}
-    @keyframes ctaShine{0%{left:-70%}55%,100%{left:150%}}
-    .engage-figure{max-width:260px;margin:0 auto clamp(30px,5vh,52px);text-align:center}
-    .engage-figure img{width:100%;height:auto;display:block;animation:botBob 4s ease-in-out infinite;filter:drop-shadow(0 16px 34px rgba(11,27,48,.20))}
-    .engage-cap{text-align:center;margin-top:16px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal-dim)}
-    @media(max-width:900px){.hero-ai{opacity:.10;width:78%;right:auto;left:50%;transform:translate(-50%,-50%)}}
-    @media(max-width:560px){.cta-bot{width:62px}.engage-figure{max-width:210px}}
-    @media(prefers-reduced-motion:reduce){.cta-bot,.engage-figure img,.btn-cta-anim,.btn-cta-anim::after{animation:none}}
+    .hero .role{font-family:var(--sans);font-weight:500;font-size:clamp(13px,1.4vw,15px);letter-spacing:.14em;color:var(--gold-soft);margin:14px 0 0}
+    .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper);margin-top:clamp(36px,5vh,54px)}
+    .sector-card{background:var(--paper);padding:clamp(24px,3vw,38px);border-top:2px solid transparent;transition:border-color .3s ease,background .3s ease}
+    .sector-card:hover{border-top-color:var(--acc);background:var(--paper-soft)}
+    .sector-card .ic{width:32px;height:32px;color:var(--acc);margin-bottom:16px}
+    .sector-card .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .sector-card h3{font-size:19px;margin-bottom:6px}
+    .sector-card p{font-size:14px;color:var(--charcoal-dim);line-height:1.6}
+    .sectors-more{text-align:center;margin-top:22px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal-dim)}
+    .challenge{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper)}
+    .ch{background:var(--paper);padding:clamp(24px,2.6vw,34px)}
+    .alternate .ch{background:var(--paper-soft)}
+    .ch .k{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+    .ch p{font-size:14.5px;color:var(--charcoal-dim);margin-top:12px;line-height:1.65}
+    .source{font-size:12px;letter-spacing:.04em;color:var(--charcoal-dim);margin-top:22px}
+    .source b{color:var(--ink)}
+    .sec-ink .source{color:var(--bone-dim)} .sec-ink .source b{color:var(--bone)}
+    @media(max-width:900px){.sectors-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.sectors-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <div class="logo">Randy Kimbi</div>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/services/strategy/">AI Strategy</a></li>
-          <li><a href="/services/training/">Training</a></li>
-          <li><a href="/assessment/">Assessment</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
 
   <section class="hero">
-    <div class="hero-ai" aria-hidden="true">
-      <svg viewBox="0 0 220 200" fill="none" stroke="currentColor" stroke-width="1">
-        <line x1="30" y1="46" x2="92" y2="76"/>
-        <line x1="92" y1="76" x2="158" y2="42"/>
-        <line x1="92" y1="76" x2="150" y2="128"/>
-        <line x1="150" y1="128" x2="84" y2="158"/>
-        <line x1="84" y1="158" x2="30" y2="124"/>
-        <line x1="30" y1="124" x2="92" y2="76"/>
-        <line x1="158" y1="42" x2="188" y2="104"/>
-        <line x1="188" y1="104" x2="150" y2="128"/>
-        <line x1="84" y1="158" x2="120" y2="188"/>
-        <circle cx="30" cy="46" r="3.2" fill="currentColor"/>
-        <circle cx="92" cy="76" r="4.2" fill="currentColor"/>
-        <circle cx="158" cy="42" r="3.2" fill="currentColor"/>
-        <circle cx="150" cy="128" r="3.2" fill="currentColor"/>
-        <circle cx="84" cy="158" r="3.2" fill="currentColor"/>
-        <circle cx="30" cy="124" r="3.2" fill="currentColor"/>
-        <circle cx="188" cy="104" r="2.8" fill="currentColor"/>
-        <circle cx="120" cy="188" r="2.4" fill="currentColor"/>
-      </svg>
-    </div>
     <div class="container">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Enterprise AI Strategist</span>
-          <h1>You have heard of AI. Is it working <em>for you, or your</em> <span class="hl">competitors</span><em>?</em></h1>
+          <span class="eyebrow">Randy Kimbi</span>
+          <h1>AI that works for the organisation you already lead.</h1>
+          <p class="role">AI Consultant &nbsp;|&nbsp; Corporate AI Trainer &nbsp;|&nbsp; Software Engineer</p>
+          <p style="margin-top:20px">I help business leaders understand AI, control its risks and put it to work across their organisations through consultancy, corporate training, AI agents and automation.</p>
           <div class="hero-cta">
-            <a href="/assessment/" class="btn btn-primary">Assess your AI readiness</a>
-            <img class="cta-bot" src="/images/ai-avatar.png" alt="AI assistant" width="80" height="70">
-            <a href="/contact/" class="textlink">Schedule a strategy call <span class="ar">&rarr;</span></a>
+            <a href="/assessment/" class="btn btn-primary">Take the Free AI Assessment</a>
+            <a href="/services/consultancy/" class="textlink">Discuss a Consultancy <span class="ar">&rarr;</span></a>
           </div>
         </div>
         <div class="portrait">
-          <!-- To use a real photo, replace the .portrait-inner block with:
-               <div class="portrait-frame"><img src="/images/randy-kimbi.jpg" alt="Randy Kimbi"></div> -->
           <div class="portrait-frame">
-            <img src="/images/randy-hero.jpg" alt="Randy Kimbi, Enterprise AI Strategist"><div class="portrait-cap"><div class="n">Randy Kimbi</div><div class="r">Enterprise AI Strategist</div></div>
+            <img src="/images/randy-hero.jpg" alt="Randy Kimbi, AI Consultant and Corporate AI Trainer">
+            <div class="portrait-cap"><div class="n">Randy Kimbi</div><div class="r">AI Consultant &middot; Corporate AI Trainer</div></div>
           </div>
-        </div>
-      </div>
-      <div class="trustline">
-        <span class="lab">Advising leaders across</span>
-        <div class="sectors">
-          <span class="sector-pill">Banking</span>
-          <span class="sector-pill">Government</span>
-          <span class="sector-pill">Education</span>
-          <span class="sector-pill">Multinational Enterprise</span>
         </div>
       </div>
     </div>
@@ -104,25 +56,104 @@
 
   <section>
     <div class="container">
+      <div class="sec-head center">
+        <span class="eyebrow center">Advising Leaders on AI Across</span>
+        <h2>Built for the people who run <em>organisations.</em></h2>
+      </div>
+      <div class="sectors-grid">
+        <div class="sector-card" style="--acc:#4A6C8C"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div><h3>Business</h3><p>Founders, CEOs and directors putting AI to work across the company.</p></div>
+        <div class="sector-card" style="--acc:#7B3B45"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6M8 13h.01M16 13h.01"/></svg></div><h3>Government</h3><p>Agencies and directors adopting AI safely and accountably.</p></div>
+        <div class="sector-card" style="--acc:#2E6E6A"><div class="ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 2 6 2s6-1 6-2v-5"/></svg></div><h3>Education</h3><p>School and institution leaders modernising how they operate.</p></div>
+        <div class="sector-card" style="--acc:#3E5C76"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 10h16M5 10 12 4l7 6M6 10v11M18 10v11M10 10v11M14 10v11"/></svg></div><h3>Banking &amp; Finance</h3><p>Risk, compliance and operations leaders managing AI exposure.</p></div>
+        <div class="sector-card" style="--acc:#B08D4F"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></div><h3>Multinational Enterprises</h3><p>Groups aligning AI across markets and departments.</p></div>
+        <div class="sector-card" style="--acc:#6B7250"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20.6 8.5 12 3 3.4 8.5M4 10v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9M9 20v-6h6v6"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>Service Businesses</h3><p>Firms improving delivery, response times and efficiency.</p></div>
+      </div>
+      <div class="sectors-more">&mdash; and more &mdash;</div>
+    </div>
+  </section>
+
+  <section class="alternate">
+    <div class="container">
       <div class="sec-head">
         <span class="eyebrow">The Mandate</span>
-        <h2>AI fails on strategy, <em>not on technology.</em></h2>
+        <h2>AI capability is becoming a requirement for <em>competitiveness.</em></h2>
       </div>
-      <div class="mandate">
-        <div class="mandate-item">
-          <div class="mandate-idx">I</div>
-          <h3>The Challenge</h3>
-          <p>Organisations buy tools before asking why. Implementations deliver no return, and capability stays locked with outside vendors.</p>
+      <div class="two-column">
+        <p>The organisations that benefit most from AI will not simply be the ones that buy the most tools. They will be the ones whose leaders and teams understand how to use them, where to use them and where not to use them.</p>
+        <p>My role is to help leaders and organisations understand AI, use it properly, protect sensitive information and improve real work. The purpose is not to remove people from the organisation. It is to equip people to perform better with AI.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow">The Challenge</span>
+        <h2>Five places AI quietly helps &mdash; or <em>hurts.</em></h2>
+      </div>
+      <div class="challenge">
+        <div class="ch"><div class="k">Risk</div><p>Uncontrolled AI use can expose confidential data, create security problems and introduce unreliable information into important decisions.</p></div>
+        <div class="ch"><div class="k">Profit</div><p>AI investment without a clear business purpose simply becomes another expense.</p></div>
+        <div class="ch"><div class="k">Efficiency</div><p>Teams keep spending hours on work that could be done faster with the right AI systems.</p></div>
+        <div class="ch"><div class="k">Delivery</div><p>Slow processes affect customers, management and the organisation's ability to execute.</p></div>
+        <div class="ch"><div class="k">Governance</div><p>Without clear rules, employees use AI differently and leadership loses visibility over how company information is handled.</p></div>
+      </div>
+      <p class="source">Across Africa, <b>82% of organisations are running AI pilots</b>, yet only <b>41% have a clearly defined AI roadmap</b> and <b>37% have formalised responsible-AI processes</b>. &mdash; Source: PwC Africa, 2026.</p>
+    </div>
+  </section>
+
+  <section class="alternate">
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow">The Approach</span>
+        <h2>Tools are easy to buy. Capability is harder to <em>build.</em></h2>
+      </div>
+      <div class="two-column">
+        <p>Buying AI software does not create AI capability. Leaders need to understand what the technology can do. Employees need to know how to use it without exposing sensitive information.</p>
+        <p>Departments need practical use cases tied to the work they already perform, and leadership needs governance and visibility. Organisations that build this capability will move faster and compete harder than those that only buy tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-ink">
+    <div class="container">
+      <div class="sec-head center">
+        <span class="eyebrow center">The Outcome</span>
+        <h2>What proper AI adoption can <em>affect.</em></h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">23%</div><div class="l">of African CEOs reported revenue increases associated with AI</div></div>
+        <div class="stat"><div class="n">25%</div><div class="l">reported cost reductions</div></div>
+        <div class="stat"><div class="n">82%</div><div class="l">of organisations are already running AI pilots</div></div>
+      </div>
+      <p class="source" style="text-align:center;max-width:44em;margin-left:auto;margin-right:auto">Proper AI adoption can affect both growth and efficiency &mdash; but tools alone are not enough. Organisations need clear leadership, governance, skills and implementation. &mdash; Source: PwC Africa, 2026.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head">
+        <span class="eyebrow">Services</span>
+        <h2>Three ways to work <em>together.</em></h2>
+      </div>
+      <div class="services" style="grid-template-columns:repeat(3,1fr)">
+        <div class="svc">
+          <div class="svc-i">01</div>
+          <h3>AI Consultancy</h3>
+          <p>Understand where AI fits, what risks need attention and what your organisation should do next.</p>
+          <a href="/services/consultancy/" class="textlink">Explore AI Consultancy <span class="ar">&rarr;</span></a>
         </div>
-        <div class="mandate-item">
-          <div class="mandate-idx">II</div>
-          <h3>The Approach</h3>
-          <p>A roadmap tied to real business outcomes. Internal teams built to own and evolve the systems, from pilot to production.</p>
+        <div class="svc">
+          <div class="svc-i">02</div>
+          <h3>Corporate AI Training</h3>
+          <p>Practical AI programmes for leaders and departments, customised to the organisation. No coding required.</p>
+          <a href="/services/training/" class="textlink">Explore Corporate Training <span class="ar">&rarr;</span></a>
         </div>
-        <div class="mandate-item">
-          <div class="mandate-idx">III</div>
-          <h3>The Outcome</h3>
-          <p>Institutions that multiply existing expertise with AI outperform their peers. Advantage compounds instead of eroding.</p>
+        <div class="svc">
+          <div class="svc-i">03</div>
+          <h3>AI Agents &amp; Automation</h3>
+          <p>Build practical AI systems that handle repetitive, process-heavy work while keeping human oversight.</p>
+          <a href="/services/ai-agents-automation/" class="textlink">Explore AI Agents &amp; Automation <span class="ar">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -130,163 +161,33 @@
 
   <section class="alternate">
     <div class="container">
-      <div class="sec-head">
-        <span class="eyebrow">Engagements</span>
-        <h2>Two ways to work <em>together.</em></h2>
+      <div class="sec-head center">
+        <span class="eyebrow center">Where to Start</span>
+        <h2>Not sure where to <em>start?</em></h2>
+        <p>Start with a free assessment, speak with Randy about a specific challenge, or discuss training for your organisation.</p>
       </div>
-      <figure class="engage-figure">
-        <img src="/images/ai-avatar.png" alt="AI assistant" width="260" height="229">
-        <figcaption class="engage-cap">AI, put to work</figcaption>
-      </figure>
-      <div class="services">
+      <div class="services" style="grid-template-columns:repeat(3,1fr)">
         <div class="svc">
-          <div class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="24" y1="7" x2="24" y2="12"/>
-              <circle cx="24" cy="5.5" r="1.8" fill="currentColor" stroke="none"/>
-              <rect x="11" y="12" width="26" height="20" rx="5.5"/>
-              <circle cx="19" cy="21.5" r="2.2"/>
-              <circle cx="29" cy="21.5" r="2.2"/>
-              <line x1="20" y1="27" x2="28" y2="27"/>
-              <line x1="11" y1="20" x2="8" y2="20"/>
-              <line x1="37" y1="20" x2="40" y2="20"/>
-              <path d="M17 32 v3 h14 v-3"/>
-            </svg>
-          </div>
-          <div class="svc-i">01 — Advisory</div>
-          <h3>AI Strategy Consulting</h3>
-          <p>A 90-day engagement. Map operations, identify high-impact workflows, and build a roadmap from pilot to production.</p>
-          <a href="/services/strategy/" class="textlink">Explore strategy <span class="ar">&rarr;</span></a>
+          <h3>Free AI Assessment</h3>
+          <p>Understand where your organisation currently stands.</p>
+          <a href="/assessment/" class="btn btn-primary" style="margin-top:8px">Start Free Assessment</a>
         </div>
         <div class="svc">
-          <div class="svc-ico" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="15" y="15" width="18" height="18" rx="3"/>
-              <rect x="21" y="21" width="6" height="6" rx="1"/>
-              <line x1="24" y1="15" x2="24" y2="10"/><line x1="19.5" y1="15" x2="19.5" y2="10"/><line x1="28.5" y1="15" x2="28.5" y2="10"/>
-              <line x1="24" y1="33" x2="24" y2="38"/><line x1="19.5" y1="33" x2="19.5" y2="38"/><line x1="28.5" y1="33" x2="28.5" y2="38"/>
-              <line x1="15" y1="24" x2="10" y2="24"/><line x1="15" y1="19.5" x2="10" y2="19.5"/><line x1="15" y1="28.5" x2="10" y2="28.5"/>
-              <line x1="33" y1="24" x2="38" y2="24"/><line x1="33" y1="19.5" x2="38" y2="19.5"/><line x1="33" y1="28.5" x2="38" y2="28.5"/>
-            </svg>
-          </div>
-          <div class="svc-i">02 — Capability</div>
-          <h3>Executive Training</h3>
-          <p>Boardroom AI literacy and decision frameworks. Equip leaders to govern AI strategy with confidence.</p>
-          <a href="/services/training/" class="textlink">Explore training <span class="ar">&rarr;</span></a>
+          <h3>AI Consultancy</h3>
+          <p>For leaders who already have questions, risks or opportunities to discuss.</p>
+          <a href="/services/consultancy/" class="link-button" style="margin-top:8px">Discuss Your Situation</a>
+        </div>
+        <div class="svc">
+          <h3>Corporate Training</h3>
+          <p>For organisations that want their leaders or teams to use AI more effectively.</p>
+          <a href="/services/training/" class="link-button" style="margin-top:8px">Explore Training</a>
         </div>
       </div>
+      <p style="text-align:center;margin-top:26px;color:var(--charcoal-dim);font-size:14.5px">Need an AI agent or a business process automated? <a href="/services/ai-agents-automation/" style="color:var(--gold);border-bottom:1px solid var(--gold)">Explore AI Agents &amp; Automation</a>.</p>
     </div>
   </section>
 
-  <section class="sec-ink">
-    <div class="container">
-      <div class="sec-head center">
-        <span class="eyebrow center">Track record</span>
-        <h2>Grounded in real <em>work.</em></h2>
-      </div>
-      <div class="stats">
-        <div class="stat"><div class="n rk-count" data-to="6" data-suffix="+">0</div><div class="l">Years building software, now with AI at the core</div></div>
-        <div class="stat"><div class="n rk-count" data-to="4" data-suffix="">0</div><div class="l">Enterprise sectors served</div></div>
-        <div class="stat"><div class="n rk-count" data-to="5" data-suffix="+">0</div><div class="l">AI certifications held</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <div class="container">
-      <div class="sec-head center">
-        <span class="eyebrow center">Client Perspectives</span>
-        <h2>Proof, <em>in their words.</em></h2>
-      </div>
-      <div class="video-grid">
-        <figure class="video-col">
-          <div class="video-embed">
-            <div class="video-ph"><span class="play"></span><span class="lab">Video 1</span></div>
-          </div>
-          <figcaption><span class="v-industry">Banking</span><span class="v-detail">Risk &amp; Compliance</span></figcaption>
-        </figure>
-        <figure class="video-col">
-          <div class="video-embed">
-            <div class="video-ph"><span class="play"></span><span class="lab">Video 2</span></div>
-          </div>
-          <figcaption><span class="v-industry">Government</span><span class="v-detail">Operations &amp; Modernisation</span></figcaption>
-        </figure>
-        <figure class="video-col">
-          <div class="video-embed">
-            <div class="video-ph"><span class="play"></span><span class="lab">Video 3</span></div>
-          </div>
-          <figcaption><span class="v-industry">Education</span><span class="v-detail">AI Governance</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec-ink">
-    <div class="container">
-      <div class="statement">
-        <span class="eyebrow center" style="margin-bottom:32px">Position</span>
-        <blockquote>I move institutions from <em>AI as expense</em> to AI as owned, governed capability.</blockquote>
-        <div class="src">Randy Kimbi &middot; Enterprise AI Strategist</div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="cta-band">
-        <span class="eyebrow center">Begin</span>
-        <h2>Where does your organisation <em>stand today?</em></h2>
-        <p>Take the AI Readiness Assessment for a maturity score and a personalised roadmap.</p>
-        <div class="btn-group">
-          <a href="/assessment/" class="btn btn-primary btn-cta-anim">FREE AI Test For Your Company</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section footer-brand">
-        <span class="monogram">RK</span>
-        <span class="brand-name">Randy Kimbi</span>
-        <p>Enterprise AI strategy and executive capability for institutions that cannot afford to guess.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Engagements</h4>
-        <a href="/services/strategy/">AI Strategy Consulting</a>
-        <a href="/services/training/">Executive Training</a>
-        <a href="/assessment/">AI Readiness Assessment</a>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <a href="mailto:hello@randykimbi.com">hello@randykimbi.com</a>
-        <a href="https://wa.me/237671283217" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="tel:+237671283217">+237 671 283 217</a>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <span>&copy; 2026 Randy Kimbi. All rights reserved.</span>
-      <span>Enterprise AI Strategist &middot; Central Africa</span>
-    </div>
-  </footer>
-
+  <footer></footer>
   <script src="/js/app.js"></script>
-  <script>
-    (function(){
-      var els = document.querySelectorAll('.rk-count');
-      if(!els.length) return;
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce){ els.forEach(function(el){ el.textContent = el.getAttribute('data-to') + (el.getAttribute('data-suffix')||''); }); return; }
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(!e.isIntersecting) return; var el=e.target; io.unobserve(el);
-          var to=parseInt(el.getAttribute('data-to'),10), suf=el.getAttribute('data-suffix')||'', dur=1100, t0=null;
-          function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var eased=1-Math.pow(1-p,3); el.textContent=Math.round(eased*to)+suf; if(p<1)requestAnimationFrame(step); }
-          requestAnimationFrame(step);
-        });
-      }, {threshold:0.4});
-      els.forEach(function(el){ io.observe(el); });
-    })();
-  </script>
 </body>
 </html>

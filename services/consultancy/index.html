@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Consultancy for Organisations | Randy Kimbi</title>
+  <meta name="description" content="Paid AI consultancy for leaders who need clear answers on where AI fits, what risks need attention and what to do next. Sessions from 30 minutes.">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .note{font-size:13px;letter-spacing:.04em;color:var(--bone-dim);margin-top:18px}
+    .cov{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper)}
+    .cov div{background:var(--paper);padding:18px 20px;font-size:14.5px;color:var(--ink)}
+    .alternate .cov div{background:var(--paper-soft)}
+    .cov div::before{content:"";display:inline-block;width:14px;height:1px;background:var(--gold);vertical-align:middle;margin-right:10px}
+    .intake{max-width:var(--narrow);margin:0 auto}
+    .intake .grp{margin-bottom:20px}
+    .intake .opts{display:flex;flex-wrap:wrap;gap:10px}
+    .intake .opts label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-on-paper);border-radius:3px;padding:10px 14px;font-size:14px;font-weight:400;cursor:pointer;margin:0}
+    .intake .opts input{width:auto;margin:0}
+    .intake .hint{font-size:12px;color:var(--charcoal-dim);margin:4px 0 8px}
+    #ck-ok{display:none;text-align:center;padding:40px 20px}
+    #ck-ok .tick{width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--gold);font-size:28px}
+  </style>
+</head>
+<body>
+  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
+
+  <section class="hero text-center">
+    <div class="container"><div class="hero-grid centered"><div>
+      <span class="eyebrow center">AI Consultancy</span>
+      <h1>Clarity before strategy. Clarity before <em>implementation.</em></h1>
+      <p>For leaders who need clear answers about where AI fits, what risks need attention and what should happen next.</p>
+      <p class="note">Paid consultancy &middot; Sessions start from 30 minutes &middot; Pricing discussed privately.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-primary">Book a Consultation</a>
+        <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20want%20to%20book%20an%20AI%20consultancy%20session.%20My%20name%20is%20%5BName%5D%20and%20I%20am%20from%20%5BCompany%2FOrganisation%5D.%20We%20need%20help%20with%20%5Bbrief%20issue%5D." target="_blank" rel="noopener" class="textlink">WhatsApp Randy <span class="ar">&rarr;</span></a>
+      </div>
+    </div></div></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head"><span class="eyebrow">How it works</span><h2>Three simple <em>steps.</em></h2></div>
+      <div class="process three">
+        <div class="process-step"><div class="process-idx">Step 1</div><h3>Pre-consultation form</h3><p>Complete a short form so the session is focused from the first minute.</p></div>
+        <div class="process-step"><div class="process-idx">Step 2</div><h3>Meet with Randy</h3><p>A focused paid consultation on your specific situation.</p></div>
+        <div class="process-step"><div class="process-idx">Step 3</div><h3>Written recommendation</h3><p>A concise written recommendation afterward.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alternate">
+    <div class="container">
+      <div class="sec-head"><span class="eyebrow">What it covers</span><h2>Focused on your <em>real situation.</em></h2></div>
+      <div class="cov">
+        <div>AI readiness and risk</div><div>Where AI can create value</div><div>Agentic AI opportunities</div><div>Automation opportunities</div><div>Security</div><div>Governance</div><div>Department-specific needs</div><div>Training needs</div><div>Clear next steps</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head"><span class="eyebrow">Afterward</span><h2>Your written <em>recommendation.</em></h2></div>
+      <div class="card"><p style="margin:0">After the session you receive a concise written recommendation covering the main issue discussed, the key risks identified, immediate AI opportunities, the recommended next action, whether training, implementation or deeper strategy work is needed, and the priority areas to address first.</p></div>
+    </div>
+  </section>
+
+  <section class="alternate" id="book">
+    <div class="container">
+      <div class="sec-head center"><span class="eyebrow center">Book</span><h2>Pre-consultation <em>form.</em></h2><p>Two to three minutes. It makes your session sharper.</p></div>
+      <form class="intake form-wrap" id="ck-form" onsubmit="return ckSubmit(event)">
+        <div class="grp"><label>Your name and position</label><input name="name" required></div>
+        <div class="grp"><label>Company or organisation</label><input name="org" required></div>
+        <div class="grp"><label>Main issue you want help with</label><input name="issue" required></div>
+        <div class="grp"><label>What do you want AI to help achieve? (up to two)</label><div class="opts" data-max="2">
+          <label><input type="checkbox" name="goals" value="Improve efficiency"> Improve efficiency</label><label><input type="checkbox" name="goals" value="Reduce operating costs"> Reduce operating costs</label><label><input type="checkbox" name="goals" value="Increase sales or revenue"> Increase sales or revenue</label><label><input type="checkbox" name="goals" value="Automate repetitive work"> Automate repetitive work</label><label><input type="checkbox" name="goals" value="Improve service delivery"> Improve service delivery</label><label><input type="checkbox" name="goals" value="Reduce AI/security risks"> Reduce AI/security risks</label><label><input type="checkbox" name="goals" value="Train executives or staff"> Train executives or staff</label><label><input type="checkbox" name="goals" value="Improve governance"> Improve governance</label><label><input type="checkbox" name="goals" value="Other"> Other</label>
+        </div></div>
+        <div class="grp"><label>How is your organisation currently using AI?</label><div class="opts">
+          <label><input type="radio" name="current" value="Not using AI yet" required> Not using AI yet</label><label><input type="radio" name="current" value="A few employees use AI tools" required> A few employees use AI tools</label><label><input type="radio" name="current" value="AI is used in some departments" required> AI is used in some departments</label><label><input type="radio" name="current" value="AI is already part of our operations" required> AI is already part of our operations</label><label><input type="radio" name="current" value="Not sure what employees are using" required> Not sure what employees are using</label>
+        </div></div>
+        <div class="grp"><label>What concerns you most? (up to two)</label><div class="opts" data-max="2">
+          <label><input type="checkbox" name="concerns" value="Data privacy / confidential information"> Data privacy / confidential information</label><label><input type="checkbox" name="concerns" value="Security"> Security</label><label><input type="checkbox" name="concerns" value="Employees using AI incorrectly"> Employees using AI incorrectly</label><label><input type="checkbox" name="concerns" value="Wrong / unreliable AI output"> Wrong / unreliable AI output</label><label><input type="checkbox" name="concerns" value="Governance / compliance"> Governance / compliance</label><label><input type="checkbox" name="concerns" value="Cost"> Cost</label><label><input type="checkbox" name="concerns" value="Where AI can create value"> Where AI can create value</label><label><input type="checkbox" name="concerns" value="No major concern yet"> No major concern yet</label>
+        </div></div>
+        <div class="grp"><label>Which area needs attention first?</label><select name="area"><option>Executive leadership</option><option>Operations</option><option>Sales</option><option>Marketing</option><option>Finance</option><option>Human Resources</option><option>Customer Service</option><option>Administration</option><option>Multiple departments</option><option>Not sure</option></select></div>
+        <div class="grp"><label>Do you handle sensitive / confidential information?</label><div class="opts">
+          <label><input type="radio" name="sensitive" value="Yes" required> Yes</label><label><input type="radio" name="sensitive" value="No" required> No</label><label><input type="radio" name="sensitive" value="Not sure" required> Not sure</label>
+        </div></div>
+        <div class="grp"><label>What would make this consultation valuable to you?</label><input name="value"></div>
+        <div class="grp"><label>Email</label><input name="email" type="email" required></div>
+        <div class="grp"><label>WhatsApp number</label><input name="whatsapp" required></div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Send &amp; Continue on WhatsApp</button>
+        <p class="hint" style="margin-top:12px">On submit, your answers open a pre-filled WhatsApp message to Randy so nothing is lost.</p>
+      </form>
+      <div id="ck-ok"><div class="tick">&#10003;</div><h2 style="margin-bottom:10px">Thank you</h2><p style="color:var(--charcoal-dim)">Your details are ready in WhatsApp. Send the message to confirm your consultation request.</p></div>
+    </div>
+  </section>
+
+  <footer></footer>
+  <script src="/js/app.js"></script>
+  <script>
+    function ckSubmit(e){
+      e.preventDefault();
+      var f=e.target, g=function(n){return (f.querySelector('[name="'+n+'"]')||{}).value||'';};
+      var multi=function(n){return [].slice.call(f.querySelectorAll('[name="'+n+'"]:checked')).map(function(x){return x.value;}).join(', ');};
+      var t='AI Consultancy request%0A%0A';
+      t+='Name/Position: '+g('name')+'%0A';
+      t+='Organisation: '+g('org')+'%0A';
+      t+='Main issue: '+g('issue')+'%0A';
+      t+='Goals: '+multi('goals')+'%0A';
+      t+='Current AI use: '+g('current')+'%0A';
+      t+='Concerns: '+multi('concerns')+'%0A';
+      t+='Area first: '+g('area')+'%0A';
+      t+='Sensitive data: '+g('sensitive')+'%0A';
+      t+='Value wanted: '+g('value')+'%0A';
+      t+='Email: '+g('email')+'%0A';
+      t+='WhatsApp: '+g('whatsapp');
+      window.open('https://wa.me/237671283217?text='+encodeURIComponent(decodeURIComponent(t)),'_blank');
+      f.style.display='none'; document.getElementById('ck-ok').style.display='block';
+      window.scrollTo({top:document.getElementById('book').offsetTop-40,behavior:'smooth'});
+      return false;
+    }
+    document.addEventListener('change',function(e){
+      var box=e.target.closest('.opts[data-max]'); if(!box||e.target.type!=='checkbox')return;
+      var max=+box.getAttribute('data-max'); var ch=box.querySelectorAll('input:checked');
+      if(ch.length>max) e.target.checked=false;
+    });
+  </script>
+</body>
+</html>

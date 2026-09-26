@@ -1,135 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Randy Kimbi | AI Consultant & Software Engineer</title>
-  <meta name="description" content="Randy Kimbi is an AI consultant, corporate AI trainer and software engineer. Software engineering since 2021, applied AI since 2023, with an AI systems bachelor's project.">
-  <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .role{font-family:var(--sans);font-weight:500;font-size:clamp(13px,1.4vw,15px);letter-spacing:.12em;color:var(--gold-soft);margin:14px 0 0}
-    .tphoto img{width:100%;height:auto;display:block;border-radius:3px}
-    .video-wrap{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--line-on-paper);border-radius:3px;overflow:hidden;background:#000}
-    .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-    .vcap{font-size:12px;letter-spacing:.04em;color:var(--charcoal-dim);margin-top:12px}
-    .mq{overflow:hidden;border-top:1px solid var(--line-on-paper);border-bottom:1px solid var(--line-on-paper);padding:22px 0;margin-top:clamp(28px,4vh,40px)}
-    .mq-track{display:flex;gap:44px;width:max-content;animation:mqmove 42s linear infinite}
-    .mq:hover .mq-track{animation-play-state:paused}
-    .mq-item{font-family:var(--display);font-size:clamp(16px,2vw,20px);color:var(--charcoal);white-space:nowrap;opacity:.8}
-    @keyframes mqmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @media(prefers-reduced-motion:reduce){.mq-track{animation:none;flex-wrap:wrap;width:auto}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Randy Kimbi | AI Consultant & Software Engineer</title>
+<meta name="description" content="Randy Kimbi is an AI consultant, corporate AI trainer and software engineer. Software engineering since 2021, applied AI since 2023, with an AI systems bachelor's project.">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+:root{--maxw:1180px}
+*{box-sizing:border-box}
+section{padding:clamp(60px,9vh,110px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px)}
+.ink{background:var(--ink);color:var(--bone)} .ink h1,.ink h2,.ink h3{color:#fff}
+.paper{background:var(--paper)} .bone{background:var(--bone)}
+.aurora::before{content:"";position:absolute;inset:-25% -15%;z-index:0;pointer-events:none;background:radial-gradient(40% 46% at 16% 24%,rgba(212,175,55,.14),transparent 66%),radial-gradient(42% 50% at 86% 74%,rgba(74,108,140,.24),transparent 68%);filter:blur(28px);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.09)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.8,.24,1),transform .8s cubic-bezier(.16,.8,.24,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:clamp(10px,.9vw,12px);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px}
+.ink .eyebrow-line{color:var(--gold)}
+.head{max-width:24em;margin:0 0 clamp(30px,4.5vh,50px)}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-.03em;margin:0}
+.head p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:14px 0 0;max-width:34em}
+.ink .head p{color:var(--bone-dim)}
+
+.ahero-inner{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px);display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,54px);align-items:center;position:relative;z-index:2}
+.ahero h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.5vw,72px);line-height:1;letter-spacing:-.03em;margin:0;color:#fff}
+.ahero .role{font-family:var(--sans);font-weight:600;font-size:clamp(11px,1vw,13px);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:16px 0 0}
+.ahero .sub{font-size:clamp(16px,1.25vw,18px);line-height:1.65;color:var(--bone-dim);max-width:30em;margin:20px 0 0}
+.aphoto{position:relative;aspect-ratio:4/5;overflow:hidden;border:2px solid rgba(212,175,55,.5)}
+.aphoto img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px)}
+.two p{font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:var(--charcoal);margin:0 0 14px}
+.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,4vw,54px);align-items:center}
+.split p{font-size:clamp(15px,1.1vw,17px);line-height:1.7;color:var(--charcoal);margin:0 0 14px}
+.sphoto{position:relative;aspect-ratio:4/3;overflow:hidden;border:2px solid var(--ink)}
+.sphoto img{width:100%;height:100%;object-fit:cover}
+
+.exp{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.exp .cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(24px,2.8vw,38px);transition:background .3s ease,color .3s ease}
+.exp .cell:hover{background:var(--ink)}
+.exp .cell:hover h3{color:#fff}.exp .cell:hover p{color:var(--bone-dim)}
+.exp h3{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.9vw,24px);margin:0 0 10px;color:var(--ink)}
+.exp p{font-size:14.5px;line-height:1.55;color:var(--charcoal);margin:0}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:2px solid rgba(212,175,55,.3)}
+.stat{padding:clamp(10px,2vw,26px);border-right:2px solid rgba(212,175,55,.3);text-align:center}
+.stat .n{font-family:var(--display);font-weight:500;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.stat .l{font-size:13px;color:var(--bone-dim);margin-top:10px;line-height:1.4}
+.tr-note{text-align:center;max-width:48em;margin:clamp(28px,4vh,40px) auto 0;color:var(--bone-dim);font-size:14.5px;line-height:1.6}
+
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;border:2px solid var(--gold-soft);overflow:hidden;background:#000}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vcap{font-size:12.5px;letter-spacing:.03em;color:var(--charcoal);margin-top:12px}
+.formal{color:var(--charcoal);font-size:14px}
+
+.mq{overflow:hidden;border-top:2px solid var(--line-on-paper);border-bottom:2px solid var(--line-on-paper);padding:22px 0;margin-top:clamp(28px,4vh,40px)}
+.mq-track{display:flex;gap:44px;width:max-content;animation:mqmove 42s linear infinite}
+.mq:hover .mq-track{animation-play-state:paused}
+.mq-item{font-family:var(--display);font-size:clamp(16px,2vw,20px);color:var(--charcoal);white-space:nowrap;opacity:.85}
+@keyframes mqmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.cta{text-align:center}
+.cta h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,48px);line-height:1.05;letter-spacing:-.03em;margin:0 0 22px;color:#fff}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.on-ink{border-color:var(--line-on-ink);color:var(--bone)} .on-ink:hover{background:#fff;color:var(--ink)}
+.cta .link{display:inline-block;margin-top:18px;color:var(--gold);border-bottom:1px solid var(--gold);text-decoration:none}
+
+@media(max-width:900px){
+  .ahero-inner{grid-template-columns:1fr;gap:24px;text-align:center}
+  .ahero .sub{margin-left:auto;margin-right:auto}
+  .aphoto{max-width:340px;margin:0 auto;order:-1}
+  .head{margin-left:auto;margin-right:auto;text-align:center}.head p{margin-left:auto;margin-right:auto}
+  .two,.split{grid-template-columns:1fr;gap:20px}
+  .sphoto{order:-1;max-width:440px;margin:0 auto}
+  .exp{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr;border-left:none}
+  .stat{border:2px solid rgba(212,175,55,.25)}
+}
+@media(max-width:560px){section{padding:clamp(46px,7vh,64px) 0}.ahero h1{font-size:clamp(34px,11vw,52px)}.cta-btns .btn,.cta-btns .link-button{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.aurora::before{animation:none}.mq-track{animation:none;flex-wrap:wrap;width:auto}}
+</style>
 </head>
 <body>
-  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
+<header id="site-header"></header>
+<main>
 
-  <section class="hero">
-    <div class="container"><div class="hero-grid"><div>
-      <span class="eyebrow">About</span>
-      <h1>Randy <em>Kimbi.</em></h1>
-      <p class="role">AI Consultant &nbsp;|&nbsp; Corporate AI Trainer &nbsp;|&nbsp; Software Engineer</p>
-      <p style="margin-top:20px">I help organisations understand AI, use it safely and put it to work in real business processes &mdash; built on genuine software engineering and business experience, not prompts and tools alone.</p>
-    </div>
-    <div class="portrait"><div class="portrait-frame"><img src="/images/randy-about.jpg" alt="Randy Kimbi, AI Consultant and Software Engineer"><div class="portrait-cap"><div class="n">Randy Kimbi</div><div class="r">AI Consultant &middot; Software Engineer</div></div></div></div>
-    </div></div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Background</span><h2>The story so <em>far.</em></h2></div>
-      <div class="two-column">
-        <div>
-          <p>Randy has worked in software engineering since 2021 &mdash; across web development, applications, frontend, backend, APIs, databases and software solutions. He has also managed a software development company, Abeboh.</p>
-          <p>His broader background spans commercial leadership, sales, SEO, PR and digital growth, including progressing into Head of Sales responsibilities across three branches of Algorithmics International School of Programming.</p>
-        </div>
-        <div>
-          <p>Randy began seriously applying AI to professional work in 2023 &mdash; first in research, SEO, digital publishing, content workflows and practical business work. AI later became a deeper part of his technical and training work.</p>
-          <p>His first structured, paid AI teaching component appeared within his blogging programme in 2025, and has since grown into dedicated consultancy and corporate training.</p>
-        </div>
+  <section class="ink aurora" style="padding-top:clamp(56px,8vh,96px)">
+    <div class="ahero-inner">
+      <div class="reveal">
+        <p class="eyebrow-line">About</p>
+        <h1>Randy Kimbi.</h1>
+        <p class="role">AI Consultant &nbsp;|&nbsp; Corporate AI Trainer &nbsp;|&nbsp; Software Engineer</p>
+        <p class="sub">I help organisations understand AI, use it safely and put it to work in real business processes — built on genuine engineering and business experience, not prompts and tools alone.</p>
       </div>
+      <div class="aphoto reveal d1"><img src="/images/randy-about.jpg" alt="Randy Kimbi, AI Consultant and Software Engineer"></div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="two-column-alt">
-        <figure class="tphoto" style="margin:0"><img src="/images/randy-session.jpg" alt="Randy Kimbi training professionals"></figure>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Background</p><h2>The story so far</h2></div>
+      <div class="two reveal">
         <div>
-          <div class="sec-head" style="margin-bottom:18px"><span class="eyebrow">Built, not borrowed</span><h2>On top of real <em>engineering.</em></h2></div>
-          <p>Randy's AI work sits on a genuine software engineering and business background. He understands systems, data, business processes, sales, management and implementation.</p>
-          <p>He did not enter AI simply by learning prompts or collecting tools &mdash; he builds, and he has run the commercial side of a business. That combination is what makes the advice practical.</p>
+          <p>Randy has worked in software engineering since 2021 — web, applications, frontend, backend, APIs, databases and software solutions. He has also managed a software company, Abeboh.</p>
+          <p>His broader background spans commercial leadership, sales, SEO, PR and digital growth, including Head of Sales responsibilities across three branches of Algorithmics International School of Programming.</p>
+        </div>
+        <div>
+          <p>He began seriously applying AI to professional work in 2023 — first in research, SEO, digital publishing and content workflows, then deeper into his technical and training work.</p>
+          <p>His first structured, paid AI teaching appeared within his blogging programme in 2025, and has since grown into dedicated consultancy and corporate training.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Core Expertise</span><h2>Four areas, one <em>outcome.</em></h2></div>
-      <div class="services" style="grid-template-columns:repeat(2,1fr)">
-        <div class="svc"><h3>AI Consultancy & Strategy</h3><p>Assess the organisation, understand its goals and risks, and determine where AI can create practical value.</p></div>
-        <div class="svc"><h3>Corporate AI Training</h3><p>Turn complex AI concepts into practical, understandable programmes for executives and teams.</p></div>
-        <div class="svc"><h3>Agentic AI & Automation</h3><p>Identify tasks suitable for AI agents or automation and supervise the systems built around them.</p></div>
-        <div class="svc"><h3>Technical & Business Understanding</h3><p>Software engineering combined with experience across management, sales, marketing, digital systems and organisational processes.</p></div>
+  <section class="bone">
+    <div class="wrap">
+      <div class="split">
+        <div class="sphoto reveal"><img src="/images/randy-session.jpg" alt="Randy Kimbi training professionals"></div>
+        <div class="reveal d1">
+          <div class="head" style="margin-bottom:18px"><p class="eyebrow-line">Built, not borrowed</p><h2>On top of real engineering</h2></div>
+          <p>Randy&rsquo;s AI work sits on a genuine software engineering and business background. He understands systems, data, business processes, sales, management and implementation.</p>
+          <p>He didn&rsquo;t enter AI by learning prompts or collecting tools — he builds, and he has run the commercial side of a business. That combination is what makes the advice practical.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="sec-ink">
-    <div class="container">
-      <div class="sec-head center"><span class="eyebrow center">Track Record</span><h2>Grounded in real <em>work.</em></h2></div>
-      <div class="stats" style="grid-template-columns:repeat(4,1fr)">
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Core expertise</p><h2>Four areas, one outcome</h2></div>
+      <div class="exp reveal">
+        <div class="cell"><h3>AI Consultancy &amp; Strategy</h3><p>Assess the organisation, understand its goals and risks, and find where AI creates practical value.</p></div>
+        <div class="cell"><h3>Corporate AI Training</h3><p>Turn complex AI concepts into practical programmes for executives and teams.</p></div>
+        <div class="cell"><h3>Agentic AI &amp; Automation</h3><p>Identify tasks suited to AI agents and supervise the systems built around them.</p></div>
+        <div class="cell"><h3>Technical &amp; Business Understanding</h3><p>Engineering combined with management, sales, marketing and organisational experience.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ink aurora">
+    <div class="wrap">
+      <div class="head reveal" style="max-width:none;text-align:center;margin-left:auto;margin-right:auto"><p class="eyebrow-line">Track record</p><h2>Grounded in real work</h2></div>
+      <div class="stats reveal">
         <div class="stat"><div class="n">2021</div><div class="l">Software engineering since</div></div>
         <div class="stat"><div class="n">2023</div><div class="l">Applied AI work since</div></div>
         <div class="stat"><div class="n">BSc</div><div class="l">Software Engineering degree</div></div>
         <div class="stat"><div class="n">5</div><div class="l">AI certifications</div></div>
       </div>
-      <p class="source" style="text-align:center;max-width:48em;margin:clamp(30px,5vh,44px) auto 0;color:var(--bone-dim);font-size:14.5px">Experience training senior professionals across banking, government, education, taxation, marketing, HR, sales, management and entrepreneurship.</p>
+      <p class="tr-note reveal">Experience training senior professionals across banking, government, education, taxation, marketing, HR, sales, management and entrepreneurship.</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Applied AI From the Foundation</span><h2>His degree project was an <em>AI system.</em></h2></div>
-      <div class="two-column-alt">
-        <div>
-          <p>Randy's bachelor's final project was itself an Artificial Intelligence systems project. He developed an intelligent EdTech framework that monitors a learner's attention in real time, identifies signs of drowsiness and triggers an audio alert when intervention is needed.</p>
-          <p style="color:var(--charcoal-dim);font-size:14.5px"><em>Formal title: "Intelligent EdTech Framework for Real-Time Attention Auditing and Audio-Induced Drowsiness Mitigation."</em></p>
-          <p>In plain terms: an AI system that watches whether a student is still paying attention and wakes them with sound when they drift off &mdash; real applied AI, built from the ground up.</p>
-          <p style="color:var(--charcoal-dim);font-size:14px">Media coverage included Equinox TV and My Media Prime TV.</p>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Applied AI from the foundation</p><h2>His degree project was an AI system</h2></div>
+      <div class="split">
+        <div class="reveal">
+          <p>Randy&rsquo;s bachelor&rsquo;s final project was itself an Artificial Intelligence system — an intelligent EdTech framework that monitors a learner&rsquo;s attention in real time, detects signs of drowsiness and triggers an audio alert when intervention is needed.</p>
+          <p class="formal"><em>Formal title: &ldquo;Intelligent EdTech Framework for Real-Time Attention Auditing and Audio-Induced Drowsiness Mitigation.&rdquo;</em></p>
+          <p>In plain terms: an AI system that watches whether a student is still paying attention and wakes them with sound when they drift off — real applied AI, built from the ground up.</p>
+          <p class="formal">Media coverage included Equinox TV and My Media Prime TV.</p>
         </div>
-        <div>
+        <div class="reveal d1">
           <div class="video-wrap"><iframe src="https://www.youtube.com/embed/EiU8x2cULD8?start=639" title="Randy Kimbi bachelor's AI project on Equinox TV" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <p class="vcap">Bachelor's AI project featured on Equinox TV.</p>
+          <p class="vcap">Bachelor&rsquo;s AI project featured on Equinox TV.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Training experience</span><h2>Teaching business <em>professionals.</em></h2></div>
-      <p style="max-width:46em">In 2024, Randy was invited to train entrepreneurs at The Shirlma Show on using social media to build their brands and generate sales &mdash; an example of his ability to teach and hold a room of business professionals. That teaching ability now sits behind his corporate AI training.</p>
-      <div class="mq"><div class="mq-track"><span class="mq-item">Algorithmics International School of Programming</span><span class="mq-item">Abeboh</span><span class="mq-item">The Shirlma Show</span><span class="mq-item">Malimba School</span><span class="mq-item">Cherisa</span><span class="mq-item">HIBES University</span><span class="mq-item">Government Professionals Trained</span><span class="mq-item">Algorithmics International School of Programming</span><span class="mq-item">Abeboh</span><span class="mq-item">The Shirlma Show</span><span class="mq-item">Malimba School</span><span class="mq-item">Cherisa</span><span class="mq-item">HIBES University</span><span class="mq-item">Government Professionals Trained</span></div></div>
-      <p style="font-size:12px;color:var(--charcoal-dim);margin-top:14px">Selected organisations &amp; engagements. Not all represent formal corporate clients.</p>
+  <section class="bone">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Training experience</p><h2>Teaching business professionals</h2></div>
+      <p class="reveal" style="max-width:46em;font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:var(--charcoal);margin:0">In 2024, Randy was invited to train entrepreneurs at The Shirlma Show on using social media to build their brands and generate sales — an example of his ability to teach and hold a room of business professionals. That teaching ability now sits behind his corporate AI training.</p>
+      <div class="mq reveal"><div class="mq-track"><span class="mq-item">Algorithmics International School of Programming</span><span class="mq-item">Abeboh</span><span class="mq-item">The Shirlma Show</span><span class="mq-item">Malimba School</span><span class="mq-item">Cherisa</span><span class="mq-item">HIBES University</span><span class="mq-item">Government Professionals Trained</span><span class="mq-item">Algorithmics International School of Programming</span><span class="mq-item">Abeboh</span><span class="mq-item">The Shirlma Show</span><span class="mq-item">Malimba School</span><span class="mq-item">Cherisa</span><span class="mq-item">HIBES University</span><span class="mq-item">Government Professionals Trained</span></div></div>
+      <p class="reveal" style="font-size:12px;color:var(--charcoal);margin-top:14px">Selected organisations &amp; engagements. Not all represent formal corporate clients.</p>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="cta-band">
-        <span class="eyebrow center">Work with Randy</span>
-        <h2>Want to work with <em>me?</em></h2>
-        <div class="btn-group">
-          <a href="/assessment/" class="btn btn-primary">Take the Free AI Assessment</a>
-          <a href="/services/training/" class="link-button">See Corporate Training</a>
-        </div>
-        <p style="margin-top:18px"><a href="/contact/" style="color:var(--gold);border-bottom:1px solid var(--gold)">Contact Randy</a></p>
+  <section class="ink cta aurora">
+    <div class="wrap reveal">
+      <h2>Want to work with me?</h2>
+      <div class="cta-btns">
+        <a href="/assessment/" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg><span>Free AI Assessment</span>
+          <svg class="ar" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/services/training/" class="link-button on-ink"><span>See Corporate Training</span></a>
       </div>
+      <a href="/contact/" class="link">Contact Randy</a>
     </div>
   </section>
 
-  <footer></footer>
-  <script src="/js/app.js"></script>
+</main>
+<footer id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script>
+(function(){
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revs=document.querySelectorAll('.reveal');
+  if(rm){revs.forEach(function(e){e.classList.add('in');});return;}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    revs.forEach(function(e){io.observe(e);});
+    setTimeout(function(){revs.forEach(function(e){e.classList.add('in');});},2600);
+  } else { revs.forEach(function(e){e.classList.add('in');}); }
+})();
+</script>
 </body>
 </html>

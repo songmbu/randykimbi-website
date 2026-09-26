@@ -405,3 +405,22 @@ footer{background:var(--ink-deep);color:var(--bone);padding:clamp(56px,9vh,92px)
   .hero .eyebrow-line{font-size:10px!important;letter-spacing:.08em!important}
 }
 @media(max-width:400px){.hero .eyebrow-line{font-size:9px!important;letter-spacing:.05em!important}}
+
+/* ===== RK MOBILE STACKED CARDS ===== */
+@media(max-width:820px){
+  .sectors-grid,.ch-grid,.cov,.grid3,.sysgrid,.proof-grid,.steps,.trackgrid,.trackgrid.tg3,.trackgrid.tg4,.exp{grid-template-columns:1fr!important;border:none!important;gap:14px!important}
+  .sector-cell,.ch-cell,.cov div,.step,.tcell,.syscell,.exp .cell,.cell{border:2px solid var(--ink)!important;border-radius:12px!important;padding:20px 22px!important;text-align:center!important}
+  .sector-cell h3,.syscell h3,.step h3,.tcell h3,.exp h3{font-size:19px!important;line-height:1.2!important;margin:0 0 8px!important}
+  .sector-cell p,.syscell p,.step p,.tcell p,.ch-cell p,.cov div,.cell.prob,.exp p{font-size:15px!important;line-height:1.55!important}
+  .ch-cell .k,.step .si{font-size:12px!important;letter-spacing:.14em!important;margin:0 0 10px!important}
+  .syscell .num{font-size:26px!important;margin:0 0 4px!important}
+  .cell.prob{justify-content:center!important}
+  .cell.prob::before{display:none!important}
+  .sector-cell .acc,.acc{margin-left:auto!important;margin-right:auto!important}
+  .proof-cell{border:2px solid rgba(212,175,55,.3)!important;border-radius:12px!important;padding:22px!important;text-align:center!important;border-top:2px solid rgba(212,175,55,.3)!important}
+  .proof-cell:first-child{padding-left:22px!important}
+  .proof-n{font-size:52px!important;margin:0 0 8px!important}
+  .proof-cell p{font-size:14px!important;line-height:1.5!important}
+  .proof-cell .src{font-size:11px!important}
+  .tgrid{grid-template-columns:1fr!important;gap:16px!important}
+}

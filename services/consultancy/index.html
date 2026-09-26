@@ -1,74 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Consultancy for Organisations | Randy Kimbi</title>
-  <meta name="description" content="Paid AI consultancy for leaders who need clear answers on where AI fits, what risks need attention and what to do next. Sessions from 30 minutes.">
-  <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .note{font-size:13px;letter-spacing:.04em;color:var(--bone-dim);margin-top:18px}
-    .cov{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper)}
-    .cov div{background:var(--paper);padding:18px 20px;font-size:14.5px;color:var(--ink)}
-    .alternate .cov div{background:var(--paper-soft)}
-    .cov div::before{content:"";display:inline-block;width:14px;height:1px;background:var(--gold);vertical-align:middle;margin-right:10px}
-    .intake{max-width:var(--narrow);margin:0 auto}
-    .intake .grp{margin-bottom:20px}
-    .intake .opts{display:flex;flex-wrap:wrap;gap:10px}
-    .intake .opts label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-on-paper);border-radius:3px;padding:10px 14px;font-size:14px;font-weight:400;cursor:pointer;margin:0}
-    .intake .opts input{width:auto;margin:0}
-    .intake .hint{font-size:12px;color:var(--charcoal-dim);margin:4px 0 8px}
-    #ck-ok{display:none;text-align:center;padding:40px 20px}
-    #ck-ok .tick{width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--gold);font-size:28px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Consultancy for Organisations | Randy Kimbi</title>
+<meta name="description" content="Paid AI consultancy for leaders who need clear answers on where AI fits, what risks need attention and what to do next. Sessions from 30 minutes.">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+:root{--maxw:1180px}
+*{box-sizing:border-box}
+section{padding:clamp(60px,9vh,110px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px)}
+.ink{background:var(--ink);color:var(--bone)} .ink h2,.ink h3{color:#fff}
+.paper{background:var(--paper)} .bone{background:var(--bone)}
+.aurora::before{content:"";position:absolute;inset:-25% -15%;z-index:0;pointer-events:none;background:radial-gradient(40% 46% at 16% 24%,rgba(212,175,55,.14),transparent 66%),radial-gradient(42% 50% at 86% 74%,rgba(74,108,140,.24),transparent 68%);filter:blur(28px);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.09)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,.8,.24,1),transform .8s cubic-bezier(.16,.8,.24,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:clamp(10px,.9vw,12px);letter-spacing:.15em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px}
+.ink .eyebrow-line{color:var(--gold)}
+.head{max-width:22em;margin:0 0 clamp(36px,5.5vh,60px)}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-.03em;margin:0}
+.head p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:14px 0 0;max-width:32em}
+.ink .head p{color:var(--bone-dim)}
+
+/* hero */
+.chero-inner{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px);display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,4vw,54px);align-items:center;position:relative;z-index:2}
+.chero h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,4.4vw,58px);line-height:1.04;letter-spacing:-.03em;margin:0;color:#fff}
+.chero .sub{font-size:clamp(16px,1.25vw,18.5px);line-height:1.65;color:var(--bone-dim);max-width:30em;margin:20px 0 0}
+.chero .note{font-size:13px;letter-spacing:.03em;color:var(--gold-soft);margin:18px 0 0}
+.chero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0 0}
+.cphoto{position:relative;aspect-ratio:4/5;border:2px solid rgba(212,175,55,.5);overflow:hidden}
+.cphoto img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+/* testimonials */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.4vw,30px)}
+.tcard{border:2px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease}
+.tcard:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(0,33,71,.14)}
+.tframe{position:relative;aspect-ratio:16/9;background:var(--ink);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tframe .play{width:54px;height:54px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.tframe .play svg{width:20px;height:20px;fill:var(--gold);margin-left:3px}
+.tframe .lbl{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim)}
+.tmeta{padding:18px 20px}
+.tmeta .nm{font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink)}
+.tmeta .wp{font-size:13px;color:var(--charcoal);margin-top:3px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.step{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(24px,2.6vw,36px);transition:background .3s ease,color .3s ease}
+.step:hover{background:var(--ink)}
+.step:hover h3{color:#fff}.step:hover p,.step:hover .si{color:var(--bone-dim)}
+.step .si{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
+.step h3{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.9vw,23px);margin:0 0 8px;color:var(--ink)}
+.step p{font-size:14.5px;line-height:1.55;color:var(--charcoal);margin:0}
+
+/* covers table with clear hover */
+.cov{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.cov div{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:18px 22px;font-size:15px;color:var(--ink);transition:background .28s ease,color .28s ease}
+.cov div:hover{background:var(--ink);color:#fff}
+.cov div::before{content:"";display:inline-block;width:14px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+
+/* visual band */
+.band{position:relative;aspect-ratio:21/8;overflow:hidden;border:2px solid var(--ink)}
+.band img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.band .cap{position:absolute;left:0;bottom:0;right:0;padding:clamp(20px,3vw,36px);background:linear-gradient(to top,rgba(0,33,71,.85),transparent);color:#fff;font-family:var(--display);font-size:clamp(18px,2vw,26px);letter-spacing:-.02em}
+
+/* recommendation */
+.reccard{border:2px solid var(--ink);background:var(--paper);padding:clamp(26px,3vw,40px);max-width:44em}
+.reccard p{margin:0;font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:var(--charcoal)}
+
+/* form */
+.intake{max-width:640px;margin:0 auto}
+.intake .grp{margin-bottom:18px}
+.intake label{display:block;font-weight:600;font-size:14px;color:var(--ink);margin-bottom:8px}
+.intake input,.intake select{width:100%;padding:12px 14px;border:1px solid var(--line-on-paper);border-radius:4px;font-size:15px;font-family:var(--sans);background:#fff}
+.intake .opts{display:flex;flex-wrap:wrap;gap:10px}
+.intake .opts label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-on-paper);border-radius:4px;padding:10px 14px;font-size:14px;font-weight:400;cursor:pointer;margin:0;transition:border-color .2s,background .2s}
+.intake .opts label:hover{border-color:var(--gold-soft);background:var(--bone)}
+.intake .opts input{width:auto;margin:0}
+.intake .hint{font-size:12px;color:var(--charcoal);margin:4px 0 8px}
+#ck-ok{display:none;text-align:center;padding:40px 20px}
+#ck-ok .tick{width:60px;height:60px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--gold);font-size:26px}
+
+.btn-block{width:100%;justify-content:center}
+.on-ink{border-color:var(--line-on-ink);color:var(--bone)} .on-ink:hover{background:#fff;color:var(--ink)}
+
+@media(max-width:900px){
+  .chero-inner{grid-template-columns:1fr;gap:22px;text-align:center}
+  .chero .sub{margin-left:auto;margin-right:auto}
+  .chero-cta{justify-content:center}
+  .chero-cta .btn,.chero-cta .link-button{width:100%;justify-content:center}
+  .cphoto{max-width:360px;margin:0 auto;order:-1}
+  .head{margin-left:auto;margin-right:auto;text-align:center}.head p{margin-left:auto;margin-right:auto}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .steps,.cov{grid-template-columns:1fr 1fr}
+  .band{aspect-ratio:16/9}
+}
+@media(max-width:560px){
+  section{padding:clamp(46px,7vh,64px) 0}
+  .tgrid,.steps,.cov{grid-template-columns:1fr}
+  .chero h1{font-size:clamp(28px,8vw,40px)}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.aurora::before{animation:none}}
+</style>
 </head>
 <body>
-  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
+<header id="site-header"></header>
+<main>
 
-  <section class="hero text-center">
-    <div class="container"><div class="hero-grid centered"><div>
-      <span class="eyebrow center">AI Consultancy</span>
-      <h1>Clarity before strategy. Clarity before <em>implementation.</em></h1>
-      <p>For leaders who need clear answers about where AI fits, what risks need attention and what should happen next.</p>
-      <p class="note">Paid consultancy &middot; Sessions start from 30 minutes &middot; Pricing discussed privately.</p>
-      <div class="hero-cta">
-        <a href="#book" class="btn btn-primary">Book a Consultation</a>
-        <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20want%20to%20book%20an%20AI%20consultancy%20session.%20My%20name%20is%20%5BName%5D%20and%20I%20am%20from%20%5BCompany%2FOrganisation%5D.%20We%20need%20help%20with%20%5Bbrief%20issue%5D." target="_blank" rel="noopener" class="textlink">WhatsApp Randy <span class="ar">&rarr;</span></a>
+  <section class="ink aurora" style="padding-top:clamp(56px,8vh,96px)">
+    <div class="chero-inner">
+      <div class="reveal">
+        <p class="eyebrow-line">AI Consultancy</p>
+        <h1>Clarity before strategy.</h1>
+        <p class="sub">For leaders who need clear answers on where AI fits, what puts them at risk, and what to do next.</p>
+        <p class="note">Paid consultancy &middot; From 30 minutes &middot; Pricing discussed privately</p>
+        <div class="chero-cta">
+          <a href="#book" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v4M16 2v4M3 9h18M5 5h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+            <span>Book a Consultation</span>
+            <svg class="ar" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20want%20to%20book%20an%20AI%20consultancy%20session." target="_blank" rel="noopener" class="link-button on-ink">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
+            <span>WhatsApp Randy</span>
+          </a>
+        </div>
       </div>
-    </div></div></div>
+      <div class="cphoto reveal d1"><img src="/images/randy-about.jpg" alt="Randy Kimbi, AI consultant"></div>
+    </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">How it works</span><h2>Three simple <em>steps.</em></h2></div>
-      <div class="process three">
-        <div class="process-step"><div class="process-idx">Step 1</div><h3>Pre-consultation form</h3><p>Complete a short form so the session is focused from the first minute.</p></div>
-        <div class="process-step"><div class="process-idx">Step 2</div><h3>Meet with Randy</h3><p>A focused paid consultation on your specific situation.</p></div>
-        <div class="process-step"><div class="process-idx">Step 3</div><h3>Written recommendation</h3><p>A concise written recommendation afterward.</p></div>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">In their words</p>
+        <h2>What leaders say</h2>
+        <p>Video testimonials from the organisations I work with.</p>
+      </div>
+      <div class="tgrid">
+        <div class="tcard reveal">
+          <!-- To embed: replace this .tframe with <div class="tframe"><iframe ...></iframe></div> -->
+          <div class="tframe"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="lbl">Video testimonial</span></div>
+          <div class="tmeta"><div class="nm">Name</div><div class="wp">Role &middot; Organisation</div></div>
+        </div>
+        <div class="tcard reveal d1">
+          <div class="tframe"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="lbl">Video testimonial</span></div>
+          <div class="tmeta"><div class="nm">Name</div><div class="wp">Role &middot; Organisation</div></div>
+        </div>
+        <div class="tcard reveal d2">
+          <div class="tframe"><span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="lbl">Video testimonial</span></div>
+          <div class="tmeta"><div class="nm">Name</div><div class="wp">Role &middot; Organisation</div></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">What it covers</span><h2>Focused on your <em>real situation.</em></h2></div>
-      <div class="cov">
-        <div>AI readiness and risk</div><div>Where AI can create value</div><div>Agentic AI opportunities</div><div>Automation opportunities</div><div>Security</div><div>Governance</div><div>Department-specific needs</div><div>Training needs</div><div>Clear next steps</div>
+  <section class="bone">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">How it works</p>
+        <h2>Three simple steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><p class="si">Step 1</p><h3>Pre-consultation form</h3><p>A short form so the session is focused from the first minute.</p></div>
+        <div class="step reveal d1"><p class="si">Step 2</p><h3>Meet with Randy</h3><p>A focused paid consultation on your specific situation.</p></div>
+        <div class="step reveal d2"><p class="si">Step 3</p><h3>Written recommendation</h3><p>A concise written recommendation afterwards.</p></div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Afterward</span><h2>Your written <em>recommendation.</em></h2></div>
-      <div class="card"><p style="margin:0">After the session you receive a concise written recommendation covering the main issue discussed, the key risks identified, immediate AI opportunities, the recommended next action, whether training, implementation or deeper strategy work is needed, and the priority areas to address first.</p></div>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">What it covers</p>
+        <h2>Focused on your real situation</h2>
+      </div>
+      <div class="cov reveal">
+        <div>AI readiness &amp; risk</div><div>Where AI creates value</div><div>Agentic AI opportunities</div>
+        <div>Automation opportunities</div><div>Security</div><div>Governance</div>
+        <div>Department-specific needs</div><div>Training needs</div><div>Clear next steps</div>
+      </div>
     </div>
   </section>
 
-  <section class="alternate" id="book">
-    <div class="container">
-      <div class="sec-head center"><span class="eyebrow center">Book</span><h2>Pre-consultation <em>form.</em></h2><p>Two to three minutes. It makes your session sharper.</p></div>
-      <form class="intake form-wrap" id="ck-form" onsubmit="return ckSubmit(event)">
+  <section class="bone">
+    <div class="wrap reveal">
+      <div class="band"><img src="/images/randy-session.jpg" alt="Randy Kimbi advising a team"><div class="cap">Working directly with your leadership and teams.</div></div>
+    </div>
+  </section>
+
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">Afterwards</p>
+        <h2>Your written recommendation</h2>
+      </div>
+      <div class="reccard reveal"><p>After the session you receive a concise written recommendation: the main issue discussed, the key risks identified, immediate AI opportunities, the recommended next action, whether training or implementation is needed, and the priorities to address first.</p></div>
+    </div>
+  </section>
+
+  <section class="ink aurora" id="book">
+    <div class="wrap">
+      <div class="head reveal" style="max-width:26em">
+        <p class="eyebrow-line">Book</p>
+        <h2>Pre-consultation form</h2>
+        <p>Two to three minutes. It makes your session sharper.</p>
+      </div>
+      <form class="intake reveal" id="ck-form" onsubmit="return ckSubmit(event)">
         <div class="grp"><label>Your name and position</label><input name="name" required></div>
         <div class="grp"><label>Company or organisation</label><input name="org" required></div>
         <div class="grp"><label>Main issue you want help with</label><input name="issue" required></div>
@@ -79,7 +219,7 @@
           <label><input type="radio" name="current" value="Not using AI yet" required> Not using AI yet</label><label><input type="radio" name="current" value="A few employees use AI tools" required> A few employees use AI tools</label><label><input type="radio" name="current" value="AI is used in some departments" required> AI is used in some departments</label><label><input type="radio" name="current" value="AI is already part of our operations" required> AI is already part of our operations</label><label><input type="radio" name="current" value="Not sure what employees are using" required> Not sure what employees are using</label>
         </div></div>
         <div class="grp"><label>What concerns you most? (up to two)</label><div class="opts" data-max="2">
-          <label><input type="checkbox" name="concerns" value="Data privacy / confidential information"> Data privacy / confidential information</label><label><input type="checkbox" name="concerns" value="Security"> Security</label><label><input type="checkbox" name="concerns" value="Employees using AI incorrectly"> Employees using AI incorrectly</label><label><input type="checkbox" name="concerns" value="Wrong / unreliable AI output"> Wrong / unreliable AI output</label><label><input type="checkbox" name="concerns" value="Governance / compliance"> Governance / compliance</label><label><input type="checkbox" name="concerns" value="Cost"> Cost</label><label><input type="checkbox" name="concerns" value="Where AI can create value"> Where AI can create value</label><label><input type="checkbox" name="concerns" value="No major concern yet"> No major concern yet</label>
+          <label><input type="checkbox" name="concerns" value="Data privacy"> Data privacy</label><label><input type="checkbox" name="concerns" value="Security"> Security</label><label><input type="checkbox" name="concerns" value="Employees using AI incorrectly"> Employees using AI incorrectly</label><label><input type="checkbox" name="concerns" value="Unreliable AI output"> Unreliable AI output</label><label><input type="checkbox" name="concerns" value="Governance / compliance"> Governance / compliance</label><label><input type="checkbox" name="concerns" value="Cost"> Cost</label><label><input type="checkbox" name="concerns" value="Where AI can create value"> Where AI can create value</label><label><input type="checkbox" name="concerns" value="No major concern yet"> No major concern yet</label>
         </div></div>
         <div class="grp"><label>Which area needs attention first?</label><select name="area"><option>Executive leadership</option><option>Operations</option><option>Sales</option><option>Marketing</option><option>Finance</option><option>Human Resources</option><option>Customer Service</option><option>Administration</option><option>Multiple departments</option><option>Not sure</option></select></div>
         <div class="grp"><label>Do you handle sensitive / confidential information?</label><div class="opts">
@@ -88,42 +228,53 @@
         <div class="grp"><label>What would make this consultation valuable to you?</label><input name="value"></div>
         <div class="grp"><label>Email</label><input name="email" type="email" required></div>
         <div class="grp"><label>WhatsApp number</label><input name="whatsapp" required></div>
-        <button type="submit" class="btn btn-primary" style="width:100%">Send &amp; Continue on WhatsApp</button>
-        <p class="hint" style="margin-top:12px">On submit, your answers open a pre-filled WhatsApp message to Randy so nothing is lost.</p>
+        <button type="submit" class="btn btn-primary btn-block">Send &amp; Continue on WhatsApp</button>
+        <p class="hint" style="margin-top:12px;color:var(--bone-dim)">On submit, your answers open a pre-filled WhatsApp message to Randy so nothing is lost.</p>
       </form>
-      <div id="ck-ok"><div class="tick">&#10003;</div><h2 style="margin-bottom:10px">Thank you</h2><p style="color:var(--charcoal-dim)">Your details are ready in WhatsApp. Send the message to confirm your consultation request.</p></div>
+      <div id="ck-ok"><div class="tick">&#10003;</div><h2 style="margin-bottom:10px;color:#fff">Thank you</h2><p style="color:var(--bone-dim)">Your details are ready in WhatsApp. Send the message to confirm your consultation request.</p></div>
     </div>
   </section>
 
-  <footer></footer>
-  <script src="/js/app.js"></script>
-  <script>
-    function ckSubmit(e){
-      e.preventDefault();
-      var f=e.target, g=function(n){return (f.querySelector('[name="'+n+'"]')||{}).value||'';};
-      var multi=function(n){return [].slice.call(f.querySelectorAll('[name="'+n+'"]:checked')).map(function(x){return x.value;}).join(', ');};
-      var t='AI Consultancy request%0A%0A';
-      t+='Name/Position: '+g('name')+'%0A';
-      t+='Organisation: '+g('org')+'%0A';
-      t+='Main issue: '+g('issue')+'%0A';
-      t+='Goals: '+multi('goals')+'%0A';
-      t+='Current AI use: '+g('current')+'%0A';
-      t+='Concerns: '+multi('concerns')+'%0A';
-      t+='Area first: '+g('area')+'%0A';
-      t+='Sensitive data: '+g('sensitive')+'%0A';
-      t+='Value wanted: '+g('value')+'%0A';
-      t+='Email: '+g('email')+'%0A';
-      t+='WhatsApp: '+g('whatsapp');
-      window.open('https://wa.me/237671283217?text='+encodeURIComponent(decodeURIComponent(t)),'_blank');
-      f.style.display='none'; document.getElementById('ck-ok').style.display='block';
-      window.scrollTo({top:document.getElementById('book').offsetTop-40,behavior:'smooth'});
-      return false;
-    }
-    document.addEventListener('change',function(e){
-      var box=e.target.closest('.opts[data-max]'); if(!box||e.target.type!=='checkbox')return;
-      var max=+box.getAttribute('data-max'); var ch=box.querySelectorAll('input:checked');
-      if(ch.length>max) e.target.checked=false;
-    });
-  </script>
+</main>
+<footer id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script>
+function ckSubmit(e){
+  e.preventDefault();
+  var f=e.target, g=function(n){return (f.querySelector('[name="'+n+'"]')||{}).value||'';};
+  var multi=function(n){return [].slice.call(f.querySelectorAll('[name="'+n+'"]:checked')).map(function(x){return x.value;}).join(', ');};
+  var t='AI Consultancy request%0A%0A';
+  t+='Name/Position: '+g('name')+'%0A';
+  t+='Organisation: '+g('org')+'%0A';
+  t+='Main issue: '+g('issue')+'%0A';
+  t+='Goals: '+multi('goals')+'%0A';
+  t+='Current AI use: '+g('current')+'%0A';
+  t+='Concerns: '+multi('concerns')+'%0A';
+  t+='Area first: '+g('area')+'%0A';
+  t+='Sensitive data: '+g('sensitive')+'%0A';
+  t+='Value wanted: '+g('value')+'%0A';
+  t+='Email: '+g('email')+'%0A';
+  t+='WhatsApp: '+g('whatsapp');
+  window.open('https://wa.me/237671283217?text='+encodeURIComponent(decodeURIComponent(t)),'_blank');
+  f.style.display='none'; document.getElementById('ck-ok').style.display='block';
+  var b=document.getElementById('book'); window.scrollTo({top:b.offsetTop-40,behavior:'smooth'});
+  return false;
+}
+document.addEventListener('change',function(e){
+  var box=e.target.closest('.opts[data-max]'); if(!box||e.target.type!=='checkbox')return;
+  var max=+box.getAttribute('data-max'); var ch=box.querySelectorAll('input:checked');
+  if(ch.length>max) e.target.checked=false;
+});
+(function(){
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revs=document.querySelectorAll('.reveal');
+  if(rm){revs.forEach(function(e){e.classList.add('in');});return;}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.14,rootMargin:'0px 0px -8% 0px'});
+    revs.forEach(function(e){io.observe(e);});
+    setTimeout(function(){revs.forEach(function(e){e.classList.add('in');});},2600);
+  } else { revs.forEach(function(e){e.classList.add('in');}); }
+})();
+</script>
 </body>
 </html>

@@ -4,223 +4,293 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Randy Kimbi — AI Consultant, Corporate AI Trainer & Software Engineer</title>
-<meta name="description" content="I help business owners, boards and institutional leaders use AI to protect and grow their organisations. AI consultancy, corporate AI training and AI agents & automation.">
+<meta name="description" content="I help business owners, boards and institutional leaders put AI to work safely — AI consultancy, corporate AI training and AI agents & automation.">
 <link rel="stylesheet" href="/css/main.css">
 <style>
-.rk-hero{background:var(--ink);color:var(--bone);overflow:hidden}
-.rk-hero-inner{max-width:1200px;margin:0 auto;padding:clamp(40px,6vh,80px) clamp(20px,5vw,64px) 0;display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,4vw,56px);align-items:stretch}
-.rk-eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 22px}
-.rk-hero-h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,4.6vw,60px);line-height:1.04;letter-spacing:-.028em;margin:0;color:#fff}
-.rk-hero-punch{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(24px,3vw,40px);color:var(--gold);margin:18px 0 0;letter-spacing:-.02em}
-.rk-hero-sub{font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:var(--bone-dim);max-width:34em;margin:26px 0 0}
-.rk-hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin:34px 0 clamp(48px,8vh,80px)}
-.rk-hero-photo{position:relative;align-self:stretch;display:flex;align-items:flex-end;min-height:340px}
-.rk-hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
-.rk-hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,var(--ink) 0%,transparent 12%,transparent 88%,var(--ink) 100%),linear-gradient(to top,var(--ink) 0%,transparent 22%)}
-.rk-wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
-section{padding:clamp(56px,10vh,120px) 0}
-.rk-sectors{background:var(--paper)}
+:root{--maxw:1180px}
+*{box-sizing:border-box}
+section{padding:clamp(64px,11vh,132px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px)}
+.ink{background:var(--ink);color:var(--bone)}
+.ink h2,.ink h3{color:#fff}
+.paper{background:var(--paper)}
+.bone{background:var(--bone)}
+
+/* ---- animated aurora background for dark sections ---- */
+.aurora::before{content:"";position:absolute;inset:-25% -15%;z-index:0;pointer-events:none;
+  background:radial-gradient(38% 42% at 18% 28%,rgba(212,175,55,.12),transparent 68%),
+             radial-gradient(34% 40% at 82% 72%,rgba(74,108,140,.20),transparent 70%);
+  filter:blur(26px);animation:drift 20s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.09)}}
+.aurora>.wrap{position:relative;z-index:1}
+
+/* ---- scroll reveal ---- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.16,.8,.24,1),transform .8s cubic-bezier(.16,.8,.24,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}
+
+/* ---- shared heads (aligned) ---- */
+.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 18px}
+.ink .eyebrow-line{color:var(--gold)}
+.head{max-width:20em;margin:0 0 clamp(38px,6vh,64px)}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.04;letter-spacing:-.03em;margin:0}
+.head p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:14px 0 0;max-width:30em}
+.ink .head p{color:var(--bone-dim)}
+
+/* ---- HERO ---- */
+.hero{padding-top:0;padding-bottom:0}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:clamp(40px,6vh,84px) clamp(22px,5vw,60px) 0;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,54px);align-items:stretch}
+.hero-copy{align-self:center}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.03em;margin:0;color:#fff}
+.hero .punch{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(22px,2.6vw,34px);color:var(--gold);margin:16px 0 0;letter-spacing:-.02em}
+.hero .sub{font-size:clamp(16px,1.25vw,18.5px);line-height:1.65;color:var(--bone-dim);max-width:28em;margin:22px 0 0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 clamp(44px,7vh,72px)}
+.hero-photo{position:relative;align-self:end;display:flex;align-items:flex-end;min-height:360px;z-index:1}
+.hero-photo::before{content:"";position:absolute;left:50%;top:44%;width:78%;height:78%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(212,175,55,.22),transparent 62%);filter:blur(30px);z-index:-1;
+  animation:glow 7s ease-in-out infinite alternate}
+@keyframes glow{0%{opacity:.55;transform:translate(-50%,-50%) scale(.96)}100%{opacity:.95;transform:translate(-50%,-50%) scale(1.06)}}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to right,var(--ink) 0%,transparent 10%,transparent 90%,var(--ink) 100%),linear-gradient(to top,var(--ink) 1%,transparent 26%)}
+
+/* ---- SECTORS ---- */
 .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
-.sector-cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(28px,3vw,44px)}
-.sector-cell .sc-acc{display:block;width:44px;height:4px;margin-bottom:20px}
-.sector-cell h3{font-family:var(--display);font-weight:600;font-size:clamp(21px,2vw,26px);letter-spacing:-.02em;margin:0 0 10px;color:var(--ink)}
-.sector-cell p{font-size:16px;line-height:1.6;color:var(--charcoal);margin:0}
-.rk-mandate{background:var(--ink);color:var(--bone)}
-.rk-mandate h2,.rk-approach h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-.03em;max-width:16em;margin:0 0 24px;color:#fff}
-.rk-mandate p{font-size:clamp(18px,1.4vw,21px);line-height:1.7;color:var(--bone-dim);max-width:44em;margin:0}
-.rk-approach{background:var(--bone)}
-.rk-approach h2{color:var(--ink)}
-.rk-approach p{font-size:clamp(18px,1.4vw,21px);line-height:1.7;color:var(--charcoal);max-width:44em;margin:0}
-.sec-head{max-width:34em;margin-bottom:clamp(40px,6vh,72px)}
-.sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.03em;margin:0 0 14px;color:var(--ink)}
-.sec-head p{font-size:clamp(17px,1.3vw,19px);line-height:1.6;color:var(--charcoal);margin:0}
-.sec-head-light h2{color:#fff}.sec-head-light p{color:var(--bone-dim)}
-.rk-challenge{background:var(--paper)}
+.sector-cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(24px,2.6vw,38px);transition:background .35s ease}
+.sector-cell:hover{background:rgba(0,33,71,.04)}
+.sector-cell .acc{display:block;width:40px;height:4px;margin-bottom:16px;border-radius:2px}
+.sector-cell h3{font-family:var(--display);font-weight:600;font-size:clamp(19px,1.8vw,24px);letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
+.sector-cell p{font-size:14.5px;line-height:1.5;color:var(--charcoal);margin:0}
+
+/* ---- STATEMENT (mandate / approach) ---- */
+.statement h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4.2vw,48px);line-height:1.06;letter-spacing:-.03em;margin:0 0 20px;max-width:15em}
+.statement p{font-size:clamp(17px,1.4vw,21px);line-height:1.62;margin:0;max-width:40em}
+.paper.statement p{color:var(--charcoal)}
+.ink.statement p{color:var(--bone-dim)}
+
+/* ---- CHALLENGE ---- */
 .ch-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
-.ch-cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(26px,2.8vw,40px)}
-.ch-cell h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
-.ch-cell p{font-size:16px;line-height:1.65;color:var(--charcoal);margin:0}
-.rk-proof{background:var(--ink);color:var(--bone)}
+.ch-cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(22px,2.4vw,34px)}
+.ch-cell .k{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
+.ch-cell p{font-size:15px;line-height:1.5;color:var(--charcoal);margin:0}
+
+/* ---- PROOF ---- */
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.proof-cell{padding:clamp(20px,2.4vw,40px);border-left:2px solid rgba(212,175,55,.35)}
+.proof-cell{padding:clamp(18px,2.2vw,36px);border-left:2px solid rgba(212,175,55,.32)}
 .proof-cell:first-child{border-left:none;padding-left:0}
-.proof-n{font-family:var(--display);font-weight:500;font-size:clamp(64px,9vw,116px);line-height:1;letter-spacing:-.04em;color:var(--gold);margin:0 0 16px}
-.proof-cell p{font-size:16px;line-height:1.6;color:var(--bone-dim);margin:0 0 12px}
-.proof-src{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
-.rk-services{background:var(--bone)}
+.proof-n{font-family:var(--display);font-weight:500;font-size:clamp(62px,8.5vw,108px);line-height:1;letter-spacing:-.04em;color:var(--gold);margin:0 0 14px}
+.proof-cell p{font-size:15px;line-height:1.5;color:var(--bone-dim);margin:0 0 10px}
+.proof-cell .src{font-family:var(--sans);font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
+
+/* ---- SERVICES ---- */
 .svc-rows{border-top:2px solid var(--ink)}
-.svc-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(20px,3vw,48px);padding:clamp(30px,4vw,52px) 0;border-bottom:2px solid var(--ink);text-decoration:none;transition:padding-left .3s ease,background .3s ease}
-.svc-row:hover{padding-left:18px;background:rgba(0,33,71,.03)}
-.svc-num{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,48px);color:var(--gold-soft);letter-spacing:-.02em}
-.svc-body h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.02em;margin:0 0 8px;color:var(--ink)}
-.svc-body p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:0;max-width:42em}
-.svc-ar{width:30px;height:30px;stroke:var(--ink);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none;transition:transform .3s ease}
+.svc-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(18px,3vw,44px);
+  padding:clamp(26px,3.4vw,46px) 0;border-bottom:2px solid var(--ink);text-decoration:none;transition:padding-left .35s ease,background .35s ease}
+.svc-row:hover{padding-left:16px;background:rgba(0,33,71,.03)}
+.svc-num{font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,42px);color:var(--gold-soft);letter-spacing:-.02em}
+.svc-body h3{font-family:var(--display);font-weight:600;font-size:clamp(21px,2.4vw,30px);letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
+.svc-body p{font-size:clamp(15px,1.15vw,17px);line-height:1.5;color:var(--charcoal);margin:0;max-width:40em}
+.svc-ar{width:28px;height:28px;stroke:var(--ink);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none;transition:transform .35s ease}
 .svc-row:hover .svc-ar{transform:translateX(6px)}
-.rk-cta{background:var(--ink);color:var(--bone);text-align:center}
-.rk-cta h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-.03em;margin:0 0 18px;color:#fff}
-.rk-cta p{font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:var(--bone-dim);max-width:36em;margin:0 auto 34px}
-.rk-cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-.link-on-ink{border-color:var(--line-on-ink);color:var(--bone)}
-.link-on-ink:hover{background:#fff;color:var(--ink)}
-@media(max-width:900px){.rk-hero-inner{grid-template-columns:1fr;padding:clamp(24px,5vh,52px) 20px 0;gap:22px}.rk-hero-copy{order:2}.rk-hero-photo{order:1;min-height:0;margin:0}.rk-hero-photo img{height:auto;max-height:58vh;width:100%;object-position:top center}.rk-hero-photo::after{background:linear-gradient(to top,var(--ink) 1%,transparent 42%),linear-gradient(to right,var(--ink) 0%,transparent 9%,transparent 91%,var(--ink) 100%)}.rk-hero-h1{font-size:clamp(30px,8.2vw,46px)}.rk-hero-punch{font-size:clamp(21px,6vw,30px)}.rk-hero-sub{margin-top:20px}.rk-hero-cta{gap:12px}.rk-hero-cta .btn,.rk-hero-cta .link-button{width:100%;justify-content:center}.sectors-grid,.ch-grid{grid-template-columns:1fr 1fr}.proof-grid{grid-template-columns:1fr;gap:0}.proof-cell{border-left:none;border-top:2px solid rgba(212,175,55,.35);padding-left:0}.proof-cell:first-child{border-top:none}.svc-row{grid-template-columns:auto 1fr;gap:16px}.svc-ar{display:none}}
-@media(max-width:560px){.sectors-grid,.ch-grid{grid-template-columns:1fr}section{padding:clamp(44px,7vh,66px) 0}.rk-hero-photo img{max-height:52vh}.proof-n{font-size:clamp(56px,17vw,88px)}.rk-cta-btns .btn,.rk-cta-btns .link-button{width:100%;justify-content:center}}
+
+/* ---- CTA ---- */
+.cta{text-align:center}
+.cta h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4.2vw,50px);line-height:1.05;letter-spacing:-.03em;margin:0 0 16px;color:#fff}
+.cta p{font-size:clamp(16px,1.25vw,18.5px);line-height:1.6;color:var(--bone-dim);max-width:32em;margin:0 auto 30px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.on-ink{border-color:var(--line-on-ink);color:var(--bone)}
+.on-ink:hover{background:#fff;color:var(--ink)}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding:clamp(22px,4vh,44px) 22px 0;gap:20px}
+  .hero-copy{order:2;text-align:center}
+  .hero-photo{order:1;min-height:0;margin:0;justify-content:center}
+  .hero-photo img{height:auto;max-height:54vh;width:auto;max-width:100%}
+  .hero-photo::after{background:linear-gradient(to top,var(--ink) 1%,transparent 46%)}
+  .hero .sub{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center;gap:12px}
+  .hero-cta .btn,.hero-cta .link-button{width:100%;justify-content:center}
+  .head{margin-left:auto;margin-right:auto;text-align:center}
+  .head p{margin-left:auto;margin-right:auto}
+  .statement h2{max-width:none}
+  .sectors-grid,.ch-grid{grid-template-columns:1fr 1fr}
+  .proof-grid{grid-template-columns:1fr}
+  .proof-cell{border-left:none;border-top:2px solid rgba(212,175,55,.3);padding:22px 0}
+  .proof-cell:first-child{border-top:none;padding-top:0}
+  .svc-row{grid-template-columns:auto 1fr;gap:16px}
+  .svc-ar{display:none}
+}
+@media(max-width:560px){
+  section{padding:clamp(48px,8vh,72px) 0}
+  .sectors-grid,.ch-grid{grid-template-columns:1fr}
+  .proof-n{font-size:clamp(54px,17vw,86px)}
+  .cta-btns .btn,.cta-btns .link-button{width:100%;justify-content:center}
+  .head h2{font-size:clamp(26px,7.6vw,34px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .aurora::before,.hero-photo::before{animation:none}
+}
 </style>
 </head>
 <body>
 <header id="site-header"></header>
 <main>
-  <section class="rk-hero">
-    <div class="rk-hero-inner">
-      <div class="rk-hero-copy">
-        <p class="rk-eyebrow">AI Consultant &nbsp;·&nbsp; Corporate AI Trainer &nbsp;·&nbsp; Software Engineer</p>
-        <h1 class="rk-hero-h1">AI is moving faster than most businesses can adapt. The advantage belongs to those who learn how to move with it.</h1>
-        <p class="rk-hero-punch">What are you doing about it?</p>
-        <p class="rk-hero-sub">I help business owners, boards and institutional leaders put AI to work safely — protecting what you have built and creating a real advantage over those who wait.</p>
-        <div class="rk-hero-cta">
+
+  <section class="hero ink aurora">
+    <div class="hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow-line">AI Consultant &nbsp;·&nbsp; Corporate AI Trainer &nbsp;·&nbsp; Software Engineer</p>
+        <h1>AI is moving faster than most businesses can adapt.</h1>
+        <p class="punch">What are you doing about it?</p>
+        <p class="sub">The advantage belongs to those who learn to move with it. I help leaders put AI to work — safely.</p>
+        <div class="hero-cta">
           <a href="/assessment/" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg>
             <span>Free AI Risk Assessment</span>
             <svg class="ar" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="/contact/" class="link-button link-on-ink">
+          <a href="/contact/" class="link-button on-ink">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
             <span>Talk With Me</span>
           </a>
         </div>
       </div>
-      <div class="rk-hero-photo">
+      <div class="hero-photo reveal d1">
         <img src="/images/randy-hero.jpg" alt="Randy Kimbi, AI consultant and corporate AI trainer" loading="eager">
       </div>
     </div>
   </section>
 
-  <section class="rk-sectors">
-    <div class="rk-wrap">
-      <div class="sec-head">
-        <h2>Advising leaders on AI across the sectors that carry the most risk</h2>
-        <p>Built for the people responsible for results — where a wrong move with AI is expensive and a right one changes everything.</p>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">Who I work with</p>
+        <h2>Advising leaders where AI carries the most risk</h2>
       </div>
       <div class="sectors-grid">
-        <div class="sector-cell"><span class="sc-acc" style="background:#4A6C8C"></span><h3>Business & Enterprise</h3><p>Founders, CEOs and directors who need AI to protect margins and outpace competitors.</p></div>
-        <div class="sector-cell"><span class="sc-acc" style="background:#7B3B45"></span><h3>Government & Public Sector</h3><p>Institutions adopting AI under real accountability, scrutiny and public trust.</p></div>
-        <div class="sector-cell"><span class="sc-acc" style="background:#2E6E6A"></span><h3>Education & Institutions</h3><p>Leaders preparing staff and systems for AI without losing standards.</p></div>
-        <div class="sector-cell"><span class="sc-acc" style="background:#3E5C76"></span><h3>Banking & Finance</h3><p>Where AI, data and security decisions carry direct financial and regulatory weight.</p></div>
-        <div class="sector-cell"><span class="sc-acc" style="background:#B08D4F"></span><h3>Multinationals</h3><p>Organisations standardising how AI is used safely across teams and borders.</p></div>
-        <div class="sector-cell"><span class="sc-acc" style="background:#6B7250"></span><h3>Service & Professional Firms</h3><p>Firms whose people already use AI daily — often without a plan behind it.</p></div>
+        <div class="sector-cell reveal"><span class="acc" style="background:#4A6C8C"></span><h3>Business & Enterprise</h3><p>Founders, CEOs and directors.</p></div>
+        <div class="sector-cell reveal d1"><span class="acc" style="background:#7B3B45"></span><h3>Government</h3><p>Public bodies under scrutiny.</p></div>
+        <div class="sector-cell reveal d2"><span class="acc" style="background:#2E6E6A"></span><h3>Education</h3><p>Institutions modernising safely.</p></div>
+        <div class="sector-cell reveal"><span class="acc" style="background:#3E5C76"></span><h3>Banking & Finance</h3><p>Where AI risk is financial.</p></div>
+        <div class="sector-cell reveal d1"><span class="acc" style="background:#B08D4F"></span><h3>Multinationals</h3><p>Aligned across markets.</p></div>
+        <div class="sector-cell reveal d2"><span class="acc" style="background:#6B7250"></span><h3>Service Firms</h3><p>Teams already using AI.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="rk-mandate">
-    <div class="rk-wrap">
-      <h2>AI is already a requirement to win in your industry.</h2>
-      <p>The question is no longer whether your organisation uses AI. Your people already do. The real question is whether they use it safely, whether it is making you money or quietly creating risk, and whether you are ahead of the businesses you compete with — or behind them.</p>
+  <section class="ink statement aurora">
+    <div class="wrap reveal">
+      <h2>AI is already how your industry wins.</h2>
+      <p>Your people already use it. The only questions are whether they use it safely — and whether it's making you money or quietly creating risk.</p>
     </div>
   </section>
 
-  <section class="rk-challenge">
-    <div class="rk-wrap">
-      <div class="sec-head">
-        <h2>Where AI can cost you money or put your business at risk</h2>
-        <p>Most organisations adopt AI by accident, one employee at a time. That is exactly where the danger sits.</p>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">The real exposure</p>
+        <h2>Where AI can cost you or expose you</h2>
       </div>
       <div class="ch-grid">
-        <div class="ch-cell"><h3>Security</h3><p>Staff paste sensitive data into public AI tools every day. One leak can be irreversible.</p></div>
-        <div class="ch-cell"><h3>Profit</h3><p>Competitors using AI well move faster and cheaper. Standing still is a decision with a price.</p></div>
-        <div class="ch-cell"><h3>Efficiency</h3><p>AI is bought as a gadget, not a system — so it never actually reduces cost or effort.</p></div>
-        <div class="ch-cell"><h3>Delivery</h3><p>Tools are introduced with no training, so adoption stalls and money is wasted.</p></div>
-        <div class="ch-cell"><h3>Governance</h3><p>No rules, no oversight, no accountability for how AI is used across your teams.</p></div>
+        <div class="ch-cell reveal"><p class="k">Security</p><p>Staff paste sensitive data into public AI.</p></div>
+        <div class="ch-cell reveal d1"><p class="k">Profit</p><p>Competitors move faster and cheaper.</p></div>
+        <div class="ch-cell reveal d2"><p class="k">Efficiency</p><p>Tools bought, never turned into systems.</p></div>
+        <div class="ch-cell reveal"><p class="k">Delivery</p><p>No training, so adoption stalls.</p></div>
+        <div class="ch-cell reveal d1"><p class="k">Governance</p><p>No rules. No oversight. No accountability.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="rk-approach">
-    <div class="rk-wrap">
-      <h2>Buying AI tools is the easy part.</h2>
-      <p>Any business can subscribe to the latest platform. The advantage comes from knowing where AI belongs in your organisation, where it does not, and how your people use it without exposing you. That is the work I do with you — clarity first, then a strategy your team can actually run.</p>
+  <section class="bone statement">
+    <div class="wrap reveal">
+      <h2>Buying the tools is the easy part.</h2>
+      <p>The advantage is knowing where AI belongs, where it doesn't, and how your team uses it without exposing you.</p>
     </div>
   </section>
 
-  <section class="rk-proof">
-    <div class="rk-wrap">
-      <div class="sec-head sec-head-light">
+  <section class="ink aurora">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">Why it matters</p>
         <h2>What changes when you get AI right</h2>
-        <p>The gap between organisations that use AI well and those that don't is widening — and it shows up in the numbers.</p>
       </div>
       <div class="proof-grid">
-        <div class="proof-cell">
-          <div class="proof-n" data-target="82">82%</div>
-          <p>of leaders at billion-dollar companies say AI will reshape the competitive landscape of their industry within 24 months.</p>
-          <span class="proof-src">Source: KPMG</span>
-        </div>
-        <div class="proof-cell">
-          <div class="proof-n" data-target="23">23%</div>
-          <p>of African CEOs reported revenue increases associated with AI.</p>
-          <span class="proof-src">Source: PwC Africa</span>
-        </div>
-        <div class="proof-cell">
-          <div class="proof-n" data-target="25">25%</div>
-          <p>reported cost reductions associated with AI. External research — not client results.</p>
-          <span class="proof-src">Source: PwC Africa</span>
-        </div>
+        <div class="proof-cell reveal"><div class="proof-n" data-target="82">82%</div><p>of large-company leaders say AI will reshape their industry within 24 months.</p><span class="src">Source: KPMG</span></div>
+        <div class="proof-cell reveal d1"><div class="proof-n" data-target="23">23%</div><p>of African CEOs saw revenue gains linked to AI.</p><span class="src">Source: PwC</span></div>
+        <div class="proof-cell reveal d2"><div class="proof-n" data-target="25">25%</div><p>reported cost reductions from AI. External research — not client results.</p><span class="src">Source: PwC</span></div>
       </div>
     </div>
   </section>
 
-  <section class="rk-services">
-    <div class="rk-wrap">
-      <div class="sec-head">
-        <h2>How I can help you</h2>
-        <p>Three ways to put AI to work in your organisation — safely, and with a plan behind it.</p>
+  <section class="bone">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow-line">How I can help</p>
+        <h2>Three ways to put AI to work</h2>
       </div>
       <div class="svc-rows">
-        <a href="/services/consultancy/" class="svc-row">
+        <a href="/services/consultancy/" class="svc-row reveal">
           <span class="svc-num">01</span>
-          <div class="svc-body"><h3>AI Consultancy</h3><p>Clarity before strategy. We work out where AI belongs in your organisation, where it doesn't, and what to do first — ending with a written recommendation you can act on.</p></div>
+          <div class="svc-body"><h3>AI Consultancy</h3><p>Clarity first — where AI belongs, and what to do next.</p></div>
           <svg class="svc-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="/services/training/" class="svc-row">
+        <a href="/services/training/" class="svc-row reveal d1">
           <span class="svc-num">02</span>
-          <div class="svc-body"><h3>Corporate AI Training</h3><p>Executive and team programmes that teach your people to use AI safely and effectively — no coding required, built around how your organisation actually works.</p></div>
+          <div class="svc-body"><h3>Corporate AI Training</h3><p>Teach your people to use AI safely. No coding required.</p></div>
           <svg class="svc-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="/services/ai-agents-automation/" class="svc-row">
+        <a href="/services/ai-agents-automation/" class="svc-row reveal d2">
           <span class="svc-num">03</span>
-          <div class="svc-body"><h3>AI Agents & Automation</h3><p>Custom AI systems that take repetitive work off your team — with human review built in, so you gain speed without losing control.</p></div>
+          <div class="svc-body"><h3>AI Agents & Automation</h3><p>Systems that take repetitive work off your team.</p></div>
           <svg class="svc-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="rk-cta">
-    <div class="rk-wrap">
-      <h2>You do not need to know where to start.</h2>
-      <p>That is exactly what the assessment is for. Answer a few honest questions and see where your organisation stands on AI — in a few minutes, at no cost.</p>
-      <div class="rk-cta-btns">
+  <section class="ink cta aurora">
+    <div class="wrap reveal">
+      <h2>Not sure where to start?</h2>
+      <p>Take the free AI Risk Assessment. A few honest questions, a clear picture of where you stand.</p>
+      <div class="cta-btns">
         <a href="/assessment/" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg>
           <span>Free AI Risk Assessment</span>
           <svg class="ar" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="/contact/" class="link-button link-on-ink">
+        <a href="/contact/" class="link-button on-ink">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
           <span>Talk With Me</span>
         </a>
       </div>
     </div>
   </section>
+
 </main>
 <footer id="site-footer"></footer>
 <script src="/js/app.js"></script>
 <script>
 (function(){
-  function animate(el){ var t=parseInt(el.getAttribute('data-target'),10),s=el.textContent.replace(/[0-9]/g,'')||'%',st=null,d=1400;
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revs=document.querySelectorAll('.reveal');
+  if(rm){ revs.forEach(function(e){e.classList.add('in');}); }
+  else if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });},{threshold:0.15,rootMargin:'0px 0px -8% 0px'});
+    revs.forEach(function(e){io.observe(e);});
+    setTimeout(function(){revs.forEach(function(e){e.classList.add('in');});},2600);
+  } else { revs.forEach(function(e){e.classList.add('in');}); }
+
+  function animate(el){ var t=parseInt(el.getAttribute('data-target'),10),s='%',st=null,d=1400;
     function step(ts){ if(!st)st=ts; var p=Math.min((ts-st)/d,1); el.textContent=Math.round((0.5-Math.cos(p*Math.PI)/2)*t)+s; if(p<1)requestAnimationFrame(step); else el.textContent=t+s; }
     requestAnimationFrame(step); }
   var done=false; function run(){ if(done)return; done=true; document.querySelectorAll('.proof-n').forEach(animate); }
   var n=document.querySelectorAll('.proof-n');
-  if('IntersectionObserver' in window && n.length){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run();io.disconnect();}});},{threshold:0.4}); io.observe(n[0]); setTimeout(run,3000); } else { run(); }
+  if(rm){ n.forEach(function(e){e.textContent=e.getAttribute('data-target')+'%';}); }
+  else if('IntersectionObserver' in window && n.length){ var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run();io2.disconnect();}});},{threshold:0.4}); io2.observe(n[0]); setTimeout(run,3200); }
+  else { run(); }
 })();
 </script>
 </body>

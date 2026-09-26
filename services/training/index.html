@@ -1,112 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corporate AI Training & Executive Programmes | Randy Kimbi</title>
-  <meta name="description" content="Practical corporate AI training for executives, leadership teams and business departments. No coding. Customised, in-person or virtual.">
-  <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .nocode{display:inline-block;background:var(--gold);color:var(--ink-deep);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:10px 20px;border-radius:999px;margin-top:24px}
-    .track-h{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:clamp(40px,6vh,60px) 0 18px}
-    .tmeta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .tmeta span{border:1px solid var(--line-on-paper);border-radius:999px;padding:9px 16px;font-size:13px;color:var(--charcoal-dim)}
-    .tphoto img{width:100%;height:auto;display:block;border-radius:3px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Corporate AI Training & Executive Programmes | Randy Kimbi</title>
+<meta name="description" content="Practical corporate AI training for executives, leadership teams and business departments. No coding. Customised, in-person or virtual.">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+:root{--maxw:1180px}
+*{box-sizing:border-box}
+section{padding:clamp(60px,9vh,110px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px)}
+.ink{background:var(--ink);color:var(--bone)} .ink h1,.ink h2,.ink h3{color:#fff}
+.paper{background:var(--paper)} .bone{background:var(--bone)}
+.aurora::before{content:"";position:absolute;inset:-25% -15%;z-index:0;pointer-events:none;background:radial-gradient(40% 46% at 16% 24%,rgba(212,175,55,.14),transparent 66%),radial-gradient(42% 50% at 86% 74%,rgba(74,108,140,.24),transparent 68%);filter:blur(28px);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.09)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.8,.24,1),transform .8s cubic-bezier(.16,.8,.24,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:clamp(10px,.9vw,12px);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px}
+.ink .eyebrow-line{color:var(--gold)}
+.head{max-width:24em;margin:0 0 clamp(34px,5vh,56px)}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-.03em;margin:0}
+.head p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:14px 0 0;max-width:34em}
+.ink .head p{color:var(--bone-dim)}
+
+.thero{text-align:center;position:relative;z-index:2;max-width:40em;margin:0 auto}
+.thero h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,4.8vw,60px);line-height:1.03;letter-spacing:-.03em;margin:0;color:#fff}
+.thero p{font-size:clamp(16px,1.25vw,18.5px);color:var(--bone-dim);margin:20px auto 0;max-width:32em}
+.nocode{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--ink);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:11px 20px;border-radius:999px;margin-top:26px}
+.thero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.on-ink{border-color:var(--line-on-ink);color:var(--bone)} .on-ink:hover{background:#fff;color:var(--ink)}
+
+.who{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,54px);align-items:center}
+.who p{font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:var(--charcoal);margin:0 0 16px}
+.tphoto{position:relative;aspect-ratio:4/3;overflow:hidden;border:2px solid var(--ink)}
+.tphoto img{width:100%;height:100%;object-fit:cover}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chips span{border:1.5px solid var(--gold-soft);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--ink)}
+
+.track-h{font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:clamp(36px,5vh,52px) 0 18px}
+.trackgrid{display:grid;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.tg3{grid-template-columns:repeat(3,1fr)} .tg4{grid-template-columns:repeat(4,1fr)}
+.tcell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(22px,2.4vw,32px);transition:background .3s ease,color .3s ease}
+.tcell:hover{background:var(--ink)}
+.tcell:hover h3{color:#fff}.tcell:hover p{color:var(--bone-dim)}
+.tcell h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.6vw,21px);line-height:1.15;margin:0 0 8px;color:var(--ink)}
+.tcell p{font-size:14px;line-height:1.5;color:var(--charcoal);margin:0}
+.tnote{margin-top:18px;color:var(--charcoal);font-size:14px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,50px)}
+.two p{font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:var(--charcoal);margin:0}
+.ink.stmt{text-align:center}
+.ink.stmt .head{margin-left:auto;margin-right:auto}
+.ink.stmt p{max-width:44em;margin:0 auto;color:var(--bone-dim);font-size:clamp(16px,1.3vw,19px);line-height:1.65}
+
+.cta{text-align:center}
+.cta h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,48px);line-height:1.05;letter-spacing:-.03em;margin:0 0 24px;color:#fff}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+@media(max-width:900px){
+  .who{grid-template-columns:1fr;gap:22px}.tphoto{order:-1;max-width:420px;margin:0 auto}
+  .head{margin-left:auto;margin-right:auto;text-align:center}.head p{margin-left:auto;margin-right:auto}
+  .tg3,.tg4{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr;gap:14px}
+  .thero-cta .btn,.thero-cta .link-button{width:100%;justify-content:center}
+}
+@media(max-width:560px){section{padding:clamp(46px,7vh,64px) 0}.tg3,.tg4{grid-template-columns:1fr}.thero h1{font-size:clamp(28px,8vw,40px)}.cta-btns .btn,.cta-btns .link-button{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.aurora::before{animation:none}}
+</style>
 </head>
 <body>
-  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
+<header id="site-header"></header>
+<main>
 
-  <section class="hero text-center">
-    <div class="container"><div class="hero-grid centered"><div>
-      <span class="eyebrow center">Corporate AI Training & Executive Programmes</span>
-      <h1>Practical AI capability for the people who <em>lead.</em></h1>
-      <p>Custom programmes for executives, leadership teams and business departments &mdash; focused on using AI effectively in real work.</p>
-      <span class="nocode">No coding required</span>
-    </div></div></div>
+  <section class="ink aurora">
+    <div class="wrap thero reveal">
+      <p class="eyebrow-line">Corporate AI Training &amp; Executive Programmes</p>
+      <h1>Practical AI capability for the people who lead.</h1>
+      <p>Custom programmes for executives, leadership teams and departments — focused on using AI effectively in real work.</p>
+      <div><span class="nocode">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        No coding required</span></div>
+      <div class="thero-cta">
+        <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20would%20like%20to%20discuss%20corporate%20AI%20training%20for%20our%20organisation." target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5z"/></svg><span>Discuss Training</span>
+          <svg class="ar" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/assessment/" class="link-button on-ink"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg><span>Free AI Assessment</span></a>
+      </div>
+    </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="two-column-alt">
-        <div>
-          <div class="sec-head" style="margin-bottom:18px"><span class="eyebrow">Who it's for</span><h2>Senior leadership <em>first.</em></h2></div>
-          <p>These programmes are designed for founders, CEOs, COOs, directors, board members, government directors and senior institutional leaders. Department programmes follow.</p>
-          <p>The website presents recognised programme themes. Duration, examples, exercises, depth, delivery and business context are customised for each organisation. Delivered in-person or virtually.</p>
-          <div class="tmeta"><span>In-person</span><span>Virtual</span><span>Customised per organisation</span></div>
+  <section class="paper">
+    <div class="wrap">
+      <div class="who">
+        <div class="reveal">
+          <div class="head" style="margin-bottom:20px"><p class="eyebrow-line">Who it&rsquo;s for</p><h2>Senior leadership first.</h2></div>
+          <p>Designed for founders, CEOs, COOs, directors, boards, government directors and senior institutional leaders. Department programmes follow.</p>
+          <p>Depth, examples, delivery and business context are customised for each organisation — in-person or virtual.</p>
+          <div class="chips"><span>In-person</span><span>Virtual</span><span>Customised per organisation</span></div>
         </div>
-        <figure class="tphoto" style="margin:0"><img src="/images/randy-session.jpg" alt="Randy Kimbi leading a training session"></figure>
+        <div class="tphoto reveal d1"><img src="/images/randy-session.jpg" alt="Randy Kimbi leading a training session"></div>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Programmes</span><h2>Three training <em>tracks.</em></h2></div>
+  <section class="bone">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Programmes</p><h2>Three training tracks</h2></div>
 
-      <div class="track-h">Track 1 &mdash; Executive & Governance</div>
-      <div class="services" style="grid-template-columns:repeat(3,1fr)">
-        <div class="svc"><h3>Executive AI Leadership</h3><p>For founders, CEOs, COOs, directors and boards who need to understand where AI creates value, where it creates risk and how to lead adoption.</p></div>
-        <div class="svc"><h3>AI Governance & Risk Management</h3><p>Governance, accountability, data, risk, policy and responsible organisational adoption.</p></div>
-        <div class="svc"><h3>AI Security & Responsible Use</h3><p>Protect confidential information, reduce unsafe AI practices and improve how teams work with AI systems.</p></div>
+      <div class="track-h reveal">Track 1 — Executive &amp; Governance</div>
+      <div class="trackgrid tg3 reveal">
+        <div class="tcell"><h3>Executive AI Leadership</h3><p>Where AI creates value, where it creates risk, and how to lead adoption.</p></div>
+        <div class="tcell"><h3>AI Governance &amp; Risk</h3><p>Accountability, data, policy and responsible organisational adoption.</p></div>
+        <div class="tcell"><h3>AI Security &amp; Responsible Use</h3><p>Protect confidential information and reduce unsafe AI practices.</p></div>
       </div>
 
-      <div class="track-h">Track 2 &mdash; Department & Business Function</div>
-      <div class="services" style="grid-template-columns:repeat(4,1fr)">
-        <div class="svc"><h3>AI for Sales</h3><p>Use AI in prospecting, follow-up and closing, tied to real sales work.</p></div>
-        <div class="svc"><h3>AI for Marketing</h3><p>Content, research and campaign support without losing brand control.</p></div>
-        <div class="svc"><h3>AI for Human Resources</h3><p>Hiring, documentation and people processes, used safely.</p></div>
-        <div class="svc"><h3>AI for Management & Operations</h3><p>Planning, reporting and day-to-day operational work.</p></div>
+      <div class="track-h reveal">Track 2 — Department &amp; Function</div>
+      <div class="trackgrid tg4 reveal">
+        <div class="tcell"><h3>AI for Sales</h3><p>Prospecting, follow-up and closing.</p></div>
+        <div class="tcell"><h3>AI for Marketing</h3><p>Content and campaigns, on brand.</p></div>
+        <div class="tcell"><h3>AI for HR</h3><p>Hiring and people processes, safely.</p></div>
+        <div class="tcell"><h3>AI for Operations</h3><p>Planning, reporting and daily work.</p></div>
       </div>
-      <p style="margin-top:20px;color:var(--charcoal-dim);font-size:14.5px">Other department-specific programmes are available on request.</p>
+      <p class="tnote reveal">Other department-specific programmes available on request.</p>
 
-      <div class="track-h">Track 3 &mdash; Applied AI</div>
-      <div class="services" style="grid-template-columns:repeat(3,1fr)">
-        <div class="svc"><h3>Generative AI for Business</h3><p>Use everyday generative AI tools well and safely across the business.</p></div>
-        <div class="svc"><h3>AI for Productivity & Efficiency</h3><p>Cut time on repetitive work and speed up operations.</p></div>
-        <div class="svc"><h3>Agentic AI for Business</h3><p>Understand and apply AI agents to real processes &mdash; no coding.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">The result</span><h2>Safer adoption <em>and</em> better performance.</h2></div>
-      <div class="two-column">
-        <p>Leaders leave better able to make informed AI decisions, reduce avoidable risks and guide their teams.</p>
-        <p>Teams leave able to identify valuable use cases, work more efficiently and improve delivery &mdash; without exposing sensitive information.</p>
+      <div class="track-h reveal">Track 3 — Applied AI</div>
+      <div class="trackgrid tg3 reveal">
+        <div class="tcell"><h3>Generative AI for Business</h3><p>Use everyday AI tools well and safely.</p></div>
+        <div class="tcell"><h3>Productivity &amp; Efficiency</h3><p>Cut time on repetitive work.</p></div>
+        <div class="tcell"><h3>Agentic AI for Business</h3><p>Apply AI agents to real processes — no coding.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="sec-ink">
-    <div class="container">
-      <div class="sec-head center"><span class="eyebrow center">Important</span><h2>AI capability without governance creates <em>risk.</em></h2></div>
-      <p style="text-align:center;max-width:44em;margin:0 auto;color:var(--bone-dim)">Confidential data can be exposed, employees can use AI unsafely, and unreliable outputs can enter real decisions. Training builds the judgement and accountability that keep AI use safe.</p>
-    </div>
-  </section>
-
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Experience</span><h2>Training senior <em>professionals.</em></h2></div>
-      <p style="max-width:46em;color:var(--charcoal-dim)">Randy has trained senior professionals across banking, government, education, taxation, marketing, sales, HR and business leadership.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="cta-band">
-        <span class="eyebrow center">Next step</span>
-        <h2>Train the people who <em>lead.</em></h2>
-        <div class="btn-group">
-          <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20would%20like%20to%20discuss%20corporate%20AI%20training%20for%20our%20organisation." target="_blank" rel="noopener" class="btn btn-primary">Discuss Training for Your Organisation</a>
-          <a href="/assessment/" class="link-button">Start with the Free AI Assessment</a>
-        </div>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">The result</p><h2>Safer adoption and better performance</h2></div>
+      <div class="two reveal">
+        <p>Leaders leave able to make informed AI decisions, reduce avoidable risk and guide their teams.</p>
+        <p>Teams leave able to spot valuable use cases and work more efficiently — without exposing sensitive information.</p>
       </div>
     </div>
   </section>
 
-  <footer></footer>
-  <script src="/js/app.js"></script>
+  <section class="ink stmt aurora">
+    <div class="wrap reveal">
+      <div class="head"><p class="eyebrow-line">Important</p><h2>Capability without governance creates risk.</h2></div>
+      <p>Confidential data can be exposed, staff can use AI unsafely, and unreliable outputs can enter real decisions. Training builds the judgement and accountability that keep AI use safe.</p>
+    </div>
+  </section>
+
+  <section class="bone">
+    <div class="wrap reveal">
+      <div class="head"><p class="eyebrow-line">Experience</p><h2>Training senior professionals</h2></div>
+      <p style="max-width:46em;color:var(--charcoal);font-size:clamp(16px,1.2vw,18px);line-height:1.65;margin:0">Randy has trained senior professionals across banking, government, education, taxation, marketing, sales, HR and business leadership.</p>
+    </div>
+  </section>
+
+  <section class="ink cta aurora">
+    <div class="wrap reveal">
+      <h2>Train the people who lead.</h2>
+      <div class="cta-btns">
+        <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20would%20like%20to%20discuss%20corporate%20AI%20training%20for%20our%20organisation." target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5z"/></svg><span>Discuss Training</span>
+          <svg class="ar" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/assessment/" class="link-button on-ink"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg><span>Free AI Assessment</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script>
+(function(){
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revs=document.querySelectorAll('.reveal');
+  if(rm){revs.forEach(function(e){e.classList.add('in');});return;}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    revs.forEach(function(e){io.observe(e);});
+    setTimeout(function(){revs.forEach(function(e){e.classList.add('in');});},2600);
+  } else { revs.forEach(function(e){e.classList.add('in');}); }
+})();
+</script>
 </body>
 </html>

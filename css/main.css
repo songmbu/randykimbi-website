@@ -330,3 +330,18 @@ footer{background:var(--ink-deep);color:var(--bone);padding:clamp(56px,9vh,92px)
 /* rebuild overflow fix */
 @media(max-width:900px){.services{grid-template-columns:repeat(2,1fr)!important}.stats{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:600px){.services{grid-template-columns:1fr!important}.stats{grid-template-columns:1fr!important}}
+
+
+/* premium button system */
+.btn,.link-button,.btn-primary,.btn-secondary{min-height:56px;padding:16px 32px;border-width:2px;border-radius:8px;gap:12px;position:relative;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease,color .25s ease}
+.btn-primary,.btn-gold{border-color:var(--gold-soft)}
+.btn-primary::after,.btn-gold::after{content:"";position:absolute;top:0;left:-60%;width:38%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:btnsheen 6.5s ease-in-out infinite;pointer-events:none}
+@keyframes btnsheen{0%{left:-60%}18%{left:150%}100%{left:150%}}
+.btn-primary:hover,.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,33,71,.24)}
+.link-button{border-color:var(--line-on-paper)}
+.hero .link-button,.sec-ink .link-button{border-color:var(--line-on-ink);color:var(--bone)}
+.link-button:hover{transform:translateY(-2px);border-color:var(--gold);color:var(--gold)}
+.btn svg,.link-button svg,.btn-secondary svg{width:19px;height:19px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease}
+.btn .ar,.link-button .ar{transition:transform .25s ease}
+.btn:hover .ar,.link-button:hover .ar,.btn:hover svg.arw,.link-button:hover svg.arw{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.btn-primary::after,.btn-gold::after{display:none}}

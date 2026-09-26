@@ -1,181 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Randy Kimbi | AI Consultant, Corporate AI Trainer & Software Engineer</title>
-  <meta name="description" content="AI that makes your business safer, faster and harder to compete with. Understand where AI fits, where it creates risk, and where it saves time and cost.">
-  <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .hero .role{font-family:var(--sans);font-weight:500;font-size:clamp(13px,1.4vw,15px);letter-spacing:.14em;color:var(--gold-soft);margin:14px 0 0}
-    .sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper);margin-top:clamp(36px,5vh,54px)}
-    .sector-card{background:var(--paper);padding:clamp(24px,3vw,38px);border-top:2px solid transparent;transition:border-color .3s ease,background .3s ease}
-    .sector-card:hover{border-top-color:var(--acc);background:var(--paper-soft)}
-    .sector-card .ic{width:32px;height:32px;color:var(--acc);margin-bottom:16px}
-    .sector-card .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-    .sector-card h3{font-size:19px;margin-bottom:6px}
-    .sector-card p{font-size:14px;color:var(--charcoal-dim);line-height:1.6}
-    .sectors-more{text-align:center;margin-top:22px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal-dim)}
-    .challenge{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper)}
-    .ch{background:var(--paper);padding:clamp(24px,2.6vw,34px)}
-    .ch .k{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
-    .ch p{font-size:14.5px;color:var(--charcoal-dim);margin-top:12px;line-height:1.65}
-    .bigstat{font-family:var(--display);font-weight:400;font-size:clamp(72px,14vw,132px);line-height:1;color:var(--gold-soft)}
-    .source{font-size:12px;letter-spacing:.04em;color:var(--charcoal-dim);margin-top:14px}
-    .sec-ink .source{color:var(--bone-dim)} .sec-ink .source b{color:var(--bone)}
-    @media(max-width:900px){.sectors-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:560px){.sectors-grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Randy Kimbi — AI Consultant, Corporate AI Trainer & Software Engineer</title>
+<meta name="description" content="I help business owners, boards and institutional leaders use AI to protect and grow their organisations. AI consultancy, corporate AI training and AI agents & automation.">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+.rk-hero{background:var(--ink);color:var(--bone);overflow:hidden}
+.rk-hero-inner{max-width:1200px;margin:0 auto;padding:clamp(48px,8vh,96px) clamp(20px,5vw,64px) 0;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,4vw,56px);align-items:end}
+.rk-eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 22px}
+.rk-hero-h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,5.6vw,74px);line-height:1.0;letter-spacing:-.03em;margin:0;color:#fff}
+.rk-hero-punch{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(24px,3vw,40px);color:var(--gold);margin:18px 0 0;letter-spacing:-.02em}
+.rk-hero-sub{font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:var(--bone-dim);max-width:34em;margin:26px 0 0}
+.rk-hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin:34px 0 clamp(48px,8vh,80px)}
+.rk-hero-photo{position:relative;align-self:end;min-height:320px}
+.rk-hero-photo img{display:block;width:100%;height:auto;object-fit:cover;object-position:top center}
+.rk-hero-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,var(--ink) 0%,transparent 12%,transparent 88%,var(--ink) 100%),linear-gradient(to top,var(--ink) 0%,transparent 22%)}
+.rk-wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+section{padding:clamp(56px,10vh,120px) 0}
+.rk-sectors{background:var(--paper)}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.sector-cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(28px,3vw,44px)}
+.sector-cell .sc-acc{display:block;width:44px;height:4px;margin-bottom:20px}
+.sector-cell h3{font-family:var(--display);font-weight:600;font-size:clamp(21px,2vw,26px);letter-spacing:-.02em;margin:0 0 10px;color:var(--ink)}
+.sector-cell p{font-size:16px;line-height:1.6;color:var(--charcoal);margin:0}
+.rk-mandate{background:var(--ink);color:var(--bone)}
+.rk-mandate h2,.rk-approach h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-.03em;max-width:16em;margin:0 0 24px;color:#fff}
+.rk-mandate p{font-size:clamp(18px,1.4vw,21px);line-height:1.7;color:var(--bone-dim);max-width:44em;margin:0}
+.rk-approach{background:var(--bone)}
+.rk-approach h2{color:var(--ink)}
+.rk-approach p{font-size:clamp(18px,1.4vw,21px);line-height:1.7;color:var(--charcoal);max-width:44em;margin:0}
+.sec-head{max-width:34em;margin-bottom:clamp(40px,6vh,72px)}
+.sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.03em;margin:0 0 14px;color:var(--ink)}
+.sec-head p{font-size:clamp(17px,1.3vw,19px);line-height:1.6;color:var(--charcoal);margin:0}
+.sec-head-light h2{color:#fff}.sec-head-light p{color:var(--bone-dim)}
+.rk-challenge{background:var(--paper)}
+.ch-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.ch-cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(26px,2.8vw,40px)}
+.ch-cell h3{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+.ch-cell p{font-size:16px;line-height:1.65;color:var(--charcoal);margin:0}
+.rk-proof{background:var(--ink);color:var(--bone)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.proof-cell{padding:clamp(20px,2.4vw,40px);border-left:2px solid rgba(212,175,55,.35)}
+.proof-cell:first-child{border-left:none;padding-left:0}
+.proof-n{font-family:var(--display);font-weight:500;font-size:clamp(64px,9vw,116px);line-height:1;letter-spacing:-.04em;color:var(--gold);margin:0 0 16px}
+.proof-cell p{font-size:16px;line-height:1.6;color:var(--bone-dim);margin:0 0 12px}
+.proof-src{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
+.rk-services{background:var(--bone)}
+.svc-rows{border-top:2px solid var(--ink)}
+.svc-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(20px,3vw,48px);padding:clamp(30px,4vw,52px) 0;border-bottom:2px solid var(--ink);text-decoration:none;transition:padding-left .3s ease,background .3s ease}
+.svc-row:hover{padding-left:18px;background:rgba(0,33,71,.03)}
+.svc-num{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,48px);color:var(--gold-soft);letter-spacing:-.02em}
+.svc-body h3{font-family:var(--display);font-weight:600;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.02em;margin:0 0 8px;color:var(--ink)}
+.svc-body p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:0;max-width:42em}
+.svc-ar{width:30px;height:30px;stroke:var(--ink);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex:none;transition:transform .3s ease}
+.svc-row:hover .svc-ar{transform:translateX(6px)}
+.rk-cta{background:var(--ink);color:var(--bone);text-align:center}
+.rk-cta h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.2vw,52px);line-height:1.05;letter-spacing:-.03em;margin:0 0 18px;color:#fff}
+.rk-cta p{font-size:clamp(17px,1.3vw,19px);line-height:1.7;color:var(--bone-dim);max-width:36em;margin:0 auto 34px}
+.rk-cta-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.link-on-ink{border-color:var(--line-on-ink);color:var(--bone)}
+.link-on-ink:hover{background:#fff;color:var(--ink)}
+@media(max-width:900px){.rk-hero-inner{grid-template-columns:1fr;padding-bottom:0}.rk-hero-photo{min-height:0;margin-top:8px}.sectors-grid,.ch-grid{grid-template-columns:1fr 1fr}.proof-grid{grid-template-columns:1fr;gap:0}.proof-cell{border-left:none;border-top:2px solid rgba(212,175,55,.35);padding-left:0}.proof-cell:first-child{border-top:none}.svc-row{grid-template-columns:auto 1fr;gap:20px}.svc-ar{display:none}}
+@media(max-width:560px){.sectors-grid,.ch-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
-
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <span class="eyebrow">Randy Kimbi</span>
-          <h1>AI that makes your business safer, faster and harder to <em>compete with.</em></h1>
-          <p class="role">AI Consultant &nbsp;&middot;&nbsp; Corporate AI Trainer &nbsp;&middot;&nbsp; Software Engineer</p>
-          <p style="margin-top:20px">I help you understand where AI fits in your business, where it creates risk, and where it can save time, reduce cost and improve the way your team works.</p>
-          <div class="hero-cta">
-            <a href="/assessment/" class="btn btn-primary">Free AI Risk Assessment</a>
-            <a href="/contact/" class="textlink">Talk With Me <span class="ar">&rarr;</span></a>
-          </div>
+<header id="site-header"></header>
+<main>
+  <section class="rk-hero">
+    <div class="rk-hero-inner">
+      <div class="rk-hero-copy">
+        <p class="rk-eyebrow">AI Consultant &nbsp;·&nbsp; Corporate AI Trainer &nbsp;·&nbsp; Software Engineer</p>
+        <h1 class="rk-hero-h1">AI is moving faster than most businesses can adapt. The advantage belongs to those who learn how to move with it.</h1>
+        <p class="rk-hero-punch">What are you doing about it?</p>
+        <p class="rk-hero-sub">I help business owners, boards and institutional leaders put AI to work safely — protecting what you have built and creating a real advantage over those who wait.</p>
+        <div class="rk-hero-cta">
+          <a href="/assessment/" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg>
+            <span>Free AI Risk Assessment</span>
+            <svg class="ar" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="/contact/" class="link-button link-on-ink">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
+            <span>Talk With Me</span>
+          </a>
         </div>
-        <div class="portrait">
-          <div class="portrait-frame">
-            <img src="/images/randy-hero.jpg" alt="Randy Kimbi, AI Consultant and Corporate AI Trainer">
-            <div class="portrait-cap"><div class="n">Randy Kimbi</div><div class="r">AI Consultant &middot; Corporate AI Trainer</div></div>
-          </div>
-        </div>
+      </div>
+      <div class="rk-hero-photo">
+        <img src="/images/randy-hero.jpg" alt="Randy Kimbi, AI consultant and corporate AI trainer" loading="eager">
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="sec-head center">
-        <span class="eyebrow center">Advising Leaders on AI Across</span>
-        <h2>Built for people responsible for <em>results.</em></h2>
+  <section class="rk-sectors">
+    <div class="rk-wrap">
+      <div class="sec-head">
+        <h2>Advising leaders on AI across the sectors that carry the most risk</h2>
+        <p>Built for the people responsible for results — where a wrong move with AI is expensive and a right one changes everything.</p>
       </div>
       <div class="sectors-grid">
-        <div class="sector-card" style="--acc:#4A6C8C"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div><h3>Business</h3><p>Founders, CEOs and directors putting AI to work across the company.</p></div>
-        <div class="sector-card" style="--acc:#7B3B45"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-6h6v6M8 13h.01M16 13h.01"/></svg></div><h3>Government</h3><p>Agencies and directors adopting AI safely and accountably.</p></div>
-        <div class="sector-card" style="--acc:#2E6E6A"><div class="ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 3 2 6 2s6-1 6-2v-5"/></svg></div><h3>Education</h3><p>School and institution leaders modernising how they operate.</p></div>
-        <div class="sector-card" style="--acc:#3E5C76"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 10h16M5 10 12 4l7 6M6 10v11M18 10v11M10 10v11M14 10v11"/></svg></div><h3>Banking &amp; Finance</h3><p>Risk, compliance and operations leaders managing AI exposure.</p></div>
-        <div class="sector-card" style="--acc:#B08D4F"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg></div><h3>Multinational Enterprises</h3><p>Groups aligning AI across markets and departments.</p></div>
-        <div class="sector-card" style="--acc:#6B7250"><div class="ic"><svg viewBox="0 0 24 24"><path d="M20.6 8.5 12 3 3.4 8.5M4 10v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9M9 20v-6h6v6"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>Service Businesses</h3><p>Firms improving delivery, response times and efficiency.</p></div>
+        <div class="sector-cell"><span class="sc-acc" style="background:#4A6C8C"></span><h3>Business & Enterprise</h3><p>Founders, CEOs and directors who need AI to protect margins and outpace competitors.</p></div>
+        <div class="sector-cell"><span class="sc-acc" style="background:#7B3B45"></span><h3>Government & Public Sector</h3><p>Institutions adopting AI under real accountability, scrutiny and public trust.</p></div>
+        <div class="sector-cell"><span class="sc-acc" style="background:#2E6E6A"></span><h3>Education & Institutions</h3><p>Leaders preparing staff and systems for AI without losing standards.</p></div>
+        <div class="sector-cell"><span class="sc-acc" style="background:#3E5C76"></span><h3>Banking & Finance</h3><p>Where AI, data and security decisions carry direct financial and regulatory weight.</p></div>
+        <div class="sector-cell"><span class="sc-acc" style="background:#B08D4F"></span><h3>Multinationals</h3><p>Organisations standardising how AI is used safely across teams and borders.</p></div>
+        <div class="sector-cell"><span class="sc-acc" style="background:#6B7250"></span><h3>Service & Professional Firms</h3><p>Firms whose people already use AI daily — often without a plan behind it.</p></div>
       </div>
-      <div class="sectors-more">&mdash; and more &mdash;</div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
+  <section class="rk-mandate">
+    <div class="rk-wrap">
+      <h2>AI is already a requirement to win in your industry.</h2>
+      <p>The question is no longer whether your organisation uses AI. Your people already do. The real question is whether they use it safely, whether it is making you money or quietly creating risk, and whether you are ahead of the businesses you compete with — or behind them.</p>
+    </div>
+  </section>
+
+  <section class="rk-challenge">
+    <div class="rk-wrap">
       <div class="sec-head">
-        <h2>AI is already a requirement to win in your <em>industry.</em></h2>
+        <h2>Where AI can cost you money or put your business at risk</h2>
+        <p>Most organisations adopt AI by accident, one employee at a time. That is exactly where the danger sits.</p>
       </div>
-      <div class="two-column">
-        <p>Your competitors are already looking at AI to work faster, control costs, improve delivery and make better decisions.</p>
-        <p>My job is to help you understand where AI belongs in your business, how to use it safely and how to get real value from it &mdash; without losing control of your data, people or processes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="sec-head">
-        <h2>Where AI can cost you money or put your business at <em>risk.</em></h2>
-      </div>
-      <div class="challenge">
-        <div class="ch"><div class="k">Risk</div><p>Your staff may already be using AI with company or customer information. Without clear rules, one careless action can expose sensitive data.</p></div>
-        <div class="ch"><div class="k">Profit</div><p>Paying for AI tools without knowing what they should improve simply adds another cost to the business.</p></div>
-        <div class="ch"><div class="k">Efficiency</div><p>If your team keeps repeating reports, follow-ups, data entry and routine admin manually, you are paying for work that can be done faster.</p></div>
-        <div class="ch"><div class="k">Delivery</div><p>Slow internal processes eventually reach your customers. AI can shorten the time between a request, a decision and delivery.</p></div>
-        <div class="ch"><div class="k">Governance</div><p>If everyone is using AI differently, management has no clear view of what information is being shared, what outputs are trusted or who is responsible.</p></div>
+      <div class="ch-grid">
+        <div class="ch-cell"><h3>Security</h3><p>Staff paste sensitive data into public AI tools every day. One leak can be irreversible.</p></div>
+        <div class="ch-cell"><h3>Profit</h3><p>Competitors using AI well move faster and cheaper. Standing still is a decision with a price.</p></div>
+        <div class="ch-cell"><h3>Efficiency</h3><p>AI is bought as a gadget, not a system — so it never actually reduces cost or effort.</p></div>
+        <div class="ch-cell"><h3>Delivery</h3><p>Tools are introduced with no training, so adoption stalls and money is wasted.</p></div>
+        <div class="ch-cell"><h3>Governance</h3><p>No rules, no oversight, no accountability for how AI is used across your teams.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head">
-        <h2>Buying AI tools is the easy <em>part.</em></h2>
-      </div>
-      <div class="two-column">
-        <p>The real advantage comes when your people know what to use, how to use it and what information should never enter an AI system.</p>
-        <p>I work with your leadership first, then with the departments that need AI most. The goal is simple: safer use, better work and less wasted time.</p>
-      </div>
+  <section class="rk-approach">
+    <div class="rk-wrap">
+      <h2>Buying AI tools is the easy part.</h2>
+      <p>Any business can subscribe to the latest platform. The advantage comes from knowing where AI belongs in your organisation, where it does not, and how your people use it without exposing you. That is the work I do with you — clarity first, then a strategy your team can actually run.</p>
     </div>
   </section>
 
-  <section class="sec-ink">
-    <div class="container">
-      <div class="sec-head center">
-        <h2>What changes when you get AI <em>right.</em></h2>
+  <section class="rk-proof">
+    <div class="rk-wrap">
+      <div class="sec-head sec-head-light">
+        <h2>What changes when you get AI right</h2>
+        <p>The gap between organisations that use AI well and those that don't is widening — and it shows up in the numbers.</p>
       </div>
-      <div style="text-align:center;max-width:44em;margin:0 auto clamp(30px,5vh,44px)">
-        <div class="bigstat"><span class="rk-count" data-to="82" data-suffix="%">0</span></div>
-        <p style="color:var(--bone-dim);margin-top:10px">In the world's largest economy, 82% of leaders at billion-dollar companies say AI will reshape the competitive landscape of their industry within 24 months.</p>
-        <p class="source">Source: KPMG, US AI Quarterly Pulse Survey.</p>
-        <p style="color:var(--bone);font-family:var(--display);font-size:clamp(18px,2.2vw,24px);margin-top:26px">The competition is no longer about whether AI will matter. It is about who learns to use it properly first.</p>
-      </div>
-      <div class="stats" style="grid-template-columns:repeat(2,1fr);max-width:640px;margin-left:auto;margin-right:auto">
-        <div class="stat"><div class="n rk-count" data-to="23" data-suffix="%">0</div><div class="l">of African CEOs reported revenue increases associated with AI</div></div>
-        <div class="stat"><div class="n rk-count" data-to="25" data-suffix="%">0</div><div class="l">reported cost reductions associated with AI</div></div>
-      </div>
-      <p class="source" style="text-align:center;margin-top:18px">Source: PwC Africa. External research &mdash; not client results.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="sec-head">
-        <span class="eyebrow">How I can help you</span>
-        <h2>Three ways I can put AI to work for <em>you.</em></h2>
-      </div>
-      <div class="services" style="grid-template-columns:repeat(3,1fr)">
-        <div class="svc">
-          <div class="svc-i">01</div>
-          <h3>AI Consultancy</h3>
-          <p>If you know AI matters but are not sure what your business should do next, we start here.</p>
-          <a href="/services/consultancy/" class="textlink">AI Consultancy <span class="ar">&rarr;</span></a>
+      <div class="proof-grid">
+        <div class="proof-cell">
+          <div class="proof-n" data-target="82">82%</div>
+          <p>of leaders at billion-dollar companies say AI will reshape the competitive landscape of their industry within 24 months.</p>
+          <span class="proof-src">Source: KPMG</span>
         </div>
-        <div class="svc">
-          <div class="svc-i">02</div>
-          <h3>Corporate AI Training</h3>
-          <p>I train your leaders and teams to use AI safely and apply it to the work they already do. No coding required.</p>
-          <a href="/services/training/" class="textlink">Corporate AI Training <span class="ar">&rarr;</span></a>
+        <div class="proof-cell">
+          <div class="proof-n" data-target="23">23%</div>
+          <p>of African CEOs reported revenue increases associated with AI.</p>
+          <span class="proof-src">Source: PwC Africa</span>
         </div>
-        <div class="svc">
-          <div class="svc-i">03</div>
-          <h3>AI Agents &amp; Automation</h3>
-          <p>If your team repeats the same process every day, I help you spot what should be automated and supervise the build.</p>
-          <a href="/services/ai-agents-automation/" class="textlink">AI Agents &amp; Automation <span class="ar">&rarr;</span></a>
+        <div class="proof-cell">
+          <div class="proof-n" data-target="25">25%</div>
+          <p>reported cost reductions associated with AI. External research — not client results.</p>
+          <span class="proof-src">Source: PwC Africa</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="cta-band">
-        <span class="eyebrow center">Start here</span>
-        <h2>You do not need to know where to <em>start.</em></h2>
-        <p>That is what the Free AI Risk Assessment is for. It gives you a first look at where AI may already be creating risk and where your business has room to improve.</p>
-        <div class="btn-group">
-          <a href="/assessment/" class="btn btn-primary">Free AI Risk Assessment</a>
-          <a href="/contact/" class="link-button">Talk With Me</a>
-        </div>
+  <section class="rk-services">
+    <div class="rk-wrap">
+      <div class="sec-head">
+        <h2>How I can help you</h2>
+        <p>Three ways to put AI to work in your organisation — safely, and with a plan behind it.</p>
+      </div>
+      <div class="svc-rows">
+        <a href="/services/consultancy/" class="svc-row">
+          <span class="svc-num">01</span>
+          <div class="svc-body"><h3>AI Consultancy</h3><p>Clarity before strategy. We work out where AI belongs in your organisation, where it doesn't, and what to do first — ending with a written recommendation you can act on.</p></div>
+          <svg class="svc-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/services/training/" class="svc-row">
+          <span class="svc-num">02</span>
+          <div class="svc-body"><h3>Corporate AI Training</h3><p>Executive and team programmes that teach your people to use AI safely and effectively — no coding required, built around how your organisation actually works.</p></div>
+          <svg class="svc-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/services/ai-agents-automation/" class="svc-row">
+          <span class="svc-num">03</span>
+          <div class="svc-body"><h3>AI Agents & Automation</h3><p>Custom AI systems that take repetitive work off your team — with human review built in, so you gain speed without losing control.</p></div>
+          <svg class="svc-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
-  <footer></footer>
-  <script src="/js/app.js"></script>
-  <script>
-  (function(){var els=document.querySelectorAll('.rk-count');if(!els.length)return;var r=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(r){els.forEach(function(e){e.textContent=e.getAttribute('data-to')+(e.getAttribute('data-suffix')||'');});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(!e.isIntersecting)return;var el=e.target;io.unobserve(el);var to=+el.getAttribute('data-to'),su=el.getAttribute('data-suffix')||'',d=1200,t0=null;function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/d,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to)+su;if(p<1)requestAnimationFrame(s);else el.textContent=to+su;}requestAnimationFrame(s);setTimeout(function(){el.textContent=to+su;},d+400);});},{threshold:.4});els.forEach(function(e){io.observe(e);});})();
-  </script>
+  <section class="rk-cta">
+    <div class="rk-wrap">
+      <h2>You do not need to know where to start.</h2>
+      <p>That is exactly what the assessment is for. Answer a few honest questions and see where your organisation stands on AI — in a few minutes, at no cost.</p>
+      <div class="rk-cta-btns">
+        <a href="/assessment/" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg>
+          <span>Free AI Risk Assessment</span>
+          <svg class="ar" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/contact/" class="link-button link-on-ink">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg>
+          <span>Talk With Me</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script>
+(function(){
+  function animate(el){ var t=parseInt(el.getAttribute('data-target'),10),s=el.textContent.replace(/[0-9]/g,'')||'%',st=null,d=1400;
+    function step(ts){ if(!st)st=ts; var p=Math.min((ts-st)/d,1); el.textContent=Math.round((0.5-Math.cos(p*Math.PI)/2)*t)+s; if(p<1)requestAnimationFrame(step); else el.textContent=t+s; }
+    requestAnimationFrame(step); }
+  var done=false; function run(){ if(done)return; done=true; document.querySelectorAll('.proof-n').forEach(animate); }
+  var n=document.querySelectorAll('.proof-n');
+  if('IntersectionObserver' in window && n.length){ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){run();io.disconnect();}});},{threshold:0.4}); io.observe(n[0]); setTimeout(run,3000); } else { run(); }
+})();
+</script>
 </body>
 </html>

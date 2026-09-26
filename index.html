@@ -34,7 +34,7 @@ section{padding:clamp(64px,11vh,132px) 0;position:relative;overflow:hidden}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}.d5{transition-delay:.35s}
 
 /* ---- shared heads (aligned) ---- */
-.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:clamp(10px,.9vw,12px);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px;max-width:100%}
+.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:clamp(8px,2.1vw,12px);letter-spacing:.05em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px;white-space:nowrap}
 .ink .eyebrow-line{color:var(--gold)}
 .head{max-width:20em;margin:0 0 clamp(38px,6vh,64px)}
 .head h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.04;letter-spacing:-.03em;margin:0}
@@ -47,7 +47,7 @@ section{padding:clamp(64px,11vh,132px) 0;position:relative;overflow:hidden}
   display:grid;grid-template-columns:1fr 1.04fr;gap:clamp(24px,3.4vw,50px);align-items:center;min-height:calc(100svh - 84px);position:relative;z-index:2}
 .hero-copy{align-self:center}
 .hero h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,3.9vw,52px);line-height:1.04;letter-spacing:-.03em;margin:0;color:#fff}
-.hero .punch{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(21px,2.3vw,30px);color:var(--gold);margin:14px 0 0;letter-spacing:-.02em}
+.hero .punch{font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(26px,3.2vw,42px);color:var(--gold);margin:18px 0 0;letter-spacing:-.02em;text-shadow:0 2px 22px rgba(212,175,55,.28)}
 .hero .sub{font-size:clamp(16px,1.25vw,18.5px);line-height:1.65;color:var(--bone-dim);max-width:28em;margin:22px 0 0}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0 clamp(20px,3vh,36px)}
 .hero-photo{position:relative;align-self:end;display:flex;align-items:flex-end;min-height:360px;z-index:1}
@@ -117,15 +117,19 @@ section{padding:clamp(64px,11vh,132px) 0;position:relative;overflow:hidden}
 
 /* ---- RESPONSIVE ---- */
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;padding:clamp(12px,2vh,26px) 22px 0;gap:10px;min-height:calc(100svh - 62px)}
-  .hero h1{font-size:clamp(23px,6.2vw,32px);line-height:1.08}
-  .hero .punch{font-size:clamp(16px,4.4vw,22px);margin-top:8px}
-  .hero .sub{font-size:13.5px;margin-top:10px;line-height:1.5;max-width:34em}
-  .hero-cta{margin-top:16px;gap:10px}
-  .hero-cta .btn,.hero-cta .link-button{min-height:48px;padding:12px 18px;font-size:13.5px}
-  .hero-copy{order:2;text-align:center}
+  .hero-inner{grid-template-columns:1fr;padding:0;gap:0;min-height:0}
+  .hero-photo{order:1;align-self:auto;display:block;min-height:0;margin:0}
+  .hero-photo::before{display:none}
+  .hero-photo::after{background:linear-gradient(to top,var(--ink) 0%,rgba(0,33,71,0) 34%)}
+  .hero-copy{order:2;text-align:center;padding:22px 22px 2px}
+  .hero .eyebrow-line{font-size:clamp(8px,2.4vw,12px);white-space:nowrap}
+  .hero h1{font-size:clamp(24px,6.4vw,34px);line-height:1.07}
+  .hero .punch{font-size:clamp(22px,6vw,30px);margin-top:10px}
+  .hero .sub{font-size:14px;margin-top:12px;line-height:1.55;max-width:34em;margin-left:auto;margin-right:auto}
+  .hero-cta{margin-top:18px;gap:10px;justify-content:center}
+  .hero-cta .btn,.hero-cta .link-button{width:100%;justify-content:center;min-height:48px;padding:12px 18px;font-size:13.5px}
   .hero-photo{order:1;min-height:0;margin:0;justify-content:center}
-  .hero-photo img{height:auto;max-height:34vh;width:auto;max-width:100%}
+  .hero-photo img{width:100%!important;height:auto!important;aspect-ratio:16/10!important;max-height:none!important;object-fit:cover!important;object-position:center 24%!important}
   .hero-photo::after{background:linear-gradient(to top,var(--ink) 1%,transparent 46%)}
   .hero .sub{margin-left:auto;margin-right:auto}
   .hero-cta{justify-content:center;gap:12px}
@@ -221,6 +225,7 @@ section{padding:clamp(64px,11vh,132px) 0;position:relative;overflow:hidden}
         <div class="ch-cell reveal d2"><p class="k">Efficiency</p><p>Tools bought, never turned into systems.</p></div>
         <div class="ch-cell reveal"><p class="k">Delivery</p><p>No training, so adoption stalls.</p></div>
         <div class="ch-cell reveal d1"><p class="k">Governance</p><p>No rules. No oversight. No accountability.</p></div>
+        <div class="ch-cell reveal d2"><p class="k">Reputation</p><p>Public AI mistakes can damage trust in your brand.</p></div>
       </div>
     </div>
   </section>

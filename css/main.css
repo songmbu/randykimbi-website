@@ -4,7 +4,7 @@
    Display: Fraunces. Body/UI: Hanken Grotesk.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap');
 
 :root{
   --ink:#002147;
@@ -20,8 +20,8 @@
   --line-on-ink:rgba(176,141,79,.30);
   --line-on-paper:rgba(11,27,48,.12);
 
-  --display:'Playfair Display',Georgia,'Times New Roman',serif;
-  --sans:'Lora',Georgia,'Times New Roman',serif;
+  --display:'Fraunces',ui-serif,Georgia,serif;
+  --sans:'Hanken Grotesk',ui-sans-serif,system-ui,-apple-system,sans-serif;
 
   --max:1200px;
   --narrow:820px;

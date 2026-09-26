@@ -1,104 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Agents & Automation for Business | Randy Kimbi</title>
-  <meta name="description" content="Practical AI agents and automation that handle repetitive, process-heavy work while keeping humans in control. Built with Randy Kimbi and his technical team.">
-  <link rel="stylesheet" href="/css/main.css">
-  <style>
-    .probs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line-on-paper);border:1px solid var(--line-on-paper)}
-    .probs div{background:var(--paper);padding:18px 20px;font-size:14.5px;color:var(--ink)}
-    .alternate .probs div{background:var(--paper-soft)}
-    .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;margin-top:clamp(30px,4vh,44px)}
-    .flow .step{flex:1 1 160px;background:var(--paper);border:1px solid var(--line-on-paper);border-top:2px solid var(--gold);padding:22px 18px;text-align:center}
-    .flow .step .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-    .flow .step .d{font-family:var(--display);font-size:17px;color:var(--ink)}
-    .flow .arw{display:flex;align-items:center;color:var(--gold);font-size:20px}
-    .sys{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(30px,4vh,44px)}
-    .sys .svc{margin:0}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(28px,4vh,40px)}
-    .chips span{border:1px solid var(--line-on-paper);border-radius:999px;padding:9px 16px;font-size:13px;color:var(--charcoal-dim)}
-    .disc{font-size:12px;color:var(--charcoal-dim);margin-top:16px;max-width:44em}
-    @media(max-width:640px){.flow .arw{transform:rotate(90deg)}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Agents & Automation for Business | Randy Kimbi</title>
+<meta name="description" content="Practical AI agents and automation that handle repetitive, process-heavy work while keeping humans in control.">
+<link rel="stylesheet" href="/css/main.css">
+<style>
+:root{--maxw:1180px}
+*{box-sizing:border-box}
+section{padding:clamp(60px,9vh,110px) 0;position:relative;overflow:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,60px)}
+.ink{background:var(--ink);color:var(--bone)} .ink h1,.ink h2,.ink h3{color:#fff}
+.paper{background:var(--paper)} .bone{background:var(--bone)}
+.aurora::before{content:"";position:absolute;inset:-25% -15%;z-index:0;pointer-events:none;background:radial-gradient(40% 46% at 16% 24%,rgba(212,175,55,.14),transparent 66%),radial-gradient(42% 50% at 86% 74%,rgba(74,108,140,.24),transparent 68%);filter:blur(28px);animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.09)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.16,.8,.24,1),transform .8s cubic-bezier(.16,.8,.24,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.eyebrow-line{font-family:var(--sans);font-weight:600;font-size:clamp(10px,.9vw,12px);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft);margin:0 0 16px}
+.ink .eyebrow-line{color:var(--gold)}
+.head{max-width:24em;margin:0 0 clamp(32px,5vh,52px)}
+.head h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-.03em;margin:0}
+.head p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--charcoal);margin:14px 0 0;max-width:34em}
+.ink .head p{color:var(--bone-dim)}
+
+.ahero{text-align:center;position:relative;z-index:2;max-width:42em;margin:0 auto}
+.ahero h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,4.6vw,58px);line-height:1.04;letter-spacing:-.03em;margin:0;color:#fff}
+.ahero .em{color:var(--gold);font-style:italic}
+.ahero p{font-size:clamp(16px,1.25vw,18.5px);color:var(--bone-dim);margin:20px auto 0;max-width:34em}
+.ahero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.on-ink{border-color:var(--line-on-ink);color:var(--bone)} .on-ink:hover{background:#fff;color:var(--ink)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.cell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(20px,2.4vw,32px);transition:background .3s ease,color .3s ease}
+.cell:hover{background:var(--ink);color:#fff}
+.cell.prob{font-size:15px;color:var(--ink);display:flex;align-items:center}
+.cell.prob::before{content:"";display:inline-block;width:14px;height:2px;background:var(--gold);margin-right:12px;flex:none}
+
+.sysgrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+.syscell{border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:clamp(22px,2.6vw,34px);transition:background .3s ease,color .3s ease}
+.syscell:hover{background:var(--ink)}
+.syscell:hover h3,.syscell:hover .num{color:#fff}.syscell:hover p{color:var(--bone-dim)}
+.syscell .num{font-family:var(--display);font-weight:600;font-size:26px;color:var(--gold-soft)}
+.syscell h3{font-family:var(--display);font-weight:600;font-size:clamp(18px,1.7vw,22px);margin:8px 0 8px;color:var(--ink)}
+.syscell p{font-size:14px;line-height:1.5;color:var(--charcoal);margin:0}
+
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;margin-top:clamp(28px,4vh,42px)}
+.flow .fstep{flex:1 1 150px;background:var(--paper);border:2px solid var(--ink);border-top:3px solid var(--gold);padding:22px 18px;text-align:center;transition:background .3s,color .3s}
+.flow .fstep:hover{background:var(--ink)}.flow .fstep:hover .d{color:#fff}
+.flow .fstep .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.flow .fstep .d{font-family:var(--display);font-weight:600;font-size:17px;color:var(--ink)}
+.flow .arw{display:flex;align-items:center;color:var(--gold);font-size:22px}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chips span{border:1.5px solid var(--gold-soft);border-radius:999px;padding:9px 16px;font-size:13px;color:var(--ink)}
+.disc{font-size:12px;color:var(--charcoal);margin-top:18px;max-width:44em}
+
+.cta{text-align:center}
+.cta h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,48px);line-height:1.05;letter-spacing:-.03em;margin:0 0 14px;color:#fff}
+.cta p{font-size:clamp(16px,1.2vw,18px);color:var(--bone-dim);max-width:34em;margin:0 auto 26px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+@media(max-width:900px){
+  .head{margin-left:auto;margin-right:auto;text-align:center}.head p{margin-left:auto;margin-right:auto}
+  .grid3,.sysgrid{grid-template-columns:1fr 1fr}
+  .ahero-cta .btn,.ahero-cta .link-button{width:100%;justify-content:center}
+}
+@media(max-width:640px){.flow .arw{transform:rotate(90deg);width:100%;justify-content:center}.flow .fstep{flex:1 1 100%}}
+@media(max-width:560px){section{padding:clamp(46px,7vh,64px) 0}.grid3,.sysgrid{grid-template-columns:1fr}.ahero h1{font-size:clamp(28px,8vw,40px)}.cta-btns .btn,.cta-btns .link-button{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.aurora::before{animation:none}}
+</style>
 </head>
 <body>
-  <header><div class="header-content"><div class="logo">Randy Kimbi</div><nav><ul><li><a href="/">Home</a></li></ul></nav></div></header>
+<header id="site-header"></header>
+<main>
 
-  <section class="hero text-center">
-    <div class="container"><div class="hero-grid centered"><div>
-      <span class="eyebrow center">AI Agents & Automation</span>
-      <h1>Put the repetitive work on <em>autopilot</em> &mdash; with humans in control.</h1>
-      <p>Improve speed, consistency and efficiency while keeping important decisions under human oversight. Randy shapes the solution and supervises the build with his technical team.</p>
-      <div class="hero-cta">
-        <a href="#discuss" class="btn btn-primary">Discuss an AI System</a>
-        <a href="/assessment/" class="textlink">Start with the Free AI Assessment <span class="ar">&rarr;</span></a>
-      </div>
-    </div></div></div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Start here</span><h2>The problems this <em>solves.</em></h2></div>
-      <div class="probs">
-        <div>Slow customer response</div><div>Repetitive reporting</div><div>Manual lead qualification</div><div>Document-heavy processes</div><div>Repeated administrative work</div><div>Time lost moving information between systems</div>
+  <section class="ink aurora">
+    <div class="wrap ahero reveal">
+      <p class="eyebrow-line">AI Agents &amp; Automation</p>
+      <h1>Put the repetitive work on <span class="em">autopilot</span> — with humans in control.</h1>
+      <p>More speed and consistency, with the important decisions still made by your people. Randy shapes the solution and supervises the build.</p>
+      <div class="ahero-cta">
+        <a href="#discuss" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2a4 4 0 0 1 4 4v1h1a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h1V6a4 4 0 0 1 4-4zM9 13h.01M15 13h.01"/></svg>
+          <span>Discuss an AI System</span>
+          <svg class="ar" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/assessment/" class="link-button on-ink"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg><span>Free AI Assessment</span></a>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">How it works</span><h2>An AI agent, kept under <em>human oversight.</em></h2><p>An AI agent is a system that can understand a task, take action and complete parts of a business process with limited human input. The important decisions stay with your people.</p></div>
-      <div class="flow">
-        <div class="step"><div class="t">1</div><div class="d">Business task</div></div>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Start here</p><h2>The problems this solves</h2></div>
+      <div class="grid3 reveal">
+        <div class="cell prob">Slow customer response</div>
+        <div class="cell prob">Repetitive reporting</div>
+        <div class="cell prob">Manual lead qualification</div>
+        <div class="cell prob">Document-heavy processes</div>
+        <div class="cell prob">Repeated admin work</div>
+        <div class="cell prob">Moving data between systems</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bone">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">How it works</p><h2>An AI agent, under human oversight</h2><p>A system that understands a task, takes action and completes parts of a process — while the important decisions stay with your people.</p></div>
+      <div class="flow reveal">
+        <div class="fstep"><div class="t">1</div><div class="d">Business task</div></div>
         <div class="arw">&rarr;</div>
-        <div class="step"><div class="t">2</div><div class="d">AI agent</div></div>
+        <div class="fstep"><div class="t">2</div><div class="d">AI agent</div></div>
         <div class="arw">&rarr;</div>
-        <div class="step"><div class="t">3</div><div class="d">Human review</div></div>
+        <div class="fstep"><div class="t">3</div><div class="d">Human review</div></div>
         <div class="arw">&rarr;</div>
-        <div class="step"><div class="t">4</div><div class="d">Business result</div></div>
+        <div class="fstep"><div class="t">4</div><div class="d">Business result</div></div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">What can be built</span><h2>Five systems to start <em>from.</em></h2></div>
-      <div class="sys">
-        <div class="svc"><div class="svc-i">01</div><h3>WhatsApp AI Agent</h3><p>Handles customer enquiries, FAQs, lead capture and structured conversations.</p></div>
-        <div class="svc"><div class="svc-i">02</div><h3>Sales AI Agent</h3><p>Supports lead qualification, follow-up and sales preparation.</p></div>
-        <div class="svc"><div class="svc-i">03</div><h3>Reporting AI Agent</h3><p>Collects, organises and prepares recurring reports.</p></div>
-        <div class="svc"><div class="svc-i">04</div><h3>Document Processing Agent</h3><p>Reads, sorts, extracts and processes information from documents.</p></div>
-        <div class="svc"><div class="svc-i">05</div><h3>Executive Assistant Agent</h3><p>Supports summaries, preparation, research and repetitive executive tasks.</p></div>
-        <div class="svc"><div class="svc-i">+</div><h3>Something different?</h3><p>AI systems can be designed around a specific business process. These five are a starting point, not a limit.</p></div>
+  <section class="paper">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">What can be built</p><h2>Five systems to start from</h2></div>
+      <div class="sysgrid reveal">
+        <div class="syscell"><div class="num">01</div><h3>WhatsApp AI Agent</h3><p>Enquiries, FAQs, lead capture and structured conversations.</p></div>
+        <div class="syscell"><div class="num">02</div><h3>Sales AI Agent</h3><p>Lead qualification, follow-up and sales preparation.</p></div>
+        <div class="syscell"><div class="num">03</div><h3>Reporting AI Agent</h3><p>Collects, organises and prepares recurring reports.</p></div>
+        <div class="syscell"><div class="num">04</div><h3>Document Processing</h3><p>Reads, sorts and extracts information from documents.</p></div>
+        <div class="syscell"><div class="num">05</div><h3>Executive Assistant</h3><p>Summaries, research and repetitive executive tasks.</p></div>
+        <div class="syscell"><div class="num">+</div><h3>Something different?</h3><p>Systems can be designed around a specific process. These five are a starting point, not a limit.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="alternate">
-    <div class="container">
-      <div class="sec-head"><span class="eyebrow">Integrations</span><h2>Fits the tools you already <em>use.</em></h2></div>
-      <div class="chips"><span>WhatsApp</span><span>Google Workspace</span><span>Microsoft 365</span><span>Email</span><span>CRM</span><span>Web chat &amp; documents</span></div>
-      <p class="disc">Platform names and logos indicate possible integrations and do not imply partnership or endorsement.</p>
+  <section class="bone">
+    <div class="wrap">
+      <div class="head reveal"><p class="eyebrow-line">Integrations</p><h2>Fits the tools you already use</h2></div>
+      <div class="chips reveal"><span>WhatsApp</span><span>Google Workspace</span><span>Microsoft 365</span><span>Email</span><span>CRM</span><span>Web chat &amp; documents</span></div>
+      <p class="disc reveal">Platform names indicate possible integrations and do not imply partnership or endorsement.</p>
     </div>
   </section>
 
-  <section id="discuss">
-    <div class="container">
-      <div class="cta-band">
-        <span class="eyebrow center">Next step</span>
-        <h2>Have a process worth <em>automating?</em></h2>
-        <p>Every build depends on the task, the systems involved, the data and the level of risk. Let's scope it.</p>
-        <div class="btn-group">
-          <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20would%20like%20to%20discuss%20an%20AI%20agent%20%2F%20automation%20for%20my%20organisation.%20We%20want%20to%20automate%20%5Bbrief%20process%5D." target="_blank" rel="noopener" class="btn btn-primary">Discuss an AI System</a>
-          <a href="/assessment/" class="link-button">Start with the Free AI Assessment</a>
-        </div>
+  <section class="ink cta aurora" id="discuss">
+    <div class="wrap reveal">
+      <h2>Have a process worth automating?</h2>
+      <p>Every build depends on the task, the systems, the data and the risk. Let&rsquo;s scope it.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/237671283217?text=Hello%20Randy%2C%20I%20would%20like%20to%20discuss%20an%20AI%20agent%20%2F%20automation%20for%20my%20organisation." target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 4V5z"/></svg><span>Discuss an AI System</span>
+          <svg class="ar" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="/assessment/" class="link-button on-ink"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/></svg><span>Free AI Assessment</span></a>
       </div>
     </div>
   </section>
 
-  <footer></footer>
-  <script src="/js/app.js"></script>
+</main>
+<footer id="site-footer"></footer>
+<script src="/js/app.js"></script>
+<script>
+(function(){
+  var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revs=document.querySelectorAll('.reveal');
+  if(rm){revs.forEach(function(e){e.classList.add('in');});return;}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    revs.forEach(function(e){io.observe(e);});
+    setTimeout(function(){revs.forEach(function(e){e.classList.add('in');});},2600);
+  } else { revs.forEach(function(e){e.classList.add('in');}); }
+})();
+</script>
 </body>
 </html>
